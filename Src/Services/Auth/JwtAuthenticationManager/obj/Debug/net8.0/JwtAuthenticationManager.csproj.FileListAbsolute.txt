@@ -1,0 +1,78 @@
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\JwtAuthenticationManager.deps.json
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\JwtAuthenticationManager.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\JwtAuthenticationManager.pdb
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Authentication.Dto.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Common.Dapper.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Core.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Common.Dapper.pdb
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Authentication.Dto.pdb
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Core.pdb
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.csproj.AssemblyReference.cache
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.AssemblyInfoInputs.cache
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.AssemblyInfo.cs
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.sourcelink.json
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthe.27E6DA6D.Up2Date
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\refint\JwtAuthenticationManager.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.pdb
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\ref\JwtAuthenticationManager.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\JwtAuthenticationManager.deps.json
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\JwtAuthenticationManager.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\JwtAuthenticationManager.pdb
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Authentication.Dto.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Common.Dapper.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Core.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Common.Dapper.pdb
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Authentication.Dto.pdb
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Core.pdb
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.csproj.AssemblyReference.cache
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.AssemblyInfoInputs.cache
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.AssemblyInfo.cs
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.sourcelink.json
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthe.27E6DA6D.Up2Date
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\refint\JwtAuthenticationManager.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.pdb
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\ref\JwtAuthenticationManager.dll
+C:\PCMS_Projects\PCMS\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\JwtAuthenticationManager.deps.json
+C:\PCMS_Projects\PCMS\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\JwtAuthenticationManager.dll
+C:\PCMS_Projects\PCMS\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\JwtAuthenticationManager.pdb
+C:\PCMS_Projects\PCMS\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Authentication.Dto.dll
+C:\PCMS_Projects\PCMS\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Common.Dapper.dll
+C:\PCMS_Projects\PCMS\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Core.dll
+C:\PCMS_Projects\PCMS\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Common.Dapper.pdb
+C:\PCMS_Projects\PCMS\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Authentication.Dto.pdb
+C:\PCMS_Projects\PCMS\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Core.pdb
+C:\PCMS_Projects\PCMS\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.csproj.AssemblyReference.cache
+C:\PCMS_Projects\PCMS\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\PCMS_Projects\PCMS\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.AssemblyInfoInputs.cache
+C:\PCMS_Projects\PCMS\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.AssemblyInfo.cs
+C:\PCMS_Projects\PCMS\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.csproj.CoreCompileInputs.cache
+C:\PCMS_Projects\PCMS\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthe.27E6DA6D.Up2Date
+C:\PCMS_Projects\PCMS\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.dll
+C:\PCMS_Projects\PCMS\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\refint\JwtAuthenticationManager.dll
+C:\PCMS_Projects\PCMS\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.pdb
+C:\PCMS_Projects\PCMS\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\ref\JwtAuthenticationManager.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\JwtAuthenticationManager.deps.json
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\JwtAuthenticationManager.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\JwtAuthenticationManager.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Authentication.Dto.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Common.Dapper.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Core.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Common.Dapper.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Authentication.Dto.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\JwtAuthenticationManager\bin\Debug\net8.0\Core.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.csproj.AssemblyReference.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.AssemblyInfoInputs.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.AssemblyInfo.cs
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthe.27E6DA6D.Up2Date
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\refint\JwtAuthenticationManager.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\JwtAuthenticationManager.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\JwtAuthenticationManager\obj\Debug\net8.0\ref\JwtAuthenticationManager.dll

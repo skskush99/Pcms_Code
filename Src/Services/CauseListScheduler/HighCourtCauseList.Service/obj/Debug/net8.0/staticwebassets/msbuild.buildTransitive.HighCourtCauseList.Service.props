@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\HighCourtCauseList.Service.props" />
+</Project>

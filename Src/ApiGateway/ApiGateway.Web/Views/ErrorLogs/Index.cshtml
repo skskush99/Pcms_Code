@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Application Logs";
+}
+@{
+    //List<SelectListItem> items = new List<SelectListItem>
+    //{
+        
+    //    new SelectListItem { Text = "UPM", Value = "D:\\Sampark_new\\Services\\Core.RajSampark.Services.UPM" },
+    //    new SelectListItem { Text = "CFG", Value = "D:\\Sampark_new\\Services\\Core.RajSampark.Services.CFG" },
+    //    new SelectListItem { Text = "CLCNTR", Value = "D:\\Sampark_new\\Services\\Core.RajSampark.Services.CLCNTR" },
+    //    new SelectListItem { Text = "DMS", Value = "D:\\Sampark_new\\Services\\Core.RajSampark.Services.DMS" },
+    //    new SelectListItem { Text = "GENERIC", Value = "D:\\Sampark_new\\Services\\Core.RajSampark.Services.GENERIC" },
+    //    new SelectListItem { Text = "GRVNC", Value = "D:\\Sampark_new\\Services\\Core.RajSampark.Services.GRVNC" },
+    //    new SelectListItem { Text = "NTF", Value = "D:\\Sampark_new\\Services\\Core.RajSampark.Services.NTF" },
+    //    new SelectListItem { Text = "REPORT", Value = "D:\\Sampark_new\\Services\\Core.RajSampark.Services.REPORT" },
+      
+    //};
+
+    string selectedValue = "sims_dev"; // Set the selected value here
+}
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<h2 style="text-align:center" >Application Logs</h2>
+
+<br />
+<div>
+    @Html.Label("selectOption", "Please select Service Name")
+   
+    <br />
+    @*@Html.DropDownList("selectOption", (SelectList)ViewBag.DropdownList, "Select a Service", new {@class="btn btn-secondary btn-sm dropdown-toggle"})*@
+    @Html.DropDownList("selectFolderPath", (SelectList)ViewBag.items, new {@class="btn btn-secondary btn-sm dropdown-toggle"})
+    &nbsp;
+    <button class="btn btn-primary btn-sm" id="showButton">Show</button>
+</div>
+<br />
+<div id="ErrorLogTableDiv">
+    <!-- HTML content from the action method will be displayed here -->
+</div>
+
+
+<script>
+    $("#showButton").click(function () {
+        debugger;
+        var selectedOption = $("#selectFolderPath :selected").text();
+        var folderPath = $("#selectFolderPath").val();
+        $.ajax({
+            url: '@Url.Action("GetErrorLogFiles", "ErrorLogs")',
+            data: { ServiceName: selectedOption, folderPath: folderPath },
+            success: function (data) {
+            $("#ErrorLogTableDiv").html(data);
+            }
+        });
+    });
+</script>
+

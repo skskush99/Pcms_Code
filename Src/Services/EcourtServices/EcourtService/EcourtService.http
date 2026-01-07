@@ -1,0 +1,6 @@
+@EcourtService_HostAddress = http://localhost:5054
+
+GET {{EcourtService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,11 @@
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\bin\Release\net8.0\Email.Dto.deps.json
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\bin\Release\net8.0\Email.Dto.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\bin\Release\net8.0\Email.Dto.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Release\net8.0\Email.Dto.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Release\net8.0\Email.Dto.AssemblyInfoInputs.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Release\net8.0\Email.Dto.AssemblyInfo.cs
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Release\net8.0\Email.Dto.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Release\net8.0\Email.Dto.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Release\net8.0\refint\Email.Dto.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Release\net8.0\Email.Dto.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Release\net8.0\ref\Email.Dto.dll

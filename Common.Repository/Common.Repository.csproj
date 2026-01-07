@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Src\SharedLibrary\Common.Dapper\Common.Dapper.csproj" />
+    <ProjectReference Include="..\Src\SharedLibrary\Core\Core.csproj" />
+  </ItemGroup>
+
+</Project>

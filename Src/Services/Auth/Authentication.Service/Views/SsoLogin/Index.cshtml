@@ -1,0 +1,18 @@
+﻿@{
+	string ReturnUrl = ViewBag.ReturnUrl;
+}
+
+@* <script>
+    // Redirect to the external website with searchText as a query parameter
+    window.location.href = searchText;
+</script> *@
+
+<script>
+
+	window.onload = function () {
+		//debugger;
+		//var url = '@ViewBag.ReturnUrl';
+		window.location = @ReturnUrl;
+		//alert(url);
+	}
+</script>

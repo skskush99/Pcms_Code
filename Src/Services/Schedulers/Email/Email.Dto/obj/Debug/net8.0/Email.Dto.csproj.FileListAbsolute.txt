@@ -1,0 +1,46 @@
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\bin\Debug\net8.0\Email.Dto.deps.json
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\bin\Debug\net8.0\Email.Dto.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\bin\Debug\net8.0\Email.Dto.pdb
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.AssemblyInfoInputs.cache
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.AssemblyInfo.cs
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.sourcelink.json
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\refint\Email.Dto.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.pdb
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\ref\Email.Dto.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\bin\Debug\net8.0\Email.Dto.deps.json
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\bin\Debug\net8.0\Email.Dto.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\bin\Debug\net8.0\Email.Dto.pdb
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.AssemblyInfoInputs.cache
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.AssemblyInfo.cs
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.sourcelink.json
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\refint\Email.Dto.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.pdb
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\ref\Email.Dto.dll
+C:\PCMS_Projects\PCMS\Src\Services\Schedulers\Email\Email.Dto\bin\Debug\net8.0\Email.Dto.deps.json
+C:\PCMS_Projects\PCMS\Src\Services\Schedulers\Email\Email.Dto\bin\Debug\net8.0\Email.Dto.dll
+C:\PCMS_Projects\PCMS\Src\Services\Schedulers\Email\Email.Dto\bin\Debug\net8.0\Email.Dto.pdb
+C:\PCMS_Projects\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.GeneratedMSBuildEditorConfig.editorconfig
+C:\PCMS_Projects\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.AssemblyInfoInputs.cache
+C:\PCMS_Projects\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.AssemblyInfo.cs
+C:\PCMS_Projects\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.csproj.CoreCompileInputs.cache
+C:\PCMS_Projects\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.dll
+C:\PCMS_Projects\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\refint\Email.Dto.dll
+C:\PCMS_Projects\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.pdb
+C:\PCMS_Projects\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\ref\Email.Dto.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\bin\Debug\net8.0\Email.Dto.deps.json
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\bin\Debug\net8.0\Email.Dto.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\bin\Debug\net8.0\Email.Dto.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.AssemblyInfoInputs.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.AssemblyInfo.cs
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\refint\Email.Dto.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\Email.Dto.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Schedulers\Email\Email.Dto\obj\Debug\net8.0\ref\Email.Dto.dll

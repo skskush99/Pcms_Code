@@ -1,0 +1,62 @@
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Common.Dapper\bin\Debug\net8.0\Common.Dapper.deps.json
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Common.Dapper\bin\Debug\net8.0\Common.Dapper.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Common.Dapper\bin\Debug\net8.0\Common.Dapper.pdb
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Common.Dapper\bin\Debug\net8.0\Core.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Common.Dapper\bin\Debug\net8.0\Core.pdb
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.csproj.AssemblyReference.cache
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.AssemblyInfoInputs.cache
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.AssemblyInfo.cs
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.sourcelink.json
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.D.50C47775.Up2Date
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\refint\Common.Dapper.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.pdb
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\ref\Common.Dapper.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\SharedLibrary\Common.Dapper\bin\Debug\net8.0\Common.Dapper.deps.json
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\SharedLibrary\Common.Dapper\bin\Debug\net8.0\Common.Dapper.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\SharedLibrary\Common.Dapper\bin\Debug\net8.0\Common.Dapper.pdb
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\SharedLibrary\Common.Dapper\bin\Debug\net8.0\Core.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\SharedLibrary\Common.Dapper\bin\Debug\net8.0\Core.pdb
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.csproj.AssemblyReference.cache
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.AssemblyInfoInputs.cache
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.AssemblyInfo.cs
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.sourcelink.json
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.D.50C47775.Up2Date
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\refint\Common.Dapper.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.pdb
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\ref\Common.Dapper.dll
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Common.Dapper\bin\Debug\net8.0\Common.Dapper.deps.json
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Common.Dapper\bin\Debug\net8.0\Common.Dapper.dll
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Common.Dapper\bin\Debug\net8.0\Common.Dapper.pdb
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Common.Dapper\bin\Debug\net8.0\Core.dll
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Common.Dapper\bin\Debug\net8.0\Core.pdb
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.csproj.AssemblyReference.cache
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.GeneratedMSBuildEditorConfig.editorconfig
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.AssemblyInfoInputs.cache
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.AssemblyInfo.cs
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.csproj.CoreCompileInputs.cache
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.D.50C47775.Up2Date
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.dll
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\refint\Common.Dapper.dll
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.pdb
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\ref\Common.Dapper.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Common.Dapper\bin\Debug\net8.0\Common.Dapper.deps.json
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Common.Dapper\bin\Debug\net8.0\Common.Dapper.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Common.Dapper\bin\Debug\net8.0\Common.Dapper.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Common.Dapper\bin\Debug\net8.0\Core.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Common.Dapper\bin\Debug\net8.0\Core.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.csproj.AssemblyReference.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.AssemblyInfoInputs.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.AssemblyInfo.cs
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.D.50C47775.Up2Date
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\refint\Common.Dapper.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\Common.Dapper.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Common.Dapper\obj\Debug\net8.0\ref\Common.Dapper.dll

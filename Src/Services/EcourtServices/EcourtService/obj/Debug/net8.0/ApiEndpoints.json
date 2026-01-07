@@ -1,0 +1,300 @@
+[
+  {
+    "ContainingType": "EcourtService.Controllers.EcourtServiceController",
+    "Method": "GetAuthToken",
+    "RelativePath": "api/EcourtService/GetAuthToken/Token",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "EcourtDto.Shared.ResponseWithoutPaginationModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EcourtService.Controllers.EcourtServiceController",
+    "Method": "GetCauseListDetail",
+    "RelativePath": "api/EcourtService/GetCauseListDetail/CauseList",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "EstCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Courtno",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Causelistdate",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Cicri",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "EcourtDto.Shared.ResponseWithoutPaginationModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EcourtService.Controllers.EcourtServiceController",
+    "Method": "GetCourtComplexDetail",
+    "RelativePath": "api/EcourtService/GetCourtComplexDetail/CourtComplex",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "StateCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "DistCode",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "EcourtDto.Shared.ResponseWithoutPaginationModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EcourtService.Controllers.EcourtServiceController",
+    "Method": "GetDetailByCaseNumber",
+    "RelativePath": "api/EcourtService/GetDetailByCaseNumber/SearchByCaseNumber",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "EstCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CaseType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CaseNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "RegYear",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "EcourtDto.Shared.ResponseWithoutPaginationModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EcourtService.Controllers.EcourtServiceController",
+    "Method": "GetDetailByCNR",
+    "RelativePath": "api/EcourtService/GetDetailByCNR/SearchByCnr",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CinNo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "EcourtDto.Shared.ResponseWithoutPaginationModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EcourtService.Controllers.EcourtServiceController",
+    "Method": "GetDetailByCNRBulk",
+    "RelativePath": "api/EcourtService/GetDetailByCNRBulk/SearchByCnrBulk",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CinNo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "EcourtDto.Shared.ResponseWithoutPaginationModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EcourtService.Controllers.EcourtServiceController",
+    "Method": "GetDetailByPartyName",
+    "RelativePath": "api/EcourtService/GetDetailByPartyName/SearchByPartyName",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "EstCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PendDisp",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "LitigantName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "RegYear",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "EcourtDto.Shared.ResponseWithoutPaginationModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EcourtService.Controllers.EcourtServiceController",
+    "Method": "GetDetailCaseType",
+    "RelativePath": "api/EcourtService/GetDetailCaseType/CaseTypeMaster",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "EstCode",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "EcourtDto.Shared.ResponseWithoutPaginationModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EcourtService.Controllers.EcourtServiceController",
+    "Method": "GetDistrictDetail",
+    "RelativePath": "api/EcourtService/GetDistrictDetail/District",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "StateCode",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "EcourtDto.Shared.ResponseWithoutPaginationModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EcourtService.Controllers.EcourtServiceController",
+    "Method": "GetECourtStateDetail",
+    "RelativePath": "api/EcourtService/GetECourtStateDetail/ECourtState",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "EcourtDto.Shared.ResponseWithoutPaginationModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

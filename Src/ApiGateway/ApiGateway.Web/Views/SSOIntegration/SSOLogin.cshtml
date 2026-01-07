@@ -1,0 +1,35 @@
+﻿@*@using EConnect.EEF.Web.Insfrastructure.Extentions*@
+@using ApiGateway.Web
+@*@model EConnect.Core.Insfrastructure.UserSessionModel*@
+
+@{
+	//ViewBag.Title = "SSO Login";
+
+
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Get, new
+{
+	action = ViewBag.ReactURL + "?AuthId=" + System.Net.WebUtility.UrlEncode(ViewBag.AuthId) + "&AuthKey=" + System.Net.WebUtility.UrlEncode(ViewBag.AuthKey) + "&ComeFrom=" + ViewBag.ComeFrom + "&Language=" + ViewBag.Language + "&RedirectKey=" + ViewBag.RedirectKey + "&SsoToken=" + ViewBag.SsoToken + "&UserType=" + ViewBag.UserType + "&LoginLogId=" + ViewBag.LoginLogId + "&SsoURL=" + ViewBag.SsoURL + "&ProfileId=" + ViewBag.ProfileId,
+	id = "myForm"
+})) ;
+
+
+<script>
+
+	@*window.onload = function () {
+		document.forms['myForm'].submit();
+		alert(URL);	}*@
+
+
+</script>
+
+<script>
+
+	window.onload = function () {
+		//debugger;
+		var url = '@ViewBag.ReactURL' + "?AuthId=" + '@System.Net.WebUtility.UrlEncode(ViewBag.AuthId)' + "&AuthKey=" + '@System.Net.WebUtility.UrlEncode(ViewBag.AuthKey)' + "&ComeFrom=" + '@System.Net.WebUtility.UrlEncode(ViewBag.ComeFrom)' + "&Language=" + '@System.Net.WebUtility.UrlEncode(ViewBag.Language)' + "&RedirectKey=" + '@System.Net.WebUtility.UrlEncode(ViewBag.RedirectKey)' + "&SsoToken=" + '@System.Net.WebUtility.UrlEncode(ViewBag.SsoToken)' + "&UserType=" + '@ViewBag.UserType' + "&LoginLogId=" + '@ViewBag.LoginLogId' + "&SsoURL=" + '@ViewBag.SsoURL' + "&ProfileId=" + '@ViewBag.ProfileId' + "";
+		window.location = url;
+		//alert(url);
+	}
+</script>

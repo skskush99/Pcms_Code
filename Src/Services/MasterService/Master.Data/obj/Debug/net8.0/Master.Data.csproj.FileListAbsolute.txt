@@ -1,0 +1,58 @@
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Data\bin\Debug\net8.0\Master.Data.deps.json
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Data\bin\Debug\net8.0\Master.Data.runtimeconfig.json
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Data\bin\Debug\net8.0\Master.Data.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Data\bin\Debug\net8.0\Master.Data.pdb
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.csproj.AssemblyReference.cache
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.AssemblyInfoInputs.cache
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.AssemblyInfo.cs
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.sourcelink.json
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\refint\Master.Data.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.pdb
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.genruntimeconfig.cache
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\ref\Master.Data.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Data\bin\Debug\net8.0\Master.Data.deps.json
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Data\bin\Debug\net8.0\Master.Data.runtimeconfig.json
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Data\bin\Debug\net8.0\Master.Data.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Data\bin\Debug\net8.0\Master.Data.pdb
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.csproj.AssemblyReference.cache
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.AssemblyInfoInputs.cache
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.AssemblyInfo.cs
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.sourcelink.json
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\refint\Master.Data.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.pdb
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.genruntimeconfig.cache
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\ref\Master.Data.dll
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Data\bin\Debug\net8.0\Master.Data.deps.json
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Data\bin\Debug\net8.0\Master.Data.runtimeconfig.json
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Data\bin\Debug\net8.0\Master.Data.dll
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Data\bin\Debug\net8.0\Master.Data.pdb
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.csproj.AssemblyReference.cache
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.AssemblyInfoInputs.cache
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.AssemblyInfo.cs
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.csproj.CoreCompileInputs.cache
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.dll
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\refint\Master.Data.dll
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.pdb
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.genruntimeconfig.cache
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\ref\Master.Data.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Data\bin\Debug\net8.0\Master.Data.deps.json
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Data\bin\Debug\net8.0\Master.Data.runtimeconfig.json
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Data\bin\Debug\net8.0\Master.Data.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Data\bin\Debug\net8.0\Master.Data.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.csproj.AssemblyReference.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.AssemblyInfoInputs.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.AssemblyInfo.cs
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\refint\Master.Data.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\Master.Data.genruntimeconfig.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Data\obj\Debug\net8.0\ref\Master.Data.dll

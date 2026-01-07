@@ -1,0 +1,1 @@
+2025-01-24 13:06:48.492 +05:30 [INF] [MasterLoggingDemo/Server-125.08.13.1] 99aa2b4a-80cf-4fc0-b1ee-3b43b4ee694c This is an Information log, general info about app flow.

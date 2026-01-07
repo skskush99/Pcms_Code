@@ -1,0 +1,40 @@
+C:\PCMS_Projects\PCMS\Src\Services\Auth\Authentication.Repository\bin\Release\net8.0\Authentication.Repository.deps.json
+C:\PCMS_Projects\PCMS\Src\Services\Auth\Authentication.Repository\bin\Release\net8.0\Authentication.Repository.dll
+C:\PCMS_Projects\PCMS\Src\Services\Auth\Authentication.Repository\bin\Release\net8.0\Authentication.Repository.pdb
+C:\PCMS_Projects\PCMS\Src\Services\Auth\Authentication.Repository\bin\Release\net8.0\Authentication.Dto.dll
+C:\PCMS_Projects\PCMS\Src\Services\Auth\Authentication.Repository\bin\Release\net8.0\Common.Dapper.dll
+C:\PCMS_Projects\PCMS\Src\Services\Auth\Authentication.Repository\bin\Release\net8.0\Core.dll
+C:\PCMS_Projects\PCMS\Src\Services\Auth\Authentication.Repository\bin\Release\net8.0\Common.Dapper.pdb
+C:\PCMS_Projects\PCMS\Src\Services\Auth\Authentication.Repository\bin\Release\net8.0\Core.pdb
+C:\PCMS_Projects\PCMS\Src\Services\Auth\Authentication.Repository\bin\Release\net8.0\Authentication.Dto.pdb
+C:\PCMS_Projects\PCMS\Src\Services\Auth\Authentication.Repository\obj\Release\net8.0\Authentication.Repository.csproj.AssemblyReference.cache
+C:\PCMS_Projects\PCMS\Src\Services\Auth\Authentication.Repository\obj\Release\net8.0\Authentication.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\PCMS_Projects\PCMS\Src\Services\Auth\Authentication.Repository\obj\Release\net8.0\Authentication.Repository.AssemblyInfoInputs.cache
+C:\PCMS_Projects\PCMS\Src\Services\Auth\Authentication.Repository\obj\Release\net8.0\Authentication.Repository.AssemblyInfo.cs
+C:\PCMS_Projects\PCMS\Src\Services\Auth\Authentication.Repository\obj\Release\net8.0\Authentication.Repository.csproj.CoreCompileInputs.cache
+C:\PCMS_Projects\PCMS\Src\Services\Auth\Authentication.Repository\obj\Release\net8.0\Authenti.85AA1E41.Up2Date
+C:\PCMS_Projects\PCMS\Src\Services\Auth\Authentication.Repository\obj\Release\net8.0\Authentication.Repository.dll
+C:\PCMS_Projects\PCMS\Src\Services\Auth\Authentication.Repository\obj\Release\net8.0\refint\Authentication.Repository.dll
+C:\PCMS_Projects\PCMS\Src\Services\Auth\Authentication.Repository\obj\Release\net8.0\Authentication.Repository.pdb
+C:\PCMS_Projects\PCMS\Src\Services\Auth\Authentication.Repository\obj\Release\net8.0\ref\Authentication.Repository.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\Authentication.Repository\bin\Release\net8.0\Authentication.Repository.deps.json
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\Authentication.Repository\bin\Release\net8.0\Authentication.Repository.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\Authentication.Repository\bin\Release\net8.0\Authentication.Repository.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\Authentication.Repository\bin\Release\net8.0\Authentication.Dto.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\Authentication.Repository\bin\Release\net8.0\Common.Dapper.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\Authentication.Repository\bin\Release\net8.0\Core.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\Authentication.Repository\bin\Release\net8.0\Common.Dapper.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\Authentication.Repository\bin\Release\net8.0\Core.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\Authentication.Repository\bin\Release\net8.0\Authentication.Dto.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\Authentication.Repository\obj\Release\net8.0\Authentication.Repository.csproj.AssemblyReference.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\Authentication.Repository\obj\Release\net8.0\Authentication.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\Authentication.Repository\obj\Release\net8.0\Authentication.Repository.AssemblyInfoInputs.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\Authentication.Repository\obj\Release\net8.0\Authentication.Repository.AssemblyInfo.cs
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\Authentication.Repository\obj\Release\net8.0\Authentication.Repository.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\Authentication.Repository\obj\Release\net8.0\Authenti.85AA1E41.Up2Date
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\Authentication.Repository\obj\Release\net8.0\Authentication.Repository.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\Authentication.Repository\obj\Release\net8.0\refint\Authentication.Repository.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\Authentication.Repository\obj\Release\net8.0\Authentication.Repository.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\Authentication.Repository\obj\Release\net8.0\ref\Authentication.Repository.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\Authentication.Repository\bin\Release\net8.0\Common.Repository.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\Auth\Authentication.Repository\bin\Release\net8.0\Common.Repository.pdb

@@ -1,0 +1,713 @@
+[
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.DocumentController",
+    "Method": "PostDownloadDocument",
+    "RelativePath": "api/Document/DownloadDocument",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "DocumentId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.DocumentController",
+    "Method": "PostDownloadTemplate",
+    "RelativePath": "api/Document/DownloadTemplate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "FileName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.DocumentController",
+    "Method": "PostUploadDocument",
+    "RelativePath": "api/Document/UploadDocument",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "userNo",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "EntityId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "EntityTypeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "DocumentTypeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "folder",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.Gateway_PostAuthAdminServiceController",
+    "Method": "PostAddEdit",
+    "RelativePath": "api/Gateway_PostAuthAdminService/AddEdit",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "apiRequestModel",
+        "Type": "Core.Models.ApiRequestModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.Gateway_PostAuthAdminServiceController",
+    "Method": "PostDelete",
+    "RelativePath": "api/Gateway_PostAuthAdminService/Delete",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "apiRequestModel",
+        "Type": "Core.Models.ApiRequestModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.Gateway_PostAuthAdminServiceController",
+    "Method": "PostDeleteDocByDocId",
+    "RelativePath": "api/Gateway_PostAuthAdminService/DeleteDocByDocId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "DocumentDetailId",
+        "Type": "System.Int64[]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.Gateway_PostAuthAdminServiceController",
+    "Method": "PostDeleteDetailDocument",
+    "RelativePath": "api/Gateway_PostAuthAdminService/DeleteDocumentDetail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "DocumentDetailId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.Gateway_PostAuthAdminServiceController",
+    "Method": "PostDocumentById",
+    "RelativePath": "api/Gateway_PostAuthAdminService/DocumentById",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "DocumentDetailId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.Gateway_PostAuthAdminServiceController",
+    "Method": "PostDocumentFileByIds",
+    "RelativePath": "api/Gateway_PostAuthAdminService/DocumentFileByIds",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "DocumentDetailId",
+        "Type": "System.Int64[]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.Gateway_PostAuthAdminServiceController",
+    "Method": "PostDocumentValidationById",
+    "RelativePath": "api/Gateway_PostAuthAdminService/DocumentValidateById",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ModuleId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "EntityTypeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.Gateway_PostAuthAdminServiceController",
+    "Method": "PostDownloadDocument",
+    "RelativePath": "api/Gateway_PostAuthAdminService/DownloadDocument",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "DocumentDetailId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.Gateway_PostAuthAdminServiceController",
+    "Method": "PostExportData",
+    "RelativePath": "api/Gateway_PostAuthAdminService/ExportData",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "apiRequestModel",
+        "Type": "Core.Models.ApiRequestModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.Gateway_PostAuthAdminServiceController",
+    "Method": "PostGetList",
+    "RelativePath": "api/Gateway_PostAuthAdminService/GetList",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "apiRequestModel",
+        "Type": "Core.Models.ApiRequestModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.Gateway_PostAuthAdminServiceController",
+    "Method": "PostGetListV1",
+    "RelativePath": "api/Gateway_PostAuthAdminService/GetListV1",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "apiRequestModel",
+        "Type": "Core.Models.ApiRequestModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.Gateway_PostAuthAdminServiceController",
+    "Method": "PostGetOnLoad",
+    "RelativePath": "api/Gateway_PostAuthAdminService/GetOnLoad",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "apiRequestModel",
+        "Type": "Core.Models.ApiRequestModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.Gateway_PostAuthAdminServiceController",
+    "Method": "postReadExcelData",
+    "RelativePath": "api/Gateway_PostAuthAdminService/ReadExcelData",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "ModuleId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "EntityTypeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "EntityId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Module",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ApiPath",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ModeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.Gateway_PostAuthAdminServiceController",
+    "Method": "PostSampleFile",
+    "RelativePath": "api/Gateway_PostAuthAdminService/SampleFile",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.Gateway_PostAuthAdminServiceController",
+    "Method": "PostGetUpdateDocumentEntityId",
+    "RelativePath": "api/Gateway_PostAuthAdminService/UpdateDocumentEntityId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "DocumentIds",
+        "Type": "System.Int64[]",
+        "IsRequired": true
+      },
+      {
+        "Name": "ModuleId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "EntityTypeId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "EntityId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.Gateway_PostAuthAdminServiceController",
+    "Method": "PostUploadDocument",
+    "RelativePath": "api/Gateway_PostAuthAdminService/UploadDocument",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "ModuleId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "EntityTypeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "EntityId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.Gateway_PostAuthAdminServiceController",
+    "Method": "PostUploadImage",
+    "RelativePath": "api/Gateway_PostAuthAdminService/UploadImage",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "fileName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.GatewayServiceController",
+    "Method": "PostGetList",
+    "RelativePath": "api/GatewayService/GetList",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "apiRequestModel",
+        "Type": "Core.Models.ApiRequestModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.ErrorLogsController",
+    "Method": "DownloadFile",
+    "RelativePath": "DownloadFile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filePath",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.AuthenticateController",
+    "Method": "PostGetUserIdWiseModuleList",
+    "RelativePath": "GetUserIdWiseModuleList",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ApiKey",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrgId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ApiParams",
+        "Type": "System.Object",
+        "IsRequired": false
+      },
+      {
+        "Name": "ResponseId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Path",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Module",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserDetails",
+        "Type": "System.Object",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserSessionModel",
+        "Type": "System.Object",
+        "IsRequired": false
+      },
+      {
+        "Name": "Language",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FormAction",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.AuthenticateController",
+    "Method": "PostLoginWithOutOtp",
+    "RelativePath": "LoginWithOutOtp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ApiKey",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrgId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ApiParams",
+        "Type": "System.Object",
+        "IsRequired": false
+      },
+      {
+        "Name": "ResponseId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Path",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Module",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserDetails",
+        "Type": "System.Object",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserSessionModel",
+        "Type": "System.Object",
+        "IsRequired": false
+      },
+      {
+        "Name": "Language",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FormAction",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.AuthenticateController",
+    "Method": "PostValidateLogin",
+    "RelativePath": "ValidateLogin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ApiKey",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrgId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ApiParams",
+        "Type": "System.Object",
+        "IsRequired": false
+      },
+      {
+        "Name": "ResponseId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Path",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Module",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserDetails",
+        "Type": "System.Object",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserSessionModel",
+        "Type": "System.Object",
+        "IsRequired": false
+      },
+      {
+        "Name": "Language",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FormAction",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiGateway.Web.Controllers.AuthenticateController",
+    "Method": "PostValidateLoginWithOTP",
+    "RelativePath": "ValidateLoginWithOTP",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ApiKey",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrgId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ApiParams",
+        "Type": "System.Object",
+        "IsRequired": false
+      },
+      {
+        "Name": "ResponseId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Path",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Module",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserId",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserDetails",
+        "Type": "System.Object",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserSessionModel",
+        "Type": "System.Object",
+        "IsRequired": false
+      },
+      {
+        "Name": "Language",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FormAction",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

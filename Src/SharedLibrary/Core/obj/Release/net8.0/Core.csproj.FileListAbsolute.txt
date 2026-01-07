@@ -1,0 +1,37 @@
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Core\bin\Release\net8.0\Core.deps.json
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Core\bin\Release\net8.0\Core.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Core\bin\Release\net8.0\Core.pdb
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Core\obj\Release\net8.0\Core.csproj.AssemblyReference.cache
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Core\obj\Release\net8.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Core\obj\Release\net8.0\Core.AssemblyInfoInputs.cache
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Core\obj\Release\net8.0\Core.AssemblyInfo.cs
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Core\obj\Release\net8.0\Core.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Core\obj\Release\net8.0\Core.sourcelink.json
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Core\obj\Release\net8.0\Core.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Core\obj\Release\net8.0\refint\Core.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Core\obj\Release\net8.0\Core.pdb
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\SharedLibrary\Core\obj\Release\net8.0\ref\Core.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Core\bin\Release\net8.0\Core.deps.json
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Core\bin\Release\net8.0\Core.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Core\bin\Release\net8.0\Core.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Core\obj\Release\net8.0\Core.csproj.AssemblyReference.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Core\obj\Release\net8.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Core\obj\Release\net8.0\Core.AssemblyInfoInputs.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Core\obj\Release\net8.0\Core.AssemblyInfo.cs
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Core\obj\Release\net8.0\Core.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Core\obj\Release\net8.0\Core.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Core\obj\Release\net8.0\refint\Core.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Core\obj\Release\net8.0\Core.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Core\obj\Release\net8.0\ref\Core.dll
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Core\bin\Release\net8.0\Core.deps.json
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Core\bin\Release\net8.0\Core.dll
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Core\bin\Release\net8.0\Core.pdb
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Core\obj\Release\net8.0\Core.csproj.AssemblyReference.cache
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Core\obj\Release\net8.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Core\obj\Release\net8.0\Core.AssemblyInfoInputs.cache
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Core\obj\Release\net8.0\Core.AssemblyInfo.cs
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Core\obj\Release\net8.0\Core.csproj.CoreCompileInputs.cache
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Core\obj\Release\net8.0\Core.dll
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Core\obj\Release\net8.0\refint\Core.dll
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Core\obj\Release\net8.0\Core.pdb
+C:\PCMS_Projects\PCMS\Src\SharedLibrary\Core\obj\Release\net8.0\ref\Core.dll

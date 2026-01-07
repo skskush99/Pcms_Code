@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\PCMS_Projects\Publish\PcmsAuth</_PublishTargetUrl>
+    <History>True|2025-12-03T05:47:07.9374429Z||;True|2025-12-03T11:07:24.5890792+05:30||;True|2025-12-03T11:02:31.7708389+05:30||;True|2025-12-03T10:54:44.3059520+05:30||;True|2025-12-02T19:26:29.3974730+05:30||;True|2025-12-02T18:48:14.4249250+05:30||;True|2025-12-02T17:20:49.0136394+05:30||;True|2025-12-02T16:49:52.1785284+05:30||;True|2025-12-02T15:33:32.3778100+05:30||;True|2025-12-02T11:26:06.0051987+05:30||;True|2025-12-01T18:40:52.9671510+05:30||;True|2025-11-28T16:29:14.7108527+05:30||;True|2025-11-27T13:04:37.1120247+05:30||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

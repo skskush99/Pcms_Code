@@ -1,0 +1,2 @@
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Core.Insfrastructure\obj\Release\net8.0\staticwebassets.build.json
+D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Core.Insfrastructure\obj\Release\net8.0\staticwebassets.build.json

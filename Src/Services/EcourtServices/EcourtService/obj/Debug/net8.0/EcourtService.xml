@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EcourtService</name>
+    </assembly>
+    <members>
+        <member name="M:EcourtService.Controllers.EcourtServiceController.GetAuthToken">
+             <summary>
+             Creates an Token To Access Other API's.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /api/EcourtService/GetAuthToken/Token
+                 
+              this API provide Authorization token to Access Other API's
+             </remarks>
+        </member>
+        <member name="M:EcourtService.Controllers.EcourtServiceController.GetDetailByCNR(System.String)">
+             <summary>
+             API provides complete history of the case including, case details, party names, current status, 
+             daily proceedings, orders, judgments, IA details and process issued information based on 
+             CNR number of the case.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /api/EcourtService/GetDetailByCNR/SearchByCnr?CinNo=RJAJ1A0000862019
+                 
+              this API provides Case Detail by Providing CNR Number 
+             </remarks>
+        </member>
+        <member name="M:EcourtService.Controllers.EcourtServiceController.GetDetailByCNRBulk(EcourtDto.Ecourt.GetDetailByCNR)">
+             <summary>
+             API provides only the current status like next date, stage or decision date 
+             of the case based on CNR number. Instead of getting the complete history of 
+             case which is more elaborate, this API provides the current status of the 
+             case in short. This API is used to update the current status of the case and 
+             may be used in batch processing mode periodically. Single CNR or Multiple 
+             CNRs can be sent as request parameter to get the current status of the Case(s).
+             </summary>
+             <remarks>
+             Search by CNR (Current Case Status) API
+             Sample request:
+            
+                 GET /api/EcourtService/GetDetailByCNRBulk/SearchByCnr?CinNo=RJAJ1A0000862019
+              
+             </remarks>
+        </member>
+        <member name="M:EcourtService.Controllers.EcourtServiceController.GetDetailCaseType(System.String)">
+             <summary>
+             API provides list of the Case Types (referred as type_name) and relevant Case Type Codes 
+             (referred as case_type) used in the establishment for further accessing relevant APIs.
+             Input for this API is Establishment Code and other details.Type Name and Case Type retrieved 
+             using this API can be used to access the case data using various Case Search APIs like Search 
+             by Case Registration Number, Filing Number etc.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /api/EcourtService/GetDetailCaseType/CaseTypeMaster?EstCode=MHAU01
+              
+             </remarks>
+        </member>
+        <member name="M:EcourtService.Controllers.EcourtServiceController.GetDetailByCaseNumber(System.String,System.String,System.String,System.String)">
+             <summary>
+              API provides list of the Case Types (referred as type_name) and relevant Case Type Codes 
+              (referred as case_type) used in the establishment for further accessing relevant APIs. Input for 
+              this API is Establishment Code and other details. Type Name and Case Type retrieved using this 
+              API can be used to access the case data using various Case Search APIs like Search by Case 
+              Registration Number, Filing Number etc.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /api/EcourtService/GetDetailByCaseNumber/SearchByCaseNumber?EstCode=RJHC02&amp;CaseType=48&amp;CaseNumber=133&amp;RegYear=2013
+                 
+             Required Params :
+             
+                 {
+                    EstCode : '6 characters alphanumeric est_code (ex.MHAU01) received using Court Complex API.',
+                    CaseType : 'Integer value (ex. 15) of the Case Type. This value case_type can be obtained using Case Type Master API.',
+                    CaseNumber : 'Integer value with max length 7 digits (ex. 234) i.e. Registration number of case. If Case Number is not provided, all the cases registered for the given Case type in the given registration year will be shown. ',
+                    RegYear : '4 digit integer value (ex 2019). i.e. Registration Year of the case.'
+                 }
+               
+             </remarks>
+        </member>
+        <member name="M:EcourtService.Controllers.EcourtServiceController.GetDetailByPartyName(System.String,System.String,System.String,System.String)">
+             <summary>
+              API provides list of cases from a High court establishment matching name of the party. Input for this
+              API is Establishment Code, Litigants Name, Case Registration Year, Status of the Case(Pending or
+              Disposed) and other details.The litigants name may be petitioner’s name or respondent’s name or an
+              extra party name.The search string for litigant name may consist of full name of the party or even few
+              characters(minimum 3) for searching.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /api/EcourtService/GetDetailByPartyName/SearchByPartyName?EstCode=RJHC02&amp;PendDisp=D&amp;LitigantName=MANANGING%20DIRECTOR%20RIICO%20LTD%20AND%20OTHERS&amp;RegYear=2013
+                 
+             Required Params :
+             
+                 {
+                    EstCode : '6 characters alphanumeric est_code (ex. RJHC02) retrieved using Bench API.',
+                    PendDisp : 'Character value ‘P’ or ‘D’. P for pending cases and D for disposed cases.',
+                    LitigantName : 'Character string with maximum length 99(ex. MANANGING DIRECTOR RIICO LTD AND OTHERS). Minimum length of 3 characters is mandatory.',
+                    RegYear : '4 digit integer value (ex 2013)i.e. Registration Year of the case.'
+                 }
+               
+             </remarks>
+        </member>
+        <member name="M:EcourtService.Controllers.EcourtServiceController.GetECourtStateDetail">
+             <summary>
+             API provides list of High Courts and states relevant state codes used in the eCourts project 
+             for further accessing relevant APIs. This API doesn’t require any input string and can just be 
+             connected using dept_id,request_str,token &amp; version to get the list of the states.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /api/EcourtService/GetECourtStateDetail/ECourtState
+                 
+             </remarks>
+        </member>
+        <member name="M:EcourtService.Controllers.EcourtServiceController.GetDistrictDetail(System.String)">
+             <summary>
+             API provides list of the Districts and relevant District codes pertaining to the given state 
+             used in the eCourts project for further accessing relevant APIs. Input for this API is State 
+             Code and other details. 
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /api/EcourtService/GetDistrictDetail/District?StateCode=9
+              
+             Required Params :
+             
+                 {
+                    StateCode : '2 digit state code(ex. 9) retrieved from State Master.'
+                 }
+                 
+             </remarks>
+        </member>
+        <member name="M:EcourtService.Controllers.EcourtServiceController.GetCourtComplexDetail(System.String,System.String)">
+             <summary>
+             API provides list of the Districts and relevant District codes pertaining to the given state 
+             used in the eCourts project for further accessing relevant APIs. Input for this API is State 
+             Code and other details. 
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /api/EcourtService/GetDistrictDetail/District?StateCode=9
+              
+             Required Params :
+             
+                 {
+                    StateCode : '2 digit state code(ex. 9) retrieved from State Master.'
+                 }
+                 
+             </remarks>
+        </member>
+        <member name="M:EcourtService.Controllers.EcourtServiceController.GetCauseListDetail(System.String,System.String,System.String,System.String)">
+             <summary>
+              API provides list of cases from a High court establishment matching name of the party. Input for this
+              API is Establishment Code, Litigants Name, Case Registration Year, Status of the Case(Pending or
+              Disposed) and other details.The litigants name may be petitioner’s name or respondent’s name or an
+              extra party name.The search string for litigant name may consist of full name of the party or even few
+              characters(minimum 3) for searching.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /api/EcourtService/GetDetailByPartyName/SearchByPartyName?EstCode=RJHC02&amp;PendDisp=D&amp;LitigantName=MANANGING%20DIRECTOR%20RIICO%20LTD%20AND%20OTHERS&amp;RegYear=2013
+                 
+             Required Params :
+             
+                 {
+                    EstCode : '6 characters alphanumeric est_code (ex.MHAU01) received using Court Complex API.',
+                    Courtno : '2 digit court number for which the cause list is to be generated.',
+                    Causelistdate : 'Cause list date in yyyy-mm-dd format.',
+                    Cicri : '2 for civil and 3 for criminal.'
+                 }
+               
+             </remarks>
+        </member>
+    </members>
+</doc>

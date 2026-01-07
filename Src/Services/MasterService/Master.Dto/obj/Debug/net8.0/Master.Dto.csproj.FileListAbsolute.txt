@@ -1,0 +1,46 @@
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Dto\bin\Debug\net8.0\Master.Dto.deps.json
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Dto\bin\Debug\net8.0\Master.Dto.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Dto\bin\Debug\net8.0\Master.Dto.pdb
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.AssemblyInfoInputs.cache
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.AssemblyInfo.cs
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.sourcelink.json
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\refint\Master.Dto.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.pdb
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\ref\Master.Dto.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Dto\bin\Debug\net8.0\Master.Dto.deps.json
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Dto\bin\Debug\net8.0\Master.Dto.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Dto\bin\Debug\net8.0\Master.Dto.pdb
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.AssemblyInfoInputs.cache
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.AssemblyInfo.cs
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.sourcelink.json
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\refint\Master.Dto.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.pdb
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\ref\Master.Dto.dll
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Dto\bin\Debug\net8.0\Master.Dto.deps.json
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Dto\bin\Debug\net8.0\Master.Dto.dll
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Dto\bin\Debug\net8.0\Master.Dto.pdb
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.GeneratedMSBuildEditorConfig.editorconfig
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.AssemblyInfoInputs.cache
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.AssemblyInfo.cs
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.csproj.CoreCompileInputs.cache
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.dll
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\refint\Master.Dto.dll
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.pdb
+C:\PCMS_Projects\PCMS\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\ref\Master.Dto.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Dto\bin\Debug\net8.0\Master.Dto.deps.json
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Dto\bin\Debug\net8.0\Master.Dto.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Dto\bin\Debug\net8.0\Master.Dto.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.AssemblyInfoInputs.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.AssemblyInfo.cs
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\refint\Master.Dto.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\Master.Dto.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Src\Services\MasterService\Master.Dto\obj\Debug\net8.0\ref\Master.Dto.dll

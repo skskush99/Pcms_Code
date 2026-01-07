@@ -1,0 +1,70 @@
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Common.Repository\bin\Debug\net8.0\Common.Repository.deps.json
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Common.Repository\bin\Debug\net8.0\Common.Repository.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Common.Repository\bin\Debug\net8.0\Common.Repository.pdb
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Common.Repository\bin\Debug\net8.0\Common.Dapper.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Common.Repository\bin\Debug\net8.0\Core.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Common.Repository\bin\Debug\net8.0\Common.Dapper.pdb
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Common.Repository\bin\Debug\net8.0\Core.pdb
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Common.Repository\obj\Debug\net8.0\Common.Repository.csproj.AssemblyReference.cache
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Common.Repository\obj\Debug\net8.0\Common.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Common.Repository\obj\Debug\net8.0\Common.Repository.AssemblyInfoInputs.cache
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Common.Repository\obj\Debug\net8.0\Common.Repository.AssemblyInfo.cs
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Common.Repository\obj\Debug\net8.0\Common.Repository.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Common.Repository\obj\Debug\net8.0\Common.Repository.sourcelink.json
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Common.Repository\obj\Debug\net8.0\Common.R.D8534ADF.Up2Date
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Common.Repository\obj\Debug\net8.0\Common.Repository.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Common.Repository\obj\Debug\net8.0\refint\Common.Repository.dll
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Common.Repository\obj\Debug\net8.0\Common.Repository.pdb
+D:\Working Sandeep\LitesNew\Lites Project Latest\Lites_25082025\Common.Repository\obj\Debug\net8.0\ref\Common.Repository.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Common.Repository\bin\Debug\net8.0\Common.Repository.deps.json
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Common.Repository\bin\Debug\net8.0\Common.Repository.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Common.Repository\bin\Debug\net8.0\Common.Repository.pdb
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Common.Repository\bin\Debug\net8.0\Common.Dapper.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Common.Repository\bin\Debug\net8.0\Core.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Common.Repository\bin\Debug\net8.0\Common.Dapper.pdb
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Common.Repository\bin\Debug\net8.0\Core.pdb
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Common.Repository\obj\Debug\net8.0\Common.Repository.csproj.AssemblyReference.cache
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Common.Repository\obj\Debug\net8.0\Common.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Common.Repository\obj\Debug\net8.0\Common.Repository.AssemblyInfoInputs.cache
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Common.Repository\obj\Debug\net8.0\Common.Repository.AssemblyInfo.cs
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Common.Repository\obj\Debug\net8.0\Common.Repository.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Common.Repository\obj\Debug\net8.0\Common.Repository.sourcelink.json
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Common.Repository\obj\Debug\net8.0\Common.R.D8534ADF.Up2Date
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Common.Repository\obj\Debug\net8.0\Common.Repository.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Common.Repository\obj\Debug\net8.0\refint\Common.Repository.dll
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Common.Repository\obj\Debug\net8.0\Common.Repository.pdb
+D:\Working Sandeep\Lites_25082025\Lites_25082025\Common.Repository\obj\Debug\net8.0\ref\Common.Repository.dll
+C:\PCMS_Projects\PCMS\Common.Repository\bin\Debug\net8.0\Common.Repository.deps.json
+C:\PCMS_Projects\PCMS\Common.Repository\bin\Debug\net8.0\Common.Repository.dll
+C:\PCMS_Projects\PCMS\Common.Repository\bin\Debug\net8.0\Common.Repository.pdb
+C:\PCMS_Projects\PCMS\Common.Repository\bin\Debug\net8.0\Common.Dapper.dll
+C:\PCMS_Projects\PCMS\Common.Repository\bin\Debug\net8.0\Core.dll
+C:\PCMS_Projects\PCMS\Common.Repository\bin\Debug\net8.0\Common.Dapper.pdb
+C:\PCMS_Projects\PCMS\Common.Repository\bin\Debug\net8.0\Core.pdb
+C:\PCMS_Projects\PCMS\Common.Repository\obj\Debug\net8.0\Common.Repository.csproj.AssemblyReference.cache
+C:\PCMS_Projects\PCMS\Common.Repository\obj\Debug\net8.0\Common.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\PCMS_Projects\PCMS\Common.Repository\obj\Debug\net8.0\Common.Repository.AssemblyInfoInputs.cache
+C:\PCMS_Projects\PCMS\Common.Repository\obj\Debug\net8.0\Common.Repository.AssemblyInfo.cs
+C:\PCMS_Projects\PCMS\Common.Repository\obj\Debug\net8.0\Common.Repository.csproj.CoreCompileInputs.cache
+C:\PCMS_Projects\PCMS\Common.Repository\obj\Debug\net8.0\Common.R.D8534ADF.Up2Date
+C:\PCMS_Projects\PCMS\Common.Repository\obj\Debug\net8.0\Common.Repository.dll
+C:\PCMS_Projects\PCMS\Common.Repository\obj\Debug\net8.0\refint\Common.Repository.dll
+C:\PCMS_Projects\PCMS\Common.Repository\obj\Debug\net8.0\Common.Repository.pdb
+C:\PCMS_Projects\PCMS\Common.Repository\obj\Debug\net8.0\ref\Common.Repository.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Common.Repository\bin\Debug\net8.0\Common.Repository.deps.json
+D:\Working Sandeep\PCMS_Project\PCMS\Common.Repository\bin\Debug\net8.0\Common.Repository.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Common.Repository\bin\Debug\net8.0\Common.Repository.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Common.Repository\bin\Debug\net8.0\Common.Dapper.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Common.Repository\bin\Debug\net8.0\Core.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Common.Repository\bin\Debug\net8.0\Common.Dapper.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Common.Repository\bin\Debug\net8.0\Core.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Common.Repository\obj\Debug\net8.0\Common.Repository.csproj.AssemblyReference.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Common.Repository\obj\Debug\net8.0\Common.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\PCMS_Project\PCMS\Common.Repository\obj\Debug\net8.0\Common.Repository.AssemblyInfoInputs.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Common.Repository\obj\Debug\net8.0\Common.Repository.AssemblyInfo.cs
+D:\Working Sandeep\PCMS_Project\PCMS\Common.Repository\obj\Debug\net8.0\Common.Repository.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\PCMS_Project\PCMS\Common.Repository\obj\Debug\net8.0\Common.R.D8534ADF.Up2Date
+D:\Working Sandeep\PCMS_Project\PCMS\Common.Repository\obj\Debug\net8.0\Common.Repository.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Common.Repository\obj\Debug\net8.0\refint\Common.Repository.dll
+D:\Working Sandeep\PCMS_Project\PCMS\Common.Repository\obj\Debug\net8.0\Common.Repository.pdb
+D:\Working Sandeep\PCMS_Project\PCMS\Common.Repository\obj\Debug\net8.0\ref\Common.Repository.dll
