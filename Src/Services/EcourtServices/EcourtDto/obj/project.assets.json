@@ -61,11 +61,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtDto\\EcourtDto.csproj",
+      "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtDto\\EcourtDto.csproj",
       "projectName": "EcourtDto",
-      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtDto\\EcourtDto.csproj",
+      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtDto\\EcourtDto.csproj",
       "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-      "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtDto\\obj\\",
+      "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtDto\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

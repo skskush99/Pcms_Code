@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\ApiGateway\\ApiGateway.Web\\ApiGateway.Web.csproj": {}
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\ApiGateway\\ApiGateway.Web\\ApiGateway.Web.csproj": {}
   },
   "projects": {
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\ApiGateway\\ApiGateway.Web\\ApiGateway.Web.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\ApiGateway\\ApiGateway.Web\\ApiGateway.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\ApiGateway\\ApiGateway.Web\\ApiGateway.Web.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\ApiGateway\\ApiGateway.Web\\ApiGateway.Web.csproj",
         "projectName": "ApiGateway.Web",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\ApiGateway\\ApiGateway.Web\\ApiGateway.Web.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\ApiGateway\\ApiGateway.Web\\ApiGateway.Web.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\ApiGateway\\ApiGateway.Web\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\ApiGateway\\ApiGateway.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,11 +33,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core.Insfrastructure\\Core.Insfrastructure.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core.Insfrastructure\\Core.Insfrastructure.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core.Insfrastructure\\Core.Insfrastructure.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core.Insfrastructure\\Core.Insfrastructure.csproj"
               },
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj"
               }
             }
           }
@@ -106,14 +106,14 @@
         }
       }
     },
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj",
         "projectName": "Common.Dapper",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -135,8 +135,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj"
               }
             }
           }
@@ -186,14 +186,14 @@
         }
       }
     },
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core.Insfrastructure\\Core.Insfrastructure.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core.Insfrastructure\\Core.Insfrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core.Insfrastructure\\Core.Insfrastructure.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core.Insfrastructure\\Core.Insfrastructure.csproj",
         "projectName": "Core.Insfrastructure",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core.Insfrastructure\\Core.Insfrastructure.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core.Insfrastructure\\Core.Insfrastructure.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core.Insfrastructure\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core.Insfrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -215,8 +215,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj"
               }
             }
           }
@@ -273,14 +273,14 @@
         }
       }
     },
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

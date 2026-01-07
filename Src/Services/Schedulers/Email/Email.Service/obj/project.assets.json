@@ -2841,11 +2841,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Service\\Email.Service.csproj",
+      "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Service\\Email.Service.csproj",
       "projectName": "Email.Service",
-      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Service\\Email.Service.csproj",
+      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Service\\Email.Service.csproj",
       "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-      "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Service\\obj\\",
+      "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2867,11 +2867,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj": {
-              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj"
+            "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj": {
+              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj"
             },
-            "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.ServiceBus\\Email.ServiceBus.csproj": {
-              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.ServiceBus\\Email.ServiceBus.csproj"
+            "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.ServiceBus\\Email.ServiceBus.csproj": {
+              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.ServiceBus\\Email.ServiceBus.csproj"
             }
           }
         }
