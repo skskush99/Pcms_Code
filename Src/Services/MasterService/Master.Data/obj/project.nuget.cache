@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CoQ0XH/Yww8=",
+  "dgSpecHash": "QOCSGxFllcM=",
   "success": true,
-  "projectFilePath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Data\\Master.Data.csproj",
+  "projectFilePath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Data\\Master.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\BSDC\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\BSDC\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

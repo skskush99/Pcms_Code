@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lclTsG8kkb4=",
+  "dgSpecHash": "VZ9xrvF741I=",
   "success": true,
-  "projectFilePath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core.Insfrastructure\\Core.Insfrastructure.csproj",
+  "projectFilePath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core.Insfrastructure\\Core.Insfrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\BSDC\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\BSDC\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",

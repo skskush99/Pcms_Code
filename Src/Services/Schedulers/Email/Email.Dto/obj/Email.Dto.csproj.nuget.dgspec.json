@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj": {}
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj": {}
   },
   "projects": {
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj",
         "projectName": "Email.Dto",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Dto\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Dto\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

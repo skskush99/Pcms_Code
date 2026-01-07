@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Service\\Email.Service.csproj": {}
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Service\\Email.Service.csproj": {}
   },
   "projects": {
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj",
         "projectName": "Email.Dto",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Dto\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Dto\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -70,14 +70,14 @@
         }
       }
     },
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.ServiceBus\\Email.ServiceBus.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.ServiceBus\\Email.ServiceBus.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.ServiceBus\\Email.ServiceBus.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.ServiceBus\\Email.ServiceBus.csproj",
         "projectName": "Email.ServiceBus",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.ServiceBus\\Email.ServiceBus.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.ServiceBus\\Email.ServiceBus.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.ServiceBus\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.ServiceBus\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -99,11 +99,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj"
               },
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj"
               }
             }
           }
@@ -149,14 +149,14 @@
         }
       }
     },
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Service\\Email.Service.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Service\\Email.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Service\\Email.Service.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Service\\Email.Service.csproj",
         "projectName": "Email.Service",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Service\\Email.Service.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Service\\Email.Service.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Service\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -178,11 +178,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.Dto\\Email.Dto.csproj"
               },
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.ServiceBus\\Email.ServiceBus.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.ServiceBus\\Email.ServiceBus.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.ServiceBus\\Email.ServiceBus.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.ServiceBus\\Email.ServiceBus.csproj"
               }
             }
           }
@@ -239,14 +239,14 @@
         }
       }
     },
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj",
         "projectName": "Common.Dapper",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -268,8 +268,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj"
               }
             }
           }
@@ -319,14 +319,14 @@
         }
       }
     },
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

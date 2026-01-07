@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xmFkO3NgWAU=",
+  "dgSpecHash": "lJn0lZAdGok=",
   "success": true,
-  "projectFilePath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\ApiGateway\\PcmsApi.Gateway\\PcmsApi.Gateway.csproj",
+  "projectFilePath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\ApiGateway\\PcmsApi.Gateway\\PcmsApi.Gateway.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\BSDC\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\BSDC\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

@@ -1740,11 +1740,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj",
+      "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj",
       "projectName": "JwtAuthenticationManager",
-      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj",
+      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj",
       "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-      "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\JwtAuthenticationManager\\obj\\",
+      "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\JwtAuthenticationManager\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1766,11 +1766,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\Authentication.Dto\\Authentication.Dto.csproj": {
-              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\Authentication.Dto\\Authentication.Dto.csproj"
+            "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\Authentication.Dto\\Authentication.Dto.csproj": {
+              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\Authentication.Dto\\Authentication.Dto.csproj"
             },
-            "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
-              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj"
+            "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
+              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj"
             }
           }
         }

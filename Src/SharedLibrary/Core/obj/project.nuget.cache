@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T+tDfFxr/NY=",
+  "dgSpecHash": "jWFG6f5XzVg=",
   "success": true,
-  "projectFilePath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj",
+  "projectFilePath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\BSDC\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\BSDC\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",

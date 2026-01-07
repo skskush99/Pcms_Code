@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zpM37dqbw48=",
+  "dgSpecHash": "7jKBUmQqODc=",
   "success": true,
-  "projectFilePath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
+  "projectFilePath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\BSDC\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\BSDC\\.nuget\\packages\\microsoft.aspnet.webapi.client\\4.0.20710\\microsoft.aspnet.webapi.client.4.0.20710.nupkg.sha512",
@@ -42,9 +42,9 @@
       "code": "NU1701",
       "level": "Warning",
       "message": "Package 'Microsoft.AspNet.WebApi.Client 4.0.20710' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
+      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
       "warningLevel": 1,
-      "filePath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
+      "filePath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
       "libraryId": "Microsoft.AspNet.WebApi.Client",
       "targetGraphs": [
         "net8.0"
@@ -54,9 +54,9 @@
       "code": "NU1701",
       "level": "Warning",
       "message": "Package 'Microsoft.AspNet.WebApi.Core 4.0.20710' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
+      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
       "warningLevel": 1,
-      "filePath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
+      "filePath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
       "libraryId": "Microsoft.AspNet.WebApi.Core",
       "targetGraphs": [
         "net8.0"
@@ -66,9 +66,9 @@
       "code": "NU1701",
       "level": "Warning",
       "message": "Package 'Microsoft.Net.Http 2.0.20710' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
+      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
       "warningLevel": 1,
-      "filePath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
+      "filePath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
       "libraryId": "Microsoft.Net.Http",
       "targetGraphs": [
         "net8.0"
@@ -78,9 +78,9 @@
       "code": "NU1701",
       "level": "Warning",
       "message": "Package 'Swashbuckle.Core 5.6.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
+      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
       "warningLevel": 1,
-      "filePath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
+      "filePath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
       "libraryId": "Swashbuckle.Core",
       "targetGraphs": [
         "net8.0"

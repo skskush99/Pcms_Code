@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "megPYaqY1nY=",
+  "dgSpecHash": "ILNjHgNMAeI=",
   "success": true,
-  "projectFilePath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Email\\Email.ServiceBus\\Email.ServiceBus.csproj",
+  "projectFilePath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Email\\Email.ServiceBus\\Email.ServiceBus.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\BSDC\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\BSDC\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",

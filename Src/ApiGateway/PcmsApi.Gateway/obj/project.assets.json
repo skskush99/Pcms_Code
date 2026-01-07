@@ -6967,11 +6967,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\ApiGateway\\PcmsApi.Gateway\\PcmsApi.Gateway.csproj",
+      "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\ApiGateway\\PcmsApi.Gateway\\PcmsApi.Gateway.csproj",
       "projectName": "PcmsApi.Gateway",
-      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\ApiGateway\\PcmsApi.Gateway\\PcmsApi.Gateway.csproj",
+      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\ApiGateway\\PcmsApi.Gateway\\PcmsApi.Gateway.csproj",
       "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-      "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\ApiGateway\\PcmsApi.Gateway\\obj\\",
+      "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\ApiGateway\\PcmsApi.Gateway\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -6993,8 +6993,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj": {
-              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj"
+            "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj": {
+              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj"
             }
           }
         }
