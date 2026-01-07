@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PcmsApi.Gateway")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+53224a4ad85506be786732c2208959ec0c50084f")]
 [assembly: System.Reflection.AssemblyProductAttribute("PcmsApi.Gateway")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PcmsApi.Gateway")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

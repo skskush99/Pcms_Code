@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8CD47E27-5510-4C58-9E65-5D3382088348}|Src\\Services\\MasterService\\Master.Service\\Master.Service.csproj|d:\\working sandeep\\pcms_project\\pcms_code\\src\\services\\masterservice\\master.service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CD47E27-5510-4C58-9E65-5D3382088348}|Src\\Services\\MasterService\\Master.Service\\Master.Service.csproj|solutionrelative:src\\services\\masterservice\\master.service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8CD47E27-5510-4C58-9E65-5D3382088348}|Src\\Services\\MasterService\\Master.Service\\Master.Service.csproj|d:\\working sandeep\\pcms_project\\pcms_code\\src\\services\\masterservice\\master.service\\controllers\\userlogincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8CD47E27-5510-4C58-9E65-5D3382088348}|Src\\Services\\MasterService\\Master.Service\\Master.Service.csproj|solutionrelative:src\\services\\masterservice\\master.service\\controllers\\userlogincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -37,12 +41,21 @@
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Service\\Program.cs",
+              "RelativeDocumentMoniker": "Src\\Services\\MasterService\\Master.Service\\Program.cs",
+              "ToolTip": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Service\\Program.cs",
+              "RelativeToolTip": "Src\\Services\\MasterService\\Master.Service\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T09:37:01.239Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "IUserLoginServiceBus.cs",
               "DocumentMoniker": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.ServiceBus\\Users\\IUserLoginServiceBus.cs",
               "RelativeDocumentMoniker": "Src\\Services\\MasterService\\Master.ServiceBus\\Users\\IUserLoginServiceBus.cs",
@@ -54,20 +67,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "UserLoginController.cs",
               "DocumentMoniker": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Service\\Controllers\\UserLoginController.cs",
               "RelativeDocumentMoniker": "Src\\Services\\MasterService\\Master.Service\\Controllers\\UserLoginController.cs",
               "ToolTip": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Service\\Controllers\\UserLoginController.cs",
               "RelativeToolTip": "Src\\Services\\MasterService\\Master.Service\\Controllers\\UserLoginController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-06T09:43:53.058Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ocelot.json",
               "DocumentMoniker": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\ApiGateway\\PcmsApi.Gateway\\ocelot.json",
               "RelativeDocumentMoniker": "Src\\ApiGateway\\PcmsApi.Gateway\\ocelot.json",
