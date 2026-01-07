@@ -2326,11 +2326,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\Authentication.Service\\Authentication.Service.csproj",
+      "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\Authentication.Service\\Authentication.Service.csproj",
       "projectName": "Authentication.Service",
-      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\Authentication.Service\\Authentication.Service.csproj",
+      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\Authentication.Service\\Authentication.Service.csproj",
       "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-      "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\Authentication.Service\\obj\\",
+      "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\Authentication.Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2352,17 +2352,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Common.Repository\\Common.Repository.csproj": {
-              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Common.Repository\\Common.Repository.csproj"
+            "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Common.Repository\\Common.Repository.csproj": {
+              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Common.Repository\\Common.Repository.csproj"
             },
-            "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\Authentication.Repository\\Authentication.Repository.csproj": {
-              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\Authentication.Repository\\Authentication.Repository.csproj"
+            "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\Authentication.Repository\\Authentication.Repository.csproj": {
+              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\Authentication.Repository\\Authentication.Repository.csproj"
             },
-            "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\Authentication.ServiceBus\\Authentication.ServiceBus.csproj": {
-              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\Authentication.ServiceBus\\Authentication.ServiceBus.csproj"
+            "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\Authentication.ServiceBus\\Authentication.ServiceBus.csproj": {
+              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\Authentication.ServiceBus\\Authentication.ServiceBus.csproj"
             },
-            "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj": {
-              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj"
+            "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj": {
+              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj"
             }
           }
         }

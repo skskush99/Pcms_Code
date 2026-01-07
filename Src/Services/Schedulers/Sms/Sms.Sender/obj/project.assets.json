@@ -2574,11 +2574,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Sms\\Sms.Sender\\Sms.Sender.csproj",
+      "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Sms\\Sms.Sender\\Sms.Sender.csproj",
       "projectName": "Sms.Sender",
-      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Sms\\Sms.Sender\\Sms.Sender.csproj",
+      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Sms\\Sms.Sender\\Sms.Sender.csproj",
       "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-      "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Sms\\Sms.Sender\\obj\\",
+      "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Sms\\Sms.Sender\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2600,11 +2600,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Sms\\Sms.Dto\\Sms.Dto.csproj": {
-              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Sms\\Sms.Dto\\Sms.Dto.csproj"
+            "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Sms\\Sms.Dto\\Sms.Dto.csproj": {
+              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Sms\\Sms.Dto\\Sms.Dto.csproj"
             },
-            "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Sms\\Sms.ServiceBus\\Sms.ServiceBus.csproj": {
-              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Schedulers\\Sms\\Sms.ServiceBus\\Sms.ServiceBus.csproj"
+            "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Sms\\Sms.ServiceBus\\Sms.ServiceBus.csproj": {
+              "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Schedulers\\Sms\\Sms.ServiceBus\\Sms.ServiceBus.csproj"
             }
           }
         }
