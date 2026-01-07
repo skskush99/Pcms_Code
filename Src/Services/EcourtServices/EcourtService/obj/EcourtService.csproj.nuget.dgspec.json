@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj": {}
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj": {}
   },
   "projects": {
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Common.Repository\\Common.Repository.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Common.Repository\\Common.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Common.Repository\\Common.Repository.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Common.Repository\\Common.Repository.csproj",
         "projectName": "Common.Repository",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Common.Repository\\Common.Repository.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Common.Repository\\Common.Repository.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Common.Repository\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Common.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,11 +33,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj"
               },
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj"
               }
             }
           }
@@ -77,14 +77,14 @@
         }
       }
     },
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtDto\\EcourtDto.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtDto\\EcourtDto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtDto\\EcourtDto.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtDto\\EcourtDto.csproj",
         "projectName": "EcourtDto",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtDto\\EcourtDto.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtDto\\EcourtDto.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtDto\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtDto\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -149,14 +149,14 @@
         }
       }
     },
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtServiceBus\\EcourtServiceBus.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtServiceBus\\EcourtServiceBus.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtServiceBus\\EcourtServiceBus.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtServiceBus\\EcourtServiceBus.csproj",
         "projectName": "EcourtServiceBus",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtServiceBus\\EcourtServiceBus.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtServiceBus\\EcourtServiceBus.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtServiceBus\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtServiceBus\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -178,8 +178,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtDto\\EcourtDto.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtDto\\EcourtDto.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtDto\\EcourtDto.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtDto\\EcourtDto.csproj"
               }
             }
           }
@@ -233,14 +233,14 @@
         }
       }
     },
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
         "projectName": "EcourtService",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtService\\EcourtService.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtService\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -262,17 +262,17 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Common.Repository\\Common.Repository.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Common.Repository\\Common.Repository.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Common.Repository\\Common.Repository.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Common.Repository\\Common.Repository.csproj"
               },
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtDto\\EcourtDto.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtDto\\EcourtDto.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtDto\\EcourtDto.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtDto\\EcourtDto.csproj"
               },
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtServiceBus\\EcourtServiceBus.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\EcourtServices\\EcourtServiceBus\\EcourtServiceBus.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtServiceBus\\EcourtServiceBus.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\EcourtServices\\EcourtServiceBus\\EcourtServiceBus.csproj"
               },
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj"
               }
             }
           }
@@ -325,14 +325,14 @@
         }
       }
     },
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj",
         "projectName": "Common.Dapper",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -354,8 +354,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj"
               }
             }
           }
@@ -405,14 +405,14 @@
         }
       }
     },
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

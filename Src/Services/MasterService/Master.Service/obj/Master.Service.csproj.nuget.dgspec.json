@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Service\\Master.Service.csproj": {}
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Service\\Master.Service.csproj": {}
   },
   "projects": {
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Common.Repository\\Common.Repository.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Common.Repository\\Common.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Common.Repository\\Common.Repository.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Common.Repository\\Common.Repository.csproj",
         "projectName": "Common.Repository",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Common.Repository\\Common.Repository.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Common.Repository\\Common.Repository.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Common.Repository\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Common.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,11 +33,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj"
               },
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj"
               }
             }
           }
@@ -77,14 +77,14 @@
         }
       }
     },
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\Authentication.Dto\\Authentication.Dto.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\Authentication.Dto\\Authentication.Dto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\Authentication.Dto\\Authentication.Dto.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\Authentication.Dto\\Authentication.Dto.csproj",
         "projectName": "Authentication.Dto",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\Authentication.Dto\\Authentication.Dto.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\Authentication.Dto\\Authentication.Dto.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\Authentication.Dto\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\Authentication.Dto\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -143,14 +143,14 @@
         }
       }
     },
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj",
         "projectName": "JwtAuthenticationManager",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\JwtAuthenticationManager\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\JwtAuthenticationManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -172,11 +172,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\Authentication.Dto\\Authentication.Dto.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\Authentication.Dto\\Authentication.Dto.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\Authentication.Dto\\Authentication.Dto.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\Authentication.Dto\\Authentication.Dto.csproj"
               },
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj"
               }
             }
           }
@@ -230,14 +230,14 @@
         }
       }
     },
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Data\\Master.Data.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Data\\Master.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Data\\Master.Data.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Data\\Master.Data.csproj",
         "projectName": "Master.Data",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Data\\Master.Data.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Data\\Master.Data.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Data\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -312,14 +312,14 @@
         }
       }
     },
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Dto\\Master.Dto.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Dto\\Master.Dto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Dto\\Master.Dto.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Dto\\Master.Dto.csproj",
         "projectName": "Master.Dto",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Dto\\Master.Dto.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Dto\\Master.Dto.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Dto\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Dto\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -378,14 +378,14 @@
         }
       }
     },
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Repository\\Master.Repository.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Repository\\Master.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Repository\\Master.Repository.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Repository\\Master.Repository.csproj",
         "projectName": "Master.Repository",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Repository\\Master.Repository.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Repository\\Master.Repository.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Repository\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -407,20 +407,20 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Common.Repository\\Common.Repository.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Common.Repository\\Common.Repository.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Common.Repository\\Common.Repository.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Common.Repository\\Common.Repository.csproj"
               },
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Data\\Master.Data.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Data\\Master.Data.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Data\\Master.Data.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Data\\Master.Data.csproj"
               },
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Dto\\Master.Dto.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Dto\\Master.Dto.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Dto\\Master.Dto.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Dto\\Master.Dto.csproj"
               },
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj"
               },
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj"
               }
             }
           }
@@ -460,14 +460,14 @@
         }
       }
     },
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.ServiceBus\\Master.ServiceBus.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.ServiceBus\\Master.ServiceBus.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.ServiceBus\\Master.ServiceBus.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.ServiceBus\\Master.ServiceBus.csproj",
         "projectName": "Master.ServiceBus",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.ServiceBus\\Master.ServiceBus.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.ServiceBus\\Master.ServiceBus.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.ServiceBus\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.ServiceBus\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -489,11 +489,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Dto\\Master.Dto.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Dto\\Master.Dto.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Dto\\Master.Dto.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Dto\\Master.Dto.csproj"
               },
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Repository\\Master.Repository.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Repository\\Master.Repository.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Repository\\Master.Repository.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Repository\\Master.Repository.csproj"
               }
             }
           }
@@ -533,14 +533,14 @@
         }
       }
     },
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Service\\Master.Service.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Service\\Master.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Service\\Master.Service.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Service\\Master.Service.csproj",
         "projectName": "Master.Service",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Service\\Master.Service.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Service\\Master.Service.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Service\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -562,20 +562,20 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Common.Repository\\Common.Repository.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Common.Repository\\Common.Repository.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Common.Repository\\Common.Repository.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Common.Repository\\Common.Repository.csproj"
               },
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\Auth\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj"
               },
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Dto\\Master.Dto.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.Dto\\Master.Dto.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Dto\\Master.Dto.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.Dto\\Master.Dto.csproj"
               },
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.ServiceBus\\Master.ServiceBus.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\Services\\MasterService\\Master.ServiceBus\\Master.ServiceBus.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.ServiceBus\\Master.ServiceBus.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\Services\\MasterService\\Master.ServiceBus\\Master.ServiceBus.csproj"
               },
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj"
               }
             }
           }
@@ -664,14 +664,14 @@
         }
       }
     },
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj",
         "projectName": "Common.Dapper",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\Common.Dapper.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Common.Dapper\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Common.Dapper\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -693,8 +693,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj": {
-                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj"
+              "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj": {
+                "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj"
               }
             }
           }
@@ -744,14 +744,14 @@
         }
       }
     },
-    "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj": {
+    "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj",
+        "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\Core.csproj",
+        "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\SharedLibrary\\Core\\obj\\",
+        "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\SharedLibrary\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

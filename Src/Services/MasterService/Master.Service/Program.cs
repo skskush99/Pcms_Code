@@ -43,6 +43,7 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 builder.Services.AddHttpContextAccessor(); // Important: Add HttpContextAccessor
+//builder.Services.AddHttpContextAccessor(); // Important: Add HttpContextAccessor
 
 builder.Services.AddRepositoryInfrastructure(builder.Configuration);
 builder.Services.AddServiceInfrastructure(builder.Configuration);

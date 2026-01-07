@@ -190,11 +190,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\ApiGateway\\YarpApiGateway\\YarpApiGateway.csproj",
+      "projectUniqueName": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\ApiGateway\\YarpApiGateway\\YarpApiGateway.csproj",
       "projectName": "YarpApiGateway",
-      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\ApiGateway\\YarpApiGateway\\YarpApiGateway.csproj",
+      "projectPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\ApiGateway\\YarpApiGateway\\YarpApiGateway.csproj",
       "packagesPath": "C:\\Users\\BSDC\\.nuget\\packages\\",
-      "outputPath": "D:\\Working Sandeep\\PCMS_Project\\PCMS\\Src\\ApiGateway\\YarpApiGateway\\obj\\",
+      "outputPath": "D:\\Working Sandeep\\PCMS_Project\\Pcms_Code\\Src\\ApiGateway\\YarpApiGateway\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
