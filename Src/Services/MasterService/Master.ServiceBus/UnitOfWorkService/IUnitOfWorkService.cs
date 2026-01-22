@@ -6,7 +6,11 @@ using Master.ServiceBus.CircularOrderService;
 using Master.ServiceBus.CourtNamesService;
 using Master.ServiceBus.CourtPlacesService;
 using Master.ServiceBus.CourtTypesService;
+using Master.ServiceBus.CrimeActService;
+using Master.ServiceBus.CrimeClassificationService;
+using Master.ServiceBus.CrimeSubActService;
 using Master.ServiceBus.DesignationService;
+using Master.ServiceBus.FirStatusService;
 using Master.ServiceBus.LevelService;
 using Master.ServiceBus.NewsService;
 using Master.ServiceBus.NodalOfficerService;
@@ -32,7 +36,11 @@ public interface IUnitOfWorkService
     ICourtNamesServiceBus CourtNamesServiceBus { get; set; }
     ICourtPlacesServiceBus CourtPlacesServiceBus { get; set; }
     ICourtTypesServiceBus CourtTypesServiceBus { get; set; }
+    ICrimeActServiceBus CrimeActServiceBus { get; set; }
+    ICrimeClassificationServiceBus CrimeClassificationServiceBus { get; set; }
+    ICrimeSubActServiceBus CrimeSubActServiceBus { get; set; }
     IDesignationServiceBus DesignationServiceBus { get; set; }
+    IFirStatusServiceBus FirStatusServiceBus { get; set; }
     ILevelServiceBus LevelServiceBus { get; set; }
     INewsServiceBus NewsServiceBus { get; set; }
     INodalOfficerServiceBus NodalOfficerServiceBus { get; set; }

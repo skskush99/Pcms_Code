@@ -6,7 +6,11 @@ using Master.Repository.CircularOrder;
 using Master.Repository.CourtName;
 using Master.Repository.CourtPlaces;
 using Master.Repository.CourtTypes;
+using Master.Repository.CrimeAct;
+using Master.Repository.CrimeClassification;
+using Master.Repository.CrimeSubAct;
 using Master.Repository.Designation;
+using Master.Repository.FirStatus;
 using Master.Repository.Level;
 using Master.Repository.News;
 using Master.Repository.NodalOfficer;
@@ -23,7 +27,8 @@ using Master.Repository.WebSite;
 namespace Master.Repository.UnitOfwork;
 
 public class UnitOfWorkRepository(IRoles Roles, IUserLogin UserLogins, IMenu Menu, IAdminDepartment AdminDepartments, ICircularOrder CircularOrder, ICourtNames CourtNames, 
-    ICourtPlaces CourtPlaces, ICourtTypes CourtTypes, IDesignation Designation, ILevel Level, INews News, INodalOfficer NodalOfficer, IOffices Offices, IPoliceThana PoliceThana, IRajMaster RajMaster, 
+    ICourtPlaces CourtPlaces, ICourtTypes CourtTypes, ICrimeAct CrimeAct, ICrimeClassification CrimeClassification, ICrimeSubAct CrimeSubAct, IDesignation Designation, 
+    IFirStatus FirStatus, ILevel Level, INews News, INodalOfficer NodalOfficer, IOffices Offices, IPoliceThana PoliceThana, IRajMaster RajMaster, 
     IReqInformation ReqInformation, IState State, IUnitsDepartment UnitsDepartment, IUploadFilesRepository UploadFiles, IWebSiteRepository WebSite) : IUnitOfWorkRepository
 {
     public IRoles Roles { get; set; } = Roles;
@@ -34,7 +39,11 @@ public class UnitOfWorkRepository(IRoles Roles, IUserLogin UserLogins, IMenu Men
     public ICourtNames CourtNames { get; set; } = CourtNames;
     public ICourtPlaces CourtPlaces { get; set; } = CourtPlaces;
     public ICourtTypes CourtTypes { get; set; } = CourtTypes;
+    public ICrimeAct CrimeAct { get; set; } = CrimeAct;
+    public ICrimeClassification CrimeClassification { get; set; } = CrimeClassification;
+    public ICrimeSubAct CrimeSubAct { get; set; } = CrimeSubAct;
     public IDesignation Designation { get; set; } = Designation;
+    public IFirStatus FirStatus { get; set; }= FirStatus; 
     public ILevel Level { get; set; } = Level;
     public INews News { get; set; } = News;
     public INodalOfficer NodalOfficer { get; set; }= NodalOfficer;
