@@ -44,3 +44,35 @@ C:\PCMS_Projects\PCMS\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\Common.
 C:\PCMS_Projects\PCMS\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\refint\Common.Dapper.dll
 C:\PCMS_Projects\PCMS\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\Common.Dapper.pdb
 C:\PCMS_Projects\PCMS\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\ref\Common.Dapper.dll
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Common.Dapper\bin\Release\net8.0\Common.Dapper.deps.json
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Common.Dapper\bin\Release\net8.0\Common.Dapper.dll
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Common.Dapper\bin\Release\net8.0\Common.Dapper.pdb
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Common.Dapper\bin\Release\net8.0\Core.dll
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Common.Dapper\bin\Release\net8.0\Core.pdb
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\Common.Dapper.csproj.AssemblyReference.cache
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\Common.Dapper.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\Common.Dapper.AssemblyInfoInputs.cache
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\Common.Dapper.AssemblyInfo.cs
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\Common.Dapper.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\Common.Dapper.sourcelink.json
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\Common.D.50C47775.Up2Date
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\Common.Dapper.dll
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\refint\Common.Dapper.dll
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\Common.Dapper.pdb
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\ref\Common.Dapper.dll
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Common.Dapper\bin\Release\net8.0\Common.Dapper.deps.json
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Common.Dapper\bin\Release\net8.0\Common.Dapper.dll
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Common.Dapper\bin\Release\net8.0\Common.Dapper.pdb
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Common.Dapper\bin\Release\net8.0\Core.dll
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Common.Dapper\bin\Release\net8.0\Core.pdb
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\Common.Dapper.csproj.AssemblyReference.cache
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\Common.Dapper.GeneratedMSBuildEditorConfig.editorconfig
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\Common.Dapper.AssemblyInfoInputs.cache
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\Common.Dapper.AssemblyInfo.cs
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\Common.Dapper.csproj.CoreCompileInputs.cache
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\Common.Dapper.sourcelink.json
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\Common.D.50C47775.Up2Date
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\Common.Dapper.dll
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\refint\Common.Dapper.dll
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\Common.Dapper.pdb
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Common.Dapper\obj\Release\net8.0\ref\Common.Dapper.dll
