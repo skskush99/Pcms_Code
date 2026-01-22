@@ -412,3 +412,7 @@ FodyWeavers.xsd
 /Src/Services/MasterService/Master.Service/bin
 /Src/Services/MasterService/Master.ServiceBus/obj
 /Src/Services/MasterService/Master.ServiceBus/bin
+/Src/ApiGateway/PcmsApi.Gateway/.config
+/Src/Services/EcourtServices/EcourtService/.config
+/Src/Services/CauseListScheduler
+/Src/Services/Schedulers
