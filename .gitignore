@@ -416,3 +416,11 @@ FodyWeavers.xsd
 /Src/Services/EcourtServices/EcourtService/.config
 /Src/Services/CauseListScheduler
 /Src/Services/Schedulers
+/Src/SharedLibrary/Common.Dapper/obj/Debug/net8.0/Common.Dapper.AssemblyInfo.cs
+/Src/SharedLibrary/Common.Dapper/obj/Debug/net8.0/Common.Dapper.AssemblyInfoInputs.cache
+/Src/SharedLibrary/Common.Dapper/obj/Debug/net8.0/Common.Dapper.csproj.AssemblyReference.cache
+/Src/SharedLibrary/Core/obj/Debug/net8.0/Core.AssemblyInfo.cs
+/Src/SharedLibrary/Core/obj/Debug/net8.0/Core.AssemblyInfoInputs.cache
+/Src/SharedLibrary/Core.Insfrastructure/obj/Debug/net8.0/Core.Insfrastructure.AssemblyInfo.cs
+/Src/SharedLibrary/Core.Insfrastructure/obj/Debug/net8.0/Core.Insfrastructure.AssemblyInfoInputs.cache
+/Src/SharedLibrary/Core.Insfrastructure/obj/Debug/net8.0/Core.Insfrastructure.csproj.AssemblyReference.cache
