@@ -54,17 +54,170 @@ namespace CaseService.Controllers
                 };
             }
         }
+        
         [HttpPost]
-        public async Task<DierRegistrationsResponseModel> AddEditDierRegistrations(DierRegistrationsModel objModel)
+        [RequestSizeLimit(52428800)]
+        public async Task<ResponseWithoutPaginationModel> AddEditDierRegistrations(IFormFile? SelectFile, IFormFile? SelectFile1, IFormFile? SelectFile2, [FromForm] DierRegistrationsModel objModel)
         {
             try
             {
+                //  Charge Sheet Docs Upload
+                if (SelectFile != null && SelectFile.Length != 0)
+                {
+                    if (Path.GetFileNameWithoutExtension(SelectFile.FileName).Contains("."))
+                    {
+                        return new ResponseWithoutPaginationModel()
+                        {
+                            Status = false,
+                            Message = "Please enter a filename without any dots (e.g., 'Uploadfile' instead of 'Uploadfile.xyz' )."
+                        };
+                    }
+                    var extension = Path.GetExtension(SelectFile.FileName).ToLowerInvariant();
+
+                    var permittedExtensions = new[] { ".pdf" };
+                    if (string.IsNullOrEmpty(extension) || !permittedExtensions.Contains(extension))
+                    {
+                        return new ResponseWithoutPaginationModel()
+                        {
+                            Status = false,
+                            Message = "Kindly upload documents in PDF format only."
+                        };
+                    }
+
+                    //Validate that the file size does not exceed 10 MB.
+                    if (SelectFile.Length > 10485760)       // Limit upto 10 MB  (1,048,576 bytes in 1 MB)  
+                    {
+                        return new ResponseWithoutPaginationModel()
+                        {
+                            Status = false,
+                            Message = "File size is too large. Maximum allowed size is 10 MB."
+                        };
+                    }
+
+                    string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(SelectFile.FileName);
+                    string fileName = Convert.ToString(fileNameWithoutExtension).Replace(" ", "-") + DateTime.Now.ToString("ddMMyyyyhhmmss") + extension;
+                    string folderName = "Uploads/DierRegistrations/";
+
+                    string filePath = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+                    if (!Directory.Exists(filePath))
+                        Directory.CreateDirectory(filePath);
+
+                    var filePathWithName = Path.Combine(Directory.GetCurrentDirectory(), filePath, fileName);
+                    using (var stream = new FileStream(filePathWithName, FileMode.Create, FileAccess.Write))
+                    {
+                        await SelectFile.CopyToAsync(stream);
+                    }
+
+                    objModel.ChargeSheetDocs = folderName + fileName;
+                }
+
+                // Full Charge Sheet Docs Upload
+
+                if (SelectFile1 != null && SelectFile1.Length != 0)
+                {
+                    if (Path.GetFileNameWithoutExtension(SelectFile1.FileName).Contains("."))
+                    {
+                        return new ResponseWithoutPaginationModel()
+                        {
+                            Status = false,
+                            Message = "Please enter a filename without any dots (e.g., 'Uploadfile' instead of 'Uploadfile.xyz' )."
+                        };
+                    }
+                    var extension = Path.GetExtension(SelectFile1.FileName).ToLowerInvariant();
+
+                    var permittedExtensions = new[] { ".pdf" };
+                    if (string.IsNullOrEmpty(extension) || !permittedExtensions.Contains(extension))
+                    {
+                        return new ResponseWithoutPaginationModel()
+                        {
+                            Status = false,
+                            Message = "Kindly upload documents in PDF format only."
+                        };
+                    }
+
+                    //Validate that the file size does not exceed 10 MB.
+                    if (SelectFile1.Length > 10485760)       // Limit upto 10 MB  (1,048,576 bytes in 1 MB)  
+                    {
+                        return new ResponseWithoutPaginationModel()
+                        {
+                            Status = false,
+                            Message = "File size is too large. Maximum allowed size is 10 MB."
+                        };
+                    }
+
+                    string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(SelectFile1.FileName);
+                    string fileName = Convert.ToString(fileNameWithoutExtension).Replace(" ", "-") + DateTime.Now.ToString("ddMMyyyyhhmmss") + extension;
+                    string folderName = "Uploads/DierRegistrations/";
+
+                    string filePath = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+                    if (!Directory.Exists(filePath))
+                        Directory.CreateDirectory(filePath);
+
+                    var filePathWithName = Path.Combine(Directory.GetCurrentDirectory(), filePath, fileName);
+                    using (var stream = new FileStream(filePathWithName, FileMode.Create, FileAccess.Write))
+                    {
+                        await SelectFile1.CopyToAsync(stream);
+                    }
+
+                    objModel.FullChargeSheetDocs = folderName + fileName;
+                }
+
+                // Other Docs Upload
+                if (SelectFile2 != null && SelectFile2.Length != 0)
+                {
+                    if (Path.GetFileNameWithoutExtension(SelectFile2.FileName).Contains("."))
+                    {
+                        return new ResponseWithoutPaginationModel()
+                        {
+                            Status = false,
+                            Message = "Please enter a filename without any dots (e.g., 'Uploadfile' instead of 'Uploadfile.xyz' )."
+                        };
+                    }
+                    var extension = Path.GetExtension(SelectFile2.FileName).ToLowerInvariant();
+
+                    var permittedExtensions = new[] { ".pdf" };
+                    if (string.IsNullOrEmpty(extension) || !permittedExtensions.Contains(extension))
+                    {
+                        return new ResponseWithoutPaginationModel()
+                        {
+                            Status = false,
+                            Message = "Kindly upload documents in PDF format only."
+                        };
+                    }
+
+                    //Validate that the file size does not exceed 10 MB.
+                    if (SelectFile2.Length > 10485760)       // Limit upto 10 MB  (1,048,576 bytes in 1 MB)  
+                    {
+                        return new ResponseWithoutPaginationModel()
+                        {
+                            Status = false,
+                            Message = "File size is too large. Maximum allowed size is 10 MB."
+                        };
+                    }
+
+                    string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(SelectFile2.FileName);
+                    string fileName = Convert.ToString(fileNameWithoutExtension).Replace(" ", "-") + DateTime.Now.ToString("ddMMyyyyhhmmss") + extension;
+                    string folderName = "Uploads/DierRegistrations/";
+
+                    string filePath = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+                    if (!Directory.Exists(filePath))
+                        Directory.CreateDirectory(filePath);
+
+                    var filePathWithName = Path.Combine(Directory.GetCurrentDirectory(), filePath, fileName);
+                    using (var stream = new FileStream(filePathWithName, FileMode.Create, FileAccess.Write))
+                    {
+                        await SelectFile2.CopyToAsync(stream);
+                    }
+
+                    objModel.OtherDocs = folderName + fileName;
+                }
+
                 return await unitOfWork.DierRegistrationsService.AddEditDierRegistrations(objModel, UserSession.Current.UserId);
             }
             catch (Exception ex)
             {
                 _logsService.Logs("Error", "AddEditDierRegistrations", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/AddEditDierRegistrations");
-                return new DierRegistrationsResponseModel()
+                return new ResponseWithoutPaginationModel()
                 {
                     Status = false,
                     Message = ex.Message,
@@ -125,6 +278,58 @@ namespace CaseService.Controllers
             }
         }
 
+
+        [HttpGet]
+        public async Task<ResponseWithoutPaginationModel> GetDierVictimWitness(long GroupNo)
+        {
+            try
+            {
+                return await unitOfWork.DierRegistrationsService.GetDierVictimWitness(GroupNo);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetDierVictimWitness", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/GetDierVictimWitness");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+        [HttpPost]
+        public async Task<ResponseWithoutPaginationModel> AddEditDierVictimWitness(DierVictimWitnessModel objModel)
+        {
+            try
+            {
+                return await unitOfWork.DierRegistrationsService.AddEditDierVictimWitness(objModel, UserSession.Current.UserId);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "AddEditDierVictimWitness", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/AddEditDierVictimWitness");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+        [HttpPost]
+        public async Task<ResponseWithoutPaginationModel> DeleteDierVictimWitness(long Id)
+        {
+            try
+            {
+                return await unitOfWork.DierRegistrationsService.DeleteDierVictimWitness(Id, UserSession.Current.UserId);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "DeleteDierVictimWitness", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/DeleteDierVictimWitness");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
 
         [HttpGet]
         public async Task<ResponseWithoutPaginationModel> GetDierVictim(long VictimGroupNo)

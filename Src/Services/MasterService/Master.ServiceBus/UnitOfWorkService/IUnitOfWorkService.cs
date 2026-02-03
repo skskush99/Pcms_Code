@@ -11,6 +11,7 @@ using Master.ServiceBus.CrimeClassificationService;
 using Master.ServiceBus.CrimeSubActService;
 using Master.ServiceBus.DesignationService;
 using Master.ServiceBus.FirStatusService;
+using Master.ServiceBus.JanPratinidhiService;
 using Master.ServiceBus.LevelService;
 using Master.ServiceBus.NewsService;
 using Master.ServiceBus.NodalOfficerService;
@@ -41,6 +42,7 @@ public interface IUnitOfWorkService
     ICrimeSubActServiceBus CrimeSubActServiceBus { get; set; }
     IDesignationServiceBus DesignationServiceBus { get; set; }
     IFirStatusServiceBus FirStatusServiceBus { get; set; }
+    IJanPratinidhiServiceBus JanPratinidhiServiceBus { get; set; }
     ILevelServiceBus LevelServiceBus { get; set; }
     INewsServiceBus NewsServiceBus { get; set; }
     INodalOfficerServiceBus NodalOfficerServiceBus { get; set; }

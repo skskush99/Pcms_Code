@@ -26,15 +26,14 @@ namespace Case.Repository.DierRegistrations
                     var parmeters = new DynamicParameters();
                     parmeters.Add("@Action", "GetDierList");
                     parmeters.Add("@CNRNo", objModel.CNRNo);
+                    parmeters.Add("@FIRNo", objModel.FIRNo);
+                    parmeters.Add("@DistrictId", objModel.DistrictId); 
                     parmeters.Add("@OfficeId", objModel.OfficeId);
-                    parmeters.Add("@JCourtId", objModel.JCourtId);
-                    parmeters.Add("@FIRNo", objModel.FIRNo == null ? 0 : objModel.FIRNo);
-                    parmeters.Add("@DistrictId", objModel.DistrictId);
+                    parmeters.Add("@JCourtId", objModel.JCourtId);                                        
                     parmeters.Add("@SortBy", objModel.SortBy ?? "");
                     parmeters.Add("@IsSortByDesc", objModel.IsSortByDesc == true ? 1 : 0);
                     parmeters.Add("@PageNo", objModel.PageNo);
                     parmeters.Add("@Pagesize", objModel.PageSize);
-                    parmeters.Add("@CaseType", objModel.CaseType);
                     var objResult = await Con.QueryMultipleAsync("spTrn_DierRegistrations", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
 
                     ResponseModel objResut = new()
@@ -60,7 +59,7 @@ namespace Case.Repository.DierRegistrations
             }
         }
 
-        public async Task<DierRegistrationsResponseModel> AddEditDierRegistrations(DierRegistrationsModel objModel, int UserId)
+        public async Task<ResponseWithoutPaginationModel> AddEditDierRegistrations(DierRegistrationsModel objModel, int UserId)
         {
             try
             {
@@ -72,16 +71,17 @@ namespace Case.Repository.DierRegistrations
                     {
                         parmeters.Add("@Action", "DierEdit");
                         parmeters.Add("@UpdatedBy", UserId);
+                        parmeters.Add("@DirRegId", objModel.DirRegId);
                     }
                     else
                     {
                         parmeters.Add("@Action", "DierAdd");
                         parmeters.Add("@CreatedBy", UserId);
-                    }
-                    parmeters.Add("@DirRegId", objModel.DirRegId);
-                    parmeters.Add("@TitleOfCase", objModel.TitleOfCase);
-                    parmeters.Add("@CNRNo", objModel.CNRNo);
-                    parmeters.Add("@FIRNo", objModel.FIRNo);
+                    }                    
+                    parmeters.Add("@TitleOfCase", objModel.TitleOfCase == null ? "" : objModel.TitleOfCase);
+                    parmeters.Add("@TitleOfCase", objModel.DierNo == null ? "" : objModel.DierNo);
+                    parmeters.Add("@CNRNo", objModel.CNRNo == null ? "" : objModel.CNRNo);
+                    parmeters.Add("@FIRNo", objModel.FIRNo == null ? "" : objModel.FIRNo);
                     parmeters.Add("@FIRYear", objModel.FIRYear);
                     parmeters.Add("@PoliceStationId", objModel.PoliceStationId);
                     parmeters.Add("@CClassificationId", objModel.CClassificationId);
@@ -92,9 +92,9 @@ namespace Case.Repository.DierRegistrations
                     parmeters.Add("@VictimGroupNo", objModel.VictimGroupNo);
                     parmeters.Add("@WitnessGroupNo", objModel.WitnessGroupNo);
                     parmeters.Add("@InvestigationDtId", objModel.InvestigationDtId);
-                    parmeters.Add("@ChargeSheetNo", objModel.ChargeSheetNo);
-                    parmeters.Add("@ChargeSheetDate", objModel.ChargeSheetDate);
-                    parmeters.Add("@DateBeforeFillingCourt", objModel.DateBeforeFillingCourt);
+                    parmeters.Add("@ChargeSheetNo", objModel.ChargeSheetNo == null ? "" : objModel.ChargeSheetNo);
+                    parmeters.Add("@ChargeSheetDate", objModel.ChargeSheetDate == null ? "" : objModel.ChargeSheetDate);
+                    parmeters.Add("@DateBeforeFillingCourt", objModel.DateBeforeFillingCourt == null ? "" : objModel.DateBeforeFillingCourt);
                     parmeters.Add("@DistrictId", objModel.DistrictId);
                     parmeters.Add("@OfficeId", objModel.OfficeId);
                     parmeters.Add("@JCourtId", objModel.JCourtId);
@@ -102,22 +102,22 @@ namespace Case.Repository.DierRegistrations
                     parmeters.Add("@GovtGroupId", objModel.GovtGroupId);
                     parmeters.Add("@IsConstitutionPost", objModel.IsConstitutionPost == true ? 1 : 0);
                     parmeters.Add("@ConsGroupId", objModel.ConsGroupId);
-                    parmeters.Add("@Remarks", objModel.Remarks);
-                    parmeters.Add("@ChargeSheetDocs", objModel.ChargeSheetDocs);
-                    parmeters.Add("@FullChargeSheetDocs", objModel.FullChargeSheetDocs);
-                    parmeters.Add("@OtherDocs", objModel.OtherDocs);
-                    parmeters.Add("@CaseStatus", objModel.CaseStatus);
+                    parmeters.Add("@Remarks", objModel.Remarks == null ? "" : objModel.Remarks);
+                    parmeters.Add("@ChargeSheetDocs", objModel.ChargeSheetDocs == null ? "" : objModel.ChargeSheetDocs);
+                    parmeters.Add("@FullChargeSheetDocs", objModel.FullChargeSheetDocs == null ? "" : objModel.FullChargeSheetDocs);
+                    parmeters.Add("@OtherDocs", objModel.OtherDocs == null ? "" : objModel.OtherDocs);
+                    parmeters.Add("@CaseStatus", objModel.CaseStatus == null ? "" : objModel.CaseStatus);
                     parmeters.Add("@Steps", objModel.Steps);
-                    var objData = await Con.QueryAsync<DierRegistrationsResponseModel>("spTrn_DierRegistrations", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_DierRegistrations", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
                     var objResut = objData.FirstOrDefault();
                     DisposeCurrentSqlConnection();
-                    return objResut != null ? objResut : new DierRegistrationsResponseModel();
+                    return objResut != null ? objResut : new ResponseWithoutPaginationModel();
                 }
             }
             catch (Exception ex)
             {
                 _logsService.Logs("Error", "AddEditDierRegistrations", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/AddEditDierRegistrations");
-                return new DierRegistrationsResponseModel()
+                return new ResponseWithoutPaginationModel()
                 {
                     Status = false,
                     Message = ex.Message,
@@ -233,6 +233,115 @@ namespace Case.Repository.DierRegistrations
             }
         }
 
+        public async Task<ResponseWithoutPaginationModel> GetDierVictimWitness(long GroupNo)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+                    parmeters.Add("@Action", "GetDierVictimWitness");
+                    parmeters.Add("@GroupNo", GroupNo);
+                    var objResult = await Con.QueryAsync("spTrn_DierVictimWitness", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+
+                    ResponseWithoutPaginationModel objResut = new()
+                    {
+                        Status = true,
+                        Message = "",
+                        Data = objResult,
+                    };
+                    DisposeCurrentSqlConnection();
+
+                    return objResut;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetDierVictimWitness", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/GetDierVictimWitness");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        public async Task<ResponseWithoutPaginationModel> AddEditDierVictimWitness(DierVictimWitnessModel objModel, int UserId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+
+                    if (objModel.Id > 0)
+                    {
+                        parmeters.Add("@Action", "VictimWitnessEdit");
+                        parmeters.Add("@UpdatedBy", UserId);
+                        parmeters.Add("@Id", objModel.Id);
+                    }
+                    else
+                    {
+                        parmeters.Add("@Action", "VictimWitnessAdd");
+                        parmeters.Add("@CreatedBy", UserId);
+                    }
+                    
+                    parmeters.Add("@GroupNo", objModel.GroupNo);
+                    parmeters.Add("@Name", objModel.Name);
+                    parmeters.Add("@FatherName", objModel.FatherName);
+                    parmeters.Add("@Gender", objModel.Gender);
+                    parmeters.Add("@Address", objModel.Address);
+                    parmeters.Add("@MobileNo", objModel.MobileNo);
+                    parmeters.Add("@UIDNo", objModel.UIDNo);
+                    parmeters.Add("@DistrictId", objModel.DistrictId);
+                    parmeters.Add("@ThanaId", objModel.ThanaId);
+                    parmeters.Add("@Status", objModel.Status);
+
+                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_DierVictimWitness", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objResult = objData.FirstOrDefault();
+                    DisposeCurrentSqlConnection();
+                    return objResult != null ? objResult : new ResponseWithoutPaginationModel();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "AddEditDierVictimWitness", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/AddEditDierVictimWitness");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        public async Task<ResponseWithoutPaginationModel> DeleteDierVictimWitness(long Id, int UserId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+                    parmeters.Add("@Action", "DeleteDierVictimWitness");
+                    parmeters.Add("@DeletedBy", UserId);
+                    parmeters.Add("@Id", Id);
+
+                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_DierVictimWitness", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objResut = objData.FirstOrDefault();
+                    DisposeCurrentSqlConnection();
+                    return objResut != null ? objResut : new ResponseWithoutPaginationModel();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "DeleteDierVictimWitness", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/DeleteDierVictimWitness");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
         public async Task<ResponseWithoutPaginationModel> GetDierVictim(long VictimGroupNo)
         {
             try
@@ -242,7 +351,7 @@ namespace Case.Repository.DierRegistrations
                     var parmeters = new DynamicParameters();
                     parmeters.Add("@Action", "GetDierVictim");
                     parmeters.Add("@VictimGroupNo", VictimGroupNo);
-                    var objResult = await Con.QueryAsync("spTrn_CaseAppellants", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objResult = await Con.QueryAsync("spTrn_DierVictim", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
 
                     ResponseWithoutPaginationModel objResut = new()
                     {
@@ -296,7 +405,7 @@ namespace Case.Repository.DierRegistrations
                     parmeters.Add("@ThanaId", objModel.ThanaId);
                     parmeters.Add("@VictimStatus", objModel.VictimStatus);
 
-                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_CaseAppellants", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_DierVictim", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
                     var objResult = objData.FirstOrDefault();
                     DisposeCurrentSqlConnection();
                     return objResult != null ? objResult : new ResponseWithoutPaginationModel();
@@ -324,7 +433,7 @@ namespace Case.Repository.DierRegistrations
                     parmeters.Add("@DeletedBy", UserId);
                     parmeters.Add("@VictimId", VictimId);
 
-                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_CaseAppellants", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_DierVictim", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
                     var objResut = objData.FirstOrDefault();
                     DisposeCurrentSqlConnection();
                     return objResut != null ? objResut : new ResponseWithoutPaginationModel();
@@ -458,7 +567,7 @@ namespace Case.Repository.DierRegistrations
                     var parmeters = new DynamicParameters();
                     parmeters.Add("@Action", "GetDierInvestigation");
                     parmeters.Add("@InvestGroupNo", InvestGroupNo);
-                    var objResult = await Con.QueryAsync("spTrn_CaseAppellants", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objResult = await Con.QueryAsync("spTrn_Investigation", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
 
                     ResponseWithoutPaginationModel objResut = new()
                     {
@@ -512,7 +621,7 @@ namespace Case.Repository.DierRegistrations
                     parmeters.Add("@ThanaId", objModel.ThanaId);
                     parmeters.Add("@InvestStatus", objModel.InvestStatus);
 
-                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_CaseAppellants", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_Investigation", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
                     var objResult = objData.FirstOrDefault();
                     DisposeCurrentSqlConnection();
                     return objResult != null ? objResult : new ResponseWithoutPaginationModel();
@@ -540,7 +649,7 @@ namespace Case.Repository.DierRegistrations
                     parmeters.Add("@DeletedBy", UserId);
                     parmeters.Add("@InvestId", InvestId);
 
-                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_CaseAppellants", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_Investigation", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
                     var objResut = objData.FirstOrDefault();
                     DisposeCurrentSqlConnection();
                     return objResut != null ? objResut : new ResponseWithoutPaginationModel();

@@ -26,7 +26,7 @@ namespace Case.ServiceBus.DierRegistrationsService
             }
         }
 
-        public async Task<DierRegistrationsResponseModel> AddEditDierRegistrations(DierRegistrationsModel objModel, int UserId)
+        public async Task<ResponseWithoutPaginationModel> AddEditDierRegistrations(DierRegistrationsModel objModel, int UserId)
         {
             try
             {
@@ -68,6 +68,44 @@ namespace Case.ServiceBus.DierRegistrationsService
             try
             {
                 var data = _IUnitOfWorkRepository.DierRegistrations.DeleteDierAccused(AccusedId, UserId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
+        public async Task<ResponseWithoutPaginationModel> GetDierVictimWitness(long GroupNo)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.GetDierVictimWitness(GroupNo);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<ResponseWithoutPaginationModel> AddEditDierVictimWitness(DierVictimWitnessModel objModel, int UserId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.AddEditDierVictimWitness(objModel, UserId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<ResponseWithoutPaginationModel> DeleteDierVictimWitness(long Id, int UserId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.DeleteDierVictimWitness(Id, UserId);
                 return await data;
             }
             catch (Exception)

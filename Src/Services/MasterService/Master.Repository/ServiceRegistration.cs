@@ -15,6 +15,7 @@ using Master.Repository.CrimeClassification;
 using Master.Repository.CrimeSubAct;
 using Master.Repository.Designation;
 using Master.Repository.FirStatus;
+using Master.Repository.JanPratinidhi;
 using Master.Repository.Level;
 using Master.Repository.News;
 using Master.Repository.NodalOfficer;
@@ -52,6 +53,7 @@ public static class ServiceRegistration
         services.AddTransient<ICrimeSubAct, CrimeSubActRepository>();
         services.AddTransient<IDesignation, DesignationRepository>();
         services.AddTransient<IFirStatus, FirStatusRepository>();
+        services.AddTransient<IJanPratinidhi, JanPratinidhiRepository>();
         services.AddTransient<ILevel, LevelRepository>();
         services.AddTransient<INews, NewsRepository>();
         services.AddTransient<INodalOfficer, NodalOfficerRepository>();

@@ -4514,11 +4514,11 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/Case/Uploads/{everything}",
+      "UpstreamPathTemplate": "/CaseService/Uploads/{everything}",
       "UpstreamHttpMethod": [
         "GET"
       ],
-      "DownstreamPathTemplate": "/CaseServices/Uploads/{everything}",
+      "DownstreamPathTemplate": "/PcmsCaseService/Uploads/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -5400,6 +5400,57 @@
         "POST"
       ],
       "DownstreamPathTemplate": "/PcmsCaseService/api/DierRegistrations/DeleteDierAccused",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/CaseService/DierRegistrations/GetVictimWitness",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/DierRegistrations/GetDierVictimWitness",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/CaseService/DierRegistrations/AddEditVictimWitness",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/DierRegistrations/AddEditDierVictimWitness",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/CaseService/DierRegistrations/DeleteVictimWitness",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/DierRegistrations/DeleteDierVictimWitness",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
