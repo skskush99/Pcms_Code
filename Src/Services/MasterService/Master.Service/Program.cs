@@ -13,7 +13,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+
 builder.Services.AddJwtAuthentication();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddScoped<LogsService>();
@@ -47,7 +49,7 @@ builder.Services.AddHttpContextAccessor(); // Important: Add HttpContextAccessor
 builder.Services.AddRepositoryInfrastructure(builder.Configuration);
 builder.Services.AddServiceInfrastructure(builder.Configuration);
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline.   // 
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>
