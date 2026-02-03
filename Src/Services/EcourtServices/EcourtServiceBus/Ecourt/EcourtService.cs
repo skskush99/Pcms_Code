@@ -143,6 +143,359 @@ namespace EcourtServiceBus.Ecourt
                 throw;
             }
         }
+        public async Task<ResponseWithoutPaginationModel> GetDetailByFIR(string EstCode, string PoliceStnCode, string FIRNO, string FIRYear, string accessToken, EcourtCredentials data)
+        {
+            try
+            {
+                ResponseWithoutPaginationModel objResut = new();
+                string requestStr = $"est_code={EstCode}|police_station_code={PoliceStnCode}|fir_no={FIRNO}|fir_year={FIRYear}";
+                string requestToken = HashHMAC("15081947", requestStr);
+                requestStr = Encrypt(requestStr, data.AuthenticationKey, data.Iv);
+                requestStr = Uri.EscapeDataString(requestStr);
+
+                var credentials = new Dictionary<string, string>
+                {
+                    { "accessToken", accessToken },
+                    { "AuthenticationKey", data.AuthenticationKey },
+                    { "Iv", data.Iv },
+                    { "DeptId", data.DeptId },
+                    { "requestStr", requestStr},
+                    { "requestToken", requestToken },
+                    { "url", data.BaseUrl},
+                    { "version", data.version}
+                };
+                var responseString = await GetFIRDetail(credentials);
+                if (!responseString.Contains("Error"))
+                {
+                    var result = Newtonsoft.Json.JsonConvert.DeserializeObject<ExpandoObject>(responseString);
+                    objResut = new()
+                    {
+                        Status = true,
+                        Message = "Success",
+                        Data = result
+                    };
+                }
+                else
+                {
+                    dynamic result = new System.Dynamic.ExpandoObject();
+                    result.Error = responseString.Split("Error:")[1].Trim();
+                    objResut = new()
+                    {
+                        Status = true,
+                        Message = "Success",
+                        Data = result
+                    };
+                }
+
+                return objResut;
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it differently
+                Console.WriteLine($"Error occurred: {ex.Message}");
+                throw;
+            }
+        }
+
+        public async Task<ResponseWithoutPaginationModel> GetDetailMasterACT(string accessToken, EcourtCredentials data)
+        {
+            try
+            {
+                ResponseWithoutPaginationModel objResut = new();
+                string requestStr = $"";
+                string requestToken = HashHMAC("15081947", requestStr);
+                requestStr = Encrypt(requestStr, data.AuthenticationKey, data.Iv);
+                requestStr = Uri.EscapeDataString(requestStr);
+
+                var credentials = new Dictionary<string, string>
+                {
+                    { "accessToken", accessToken },
+                    { "AuthenticationKey", data.AuthenticationKey },
+                    { "Iv", data.Iv },
+                    { "DeptId", data.DeptId },
+                    { "requestStr", requestStr},
+                    { "requestToken", requestToken },
+                    { "url", data.BaseUrl},
+                    { "version", data.version}
+                };
+                var responseString = await GetMasterActDetail(credentials);
+                if (!responseString.Contains("Error"))
+                {
+                    var result = Newtonsoft.Json.JsonConvert.DeserializeObject<ExpandoObject>(responseString);
+                    objResut = new()
+                    {
+                        Status = true,
+                        Message = "Success",
+                        Data = result
+                    };
+                }
+                else
+                {
+                    dynamic result = new System.Dynamic.ExpandoObject();
+                    result.Error = responseString.Split("Error:")[1].Trim();
+                    objResut = new()
+                    {
+                        Status = true,
+                        Message = "Success",
+                        Data = result
+                    };
+                }
+
+                return objResut;
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it differently
+                Console.WriteLine($"Error occurred: {ex.Message}");
+                throw;
+            }
+        }
+        public async Task<ResponseWithoutPaginationModel> GetMasterCourtListDts(string est_code,string accessToken, EcourtCredentials data)
+        {
+            try
+            {
+                ResponseWithoutPaginationModel objResut = new();
+                string requestStr = $"est_code={est_code}";
+                string requestToken = HashHMAC("15081947", requestStr);
+                requestStr = Encrypt(requestStr, data.AuthenticationKey, data.Iv);
+                requestStr = Uri.EscapeDataString(requestStr);
+
+                var credentials = new Dictionary<string, string>
+                {
+                    { "accessToken", accessToken },
+                    { "AuthenticationKey", data.AuthenticationKey },
+                    { "Iv", data.Iv },
+                    { "DeptId", data.DeptId },
+                    { "requestStr", requestStr},
+                    { "requestToken", requestToken },
+                    { "url", data.BaseUrl},
+                    { "version", data.version}
+                };
+                var responseString = await GetMasterCourtListDetail(est_code,credentials);
+                if (!responseString.Contains("Error"))
+                {
+                    var result = Newtonsoft.Json.JsonConvert.DeserializeObject<ExpandoObject>(responseString);
+                    objResut = new()
+                    {
+                        Status = true,
+                        Message = "Success",
+                        Data = result
+                    };
+                }
+                else
+                {
+                    dynamic result = new System.Dynamic.ExpandoObject();
+                    result.Error = responseString.Split("Error:")[1].Trim();
+                    objResut = new()
+                    {
+                        Status = true,
+                        Message = "Success",
+                        Data = result
+                    };
+                }
+
+                return objResut;
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it differently
+                Console.WriteLine($"Error occurred: {ex.Message}");
+                throw;
+            }
+        }
+        public async Task<string> GetMasterActDetail(Dictionary<string, string> credentials)
+        {
+            string accessToken = credentials["accessToken"];
+            string AuthenticationKey = credentials["AuthenticationKey"];
+            string Iv = credentials["Iv"];
+            string DeptId = credentials["DeptId"];
+            string requestStr = credentials["requestStr"];
+            string requestToken = credentials["requestToken"];
+            string version = credentials["version"];
+            string url = $"{credentials["url"]}/dc-act-master-api/actMaster?dept_id={DeptId}&request_str={requestStr}&request_token={requestToken}&version={version}";
+
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
+                var response = await client.GetAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    var resultApi = JsonConvert.DeserializeObject<Dictionary<string, string>>(responseBody);
+
+                    if (resultApi.ContainsKey("response_str"))
+                    {
+                        string responseStr = resultApi["response_str"];
+                        byte[] payload = Convert.FromBase64String(responseStr);
+                        string decrypt = Decrypt(payload, AuthenticationKey, Iv);
+                        return decrypt;
+                    }
+                    else if (resultApi.ContainsKey("status"))
+                    {
+                        return $"Error: {resultApi["status"]}";
+                    }
+                    else
+                    {
+                        // Handle unexpected response format
+                        return "Unexpected response format";
+                    }
+                }
+                else
+                {
+                    return $"Error: {response.StatusCode} - {response.ReasonPhrase}";
+                }
+            }
+        }
+
+        public async Task<string> GetMasterCourtListDetail(string est_code, Dictionary<string, string> credentials)
+        {
+            string accessToken = credentials["accessToken"];
+            string AuthenticationKey = credentials["AuthenticationKey"];
+            string Iv = credentials["Iv"];
+            string DeptId = credentials["DeptId"];
+            string requestStr = credentials["requestStr"];
+            string requestToken = credentials["requestToken"];
+            string version = credentials["version"];
+            string url = $"{credentials["url"]}/dc-court-list-api/courtList?dept_id={DeptId}&request_str={requestStr}&request_token={requestToken}&version={version}";
+
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
+                var response = await client.GetAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    var resultApi = JsonConvert.DeserializeObject<Dictionary<string, string>>(responseBody);
+
+                    if (resultApi.ContainsKey("response_str"))
+                    {
+                        string responseStr = resultApi["response_str"];
+                        byte[] payload = Convert.FromBase64String(responseStr);
+                        string decrypt = Decrypt(payload, AuthenticationKey, Iv);
+                        return decrypt;
+                    }
+                    else if (resultApi.ContainsKey("status"))
+                    {
+                        return $"Error: {resultApi["status"]}";
+                    }
+                    else
+                    {
+                        // Handle unexpected response format
+                        return "Unexpected response format";
+                    }
+                }
+                else
+                {
+                    return $"Error: {response.StatusCode} - {response.ReasonPhrase}";
+                }
+            }
+        }
+
+        public async Task<ResponseWithoutPaginationModel> GetDetailMasterPoliceStation(string est_code, string accessToken, EcourtCredentials data)
+        {
+            try
+            {
+                ResponseWithoutPaginationModel objResut = new();
+                string requestStr = $"est_code={est_code}";
+                string requestToken = HashHMAC("15081947", requestStr);
+                requestStr = Encrypt(requestStr, data.AuthenticationKey, data.Iv);
+                requestStr = Uri.EscapeDataString(requestStr);
+
+                var credentials = new Dictionary<string, string>
+                {
+                    { "accessToken", accessToken },
+                    { "AuthenticationKey", data.AuthenticationKey },
+                    { "Iv", data.Iv },
+                    { "DeptId", data.DeptId },
+                    { "requestStr", requestStr},
+                    { "requestToken", requestToken },
+                    { "url", data.BaseUrl},
+                    { "version", data.version}
+                };
+                var responseString = await GetMasterPoliceStation(credentials);
+                if (!responseString.Contains("Error"))
+                {
+                    var result = Newtonsoft.Json.JsonConvert.DeserializeObject<ExpandoObject>(responseString);
+                    objResut = new()
+                    {
+                        Status = true,
+                        Message = "Success",
+                        Data = result
+                    };
+                }
+                else
+                {
+                    dynamic result = new System.Dynamic.ExpandoObject();
+                    result.Error = responseString.Split("Error:")[1].Trim();
+                    objResut = new()
+                    {
+                        Status = true,
+                        Message = "Success",
+                        Data = result
+                    };
+                }
+
+                return objResut;
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it differently
+                Console.WriteLine($"Error occurred: {ex.Message}");
+                throw;
+            }
+        }
+        public async Task<string> GetMasterPoliceStation(Dictionary<string, string> credentials)
+        {
+            string accessToken = credentials["accessToken"];
+            string AuthenticationKey = credentials["AuthenticationKey"];
+            string Iv = credentials["Iv"];
+            string DeptId = credentials["DeptId"];
+            string requestStr = credentials["requestStr"];
+            string requestToken = credentials["requestToken"];
+            string version = credentials["version"];
+            string url = $"{credentials["url"]}/dc-police-station-master-api/policeStationMaster?dept_id={DeptId}&request_str={requestStr}&request_token={requestToken}&version={version}";
+
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
+                var response = await client.GetAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    var resultApi = JsonConvert.DeserializeObject<Dictionary<string, string>>(responseBody);
+
+                    if (resultApi.ContainsKey("response_str"))
+                    {
+                        string responseStr = resultApi["response_str"];
+                        byte[] payload = Convert.FromBase64String(responseStr);
+                        string decrypt = Decrypt(payload, AuthenticationKey, Iv);
+                        return decrypt;
+                    }
+                    else if (resultApi.ContainsKey("status"))
+                    {
+                        return $"Error: {resultApi["status"]}";
+                    }
+                    else
+                    {
+                        // Handle unexpected response format
+                        return "Unexpected response format";
+                    }
+                }
+                else
+                {
+                    return $"Error: {response.StatusCode} - {response.ReasonPhrase}";
+                }
+            }
+        }
+
+     
+
 
         public async Task<string> GetCnrDetail(Dictionary<string, string> credentials)
         {
@@ -154,6 +507,52 @@ namespace EcourtServiceBus.Ecourt
             string requestToken = credentials["requestToken"];
             string version = credentials["version"];
             string url = $"{credentials["url"]}/dc-cnr-api/cnr?dept_id={DeptId}&request_str={requestStr}&request_token={requestToken}&version={version}";
+
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
+                var response = await client.GetAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    var resultApi = JsonConvert.DeserializeObject<Dictionary<string, string>>(responseBody);
+
+                    if (resultApi.ContainsKey("response_str"))
+                    {
+                        string responseStr = resultApi["response_str"];
+                        byte[] payload = Convert.FromBase64String(responseStr);
+                        string decrypt = Decrypt(payload, AuthenticationKey, Iv);
+                        return decrypt;
+                    }
+                    else if (resultApi.ContainsKey("status"))
+                    {
+                        return $"Error: {resultApi["status"]}";
+                    }
+                    else
+                    {
+                        // Handle unexpected response format
+                        return "Unexpected response format";
+                    }
+                }
+                else
+                {
+                    return $"Error: {response.StatusCode} - {response.ReasonPhrase}";
+                }
+            }
+        }
+
+        public async Task<string> GetFIRDetail(Dictionary<string, string> credentials)
+        {
+            string accessToken = credentials["accessToken"];
+            string AuthenticationKey = credentials["AuthenticationKey"];
+            string Iv = credentials["Iv"];
+            string DeptId = credentials["DeptId"];
+            string requestStr = credentials["requestStr"];
+            string requestToken = credentials["requestToken"];
+            string version = credentials["version"];
+            string url = $"{credentials["url"]}/dc-fir-number/firNumber?dept_id={DeptId}&request_str={requestStr}&request_token={requestToken}&version={version}";
 
             using (var client = new HttpClient())
             {
@@ -939,6 +1338,507 @@ namespace EcourtServiceBus.Ecourt
             string requestToken = credentials["requestToken"];
             string version = credentials["version"];
             string url = $"{credentials["url"]}/dc-causelist-api/causelist?dept_id={DeptId}&request_str={requestStr}&request_token={requestToken}&version={version}";
+
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
+                var response = await client.GetAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    var resultApi = JsonConvert.DeserializeObject<Dictionary<string, string>>(responseBody);
+
+                    if (resultApi.ContainsKey("response_str"))
+                    {
+                        string responseStr = resultApi["response_str"];
+                        byte[] payload = Convert.FromBase64String(responseStr);
+                        string decrypt = Decrypt(payload, AuthenticationKey, Iv);
+                        return decrypt;
+                    }
+                    else if (resultApi.ContainsKey("status"))
+                    {
+                        return $"Error: {resultApi["status"]}";
+                    }
+                    else
+                    {
+                        // Handle unexpected response format
+                        return "Unexpected response format";
+                    }
+                }
+                else
+                {
+                    return $"Error: {response.StatusCode} - {response.ReasonPhrase}";
+                }
+            }
+        }
+       
+        public async Task<ResponseWithoutPaginationModel> Criminal_Case_Status_ICJS(string state_code, string flag, string transaction_date, string accessToken, EcourtCredentials data)
+        {
+            try
+            {
+                ResponseWithoutPaginationModel objResut = new();
+                string requestStr = $"state_code={state_code}|flag={flag}|transaction_date={transaction_date}";
+                string requestToken = HashHMAC("15081947", requestStr);
+                requestStr = Encrypt(requestStr, data.AuthenticationKey, data.Iv);
+                requestStr = Uri.EscapeDataString(requestStr);
+
+                var credentials = new Dictionary<string, string>
+                {
+                    { "accessToken", accessToken },
+                    { "AuthenticationKey", data.AuthenticationKey },
+                    { "Iv", data.Iv },
+                    { "DeptId", data.DeptId },
+                    { "requestStr", requestStr},
+                    { "requestToken", requestToken },
+                    { "url", data.BaseUrl},
+                    { "version", data.version}
+                };
+                var responseString = await Criminal_Case_Status_ICJSDts(credentials);
+                if (!responseString.Contains("Error"))
+                {
+                    var result = Newtonsoft.Json.JsonConvert.DeserializeObject<ExpandoObject>(responseString);
+                    objResut = new()
+                    {
+                        Status = true,
+                        Message = "Success",
+                        Data = result
+                    };
+                }
+                else
+                {
+                    dynamic result = new System.Dynamic.ExpandoObject();
+                    result.Error = responseString.Split("Error:")[1].Trim();
+                    objResut = new()
+                    {
+                        Status = true,
+                        Message = "Success",
+                        Data = result
+                    };
+                }
+
+                return objResut;
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it differently
+                Console.WriteLine($"Error occurred: {ex.Message}");
+                throw;
+            }
+        }
+        public async Task<string> Criminal_Case_Status_ICJSDts(Dictionary<string, string> credentials)
+        {
+            string accessToken = credentials["accessToken"];
+            string AuthenticationKey = credentials["AuthenticationKey"];
+            string Iv = credentials["Iv"];
+            string DeptId = credentials["DeptId"];
+            string requestStr = credentials["requestStr"];
+            string requestToken = credentials["requestToken"];
+            string version = credentials["version"];
+            string url = $"{credentials["url"]}/dc-icjs-chargesheet-status-api/chargesheetDetails?dept_id={DeptId}&request_str={requestStr}&request_token={requestToken}&version={version}";
+
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
+                var response = await client.GetAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    var resultApi = JsonConvert.DeserializeObject<Dictionary<string, string>>(responseBody);
+
+                    if (resultApi.ContainsKey("response_str"))
+                    {
+                        string responseStr = resultApi["response_str"];
+                        byte[] payload = Convert.FromBase64String(responseStr);
+                        string decrypt = Decrypt(payload, AuthenticationKey, Iv);
+                        return decrypt;
+                    }
+                    else if (resultApi.ContainsKey("status"))
+                    {
+                        return $"Error: {resultApi["status"]}";
+                    }
+                    else
+                    {
+                        // Handle unexpected response format
+                        return "Unexpected response format";
+                    }
+                }
+                else
+                {
+                    return $"Error: {response.StatusCode} - {response.ReasonPhrase}";
+                }
+            }
+        }
+
+
+       
+        public async Task<ResponseWithoutPaginationModel> Pretrial_Criminal_Case_Status_ICJS(string state_code, string flag, string transaction_date, string accessToken, EcourtCredentials data)
+        {
+            try
+            {
+                ResponseWithoutPaginationModel objResut = new();
+                string requestStr = $"state_code={state_code}|flag={flag}|transaction_date={transaction_date}";
+                string requestToken = HashHMAC("15081947", requestStr);
+                requestStr = Encrypt(requestStr, data.AuthenticationKey, data.Iv);
+                requestStr = Uri.EscapeDataString(requestStr);
+
+                var credentials = new Dictionary<string, string>
+                {
+                    { "accessToken", accessToken },
+                    { "AuthenticationKey", data.AuthenticationKey },
+                    { "Iv", data.Iv },
+                    { "DeptId", data.DeptId },
+                    { "requestStr", requestStr},
+                    { "requestToken", requestToken },
+                    { "url", data.BaseUrl},
+                    { "version", data.version}
+                };
+                var responseString = await Pretrial_Criminal_Case_Status_ICJSDts(credentials);
+                if (!responseString.Contains("Error"))
+                {
+                    var result = Newtonsoft.Json.JsonConvert.DeserializeObject<ExpandoObject>(responseString);
+                    objResut = new()
+                    {
+                        Status = true,
+                        Message = "Success",
+                        Data = result
+                    };
+                }
+                else
+                {
+                    dynamic result = new System.Dynamic.ExpandoObject();
+                    result.Error = responseString.Split("Error:")[1].Trim();
+                    objResut = new()
+                    {
+                        Status = true,
+                        Message = "Success",
+                        Data = result
+                    };
+                }
+
+                return objResut;
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it differently
+                Console.WriteLine($"Error occurred: {ex.Message}");
+                throw;
+            }
+        }
+
+        public async Task<string> Pretrial_Criminal_Case_Status_ICJSDts(Dictionary<string, string> credentials)
+        {
+            string accessToken = credentials["accessToken"];
+            string AuthenticationKey = credentials["AuthenticationKey"];
+            string Iv = credentials["Iv"];
+            string DeptId = credentials["DeptId"];
+            string requestStr = credentials["requestStr"];
+            string requestToken = credentials["requestToken"];
+            string version = credentials["version"];
+            string url = $"{credentials["url"]}/dc-icjs-pretrial-casestatus/icjsFirDetails?dept_id={DeptId}&request_str={requestStr}&request_token={requestToken}&version={version}";
+
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
+                var response = await client.GetAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    var resultApi = JsonConvert.DeserializeObject<Dictionary<string, string>>(responseBody);
+
+                    if (resultApi.ContainsKey("response_str"))
+                    {
+                        string responseStr = resultApi["response_str"];
+                        byte[] payload = Convert.FromBase64String(responseStr);
+                        string decrypt = Decrypt(payload, AuthenticationKey, Iv);
+                        return decrypt;
+                    }
+                    else if (resultApi.ContainsKey("status"))
+                    {
+                        return $"Error: {resultApi["status"]}";
+                    }
+                    else
+                    {
+                        // Handle unexpected response format
+                        return "Unexpected response format";
+                    }
+                }
+                else
+                {
+                    return $"Error: {response.StatusCode} - {response.ReasonPhrase}";
+                }
+            }
+        }
+
+
+        public async Task<ResponseWithoutPaginationModel> Remand_Details_of_Accused(string est_code, string police_station_code, string fir_no, string fir_year, string accessToken, EcourtCredentials data)
+        {
+            try
+            {
+                ResponseWithoutPaginationModel objResut = new();
+                string requestStr = $"est_code={est_code}|police_station_code={police_station_code}|fir_no{fir_no}|fir_year={fir_year}";
+                string requestToken = HashHMAC("15081947", requestStr);
+                requestStr = Encrypt(requestStr, data.AuthenticationKey, data.Iv);
+                requestStr = Uri.EscapeDataString(requestStr);
+
+                var credentials = new Dictionary<string, string>
+                {
+                    { "accessToken", accessToken },
+                    { "AuthenticationKey", data.AuthenticationKey },
+                    { "Iv", data.Iv },
+                    { "DeptId", data.DeptId },
+                    { "requestStr", requestStr},
+                    { "requestToken", requestToken },
+                    { "url", data.BaseUrl},
+                    { "version", data.version}
+                };
+                var responseString = await Remand_Details_of_AccusedDts(credentials);
+                if (!responseString.Contains("Error"))
+                {
+                    var result = Newtonsoft.Json.JsonConvert.DeserializeObject<ExpandoObject>(responseString);
+                    objResut = new()
+                    {
+                        Status = true,
+                        Message = "Success",
+                        Data = result
+                    };
+                }
+                else
+                {
+                    dynamic result = new System.Dynamic.ExpandoObject();
+                    result.Error = responseString.Split("Error:")[1].Trim();
+                    objResut = new()
+                    {
+                        Status = true,
+                        Message = "Success",
+                        Data = result
+                    };
+                }
+
+                return objResut;
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it differently
+                Console.WriteLine($"Error occurred: {ex.Message}");
+                throw;
+            }
+        }
+
+        public async Task<string> Remand_Details_of_AccusedDts(Dictionary<string, string> credentials)
+        {
+            string accessToken = credentials["accessToken"];
+            string AuthenticationKey = credentials["AuthenticationKey"];
+            string Iv = credentials["Iv"];
+            string DeptId = credentials["DeptId"];
+            string requestStr = credentials["requestStr"];
+            string requestToken = credentials["requestToken"];
+            string version = credentials["version"];
+            string url = $"{credentials["url"]}/dc-remand-bail-api/remandBail?dept_id={DeptId}&request_str={requestStr}&request_token={requestToken}&version={version}";
+
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
+                var response = await client.GetAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    var resultApi = JsonConvert.DeserializeObject<Dictionary<string, string>>(responseBody);
+
+                    if (resultApi.ContainsKey("response_str"))
+                    {
+                        string responseStr = resultApi["response_str"];
+                        byte[] payload = Convert.FromBase64String(responseStr);
+                        string decrypt = Decrypt(payload, AuthenticationKey, Iv);
+                        return decrypt;
+                    }
+                    else if (resultApi.ContainsKey("status"))
+                    {
+                        return $"Error: {resultApi["status"]}";
+                    }
+                    else
+                    {
+                        // Handle unexpected response format
+                        return "Unexpected response format";
+                    }
+                }
+                else
+                {
+                    return $"Error: {response.StatusCode} - {response.ReasonPhrase}";
+                }
+            }
+        }
+
+        public async Task<ResponseWithoutPaginationModel> Conviction_Details(string state_code, string dist_code, string accessToken, EcourtCredentials data)
+        {
+            try
+            {
+                ResponseWithoutPaginationModel objResut = new();
+                string requestStr = $"state_code={state_code}|dist_code={dist_code}";
+                string requestToken = HashHMAC("15081947", requestStr);
+                requestStr = Encrypt(requestStr, data.AuthenticationKey, data.Iv);
+                requestStr = Uri.EscapeDataString(requestStr);
+
+                var credentials = new Dictionary<string, string>
+                {
+                    { "accessToken", accessToken },
+                    { "AuthenticationKey", data.AuthenticationKey },
+                    { "Iv", data.Iv },
+                    { "DeptId", data.DeptId },
+                    { "requestStr", requestStr},
+                    { "requestToken", requestToken },
+                    { "url", data.BaseUrl},
+                    { "version", data.version}
+                };
+                var responseString = await Conviction_DetailsDts(credentials);
+                if (!responseString.Contains("Error"))
+                {
+                    var result = Newtonsoft.Json.JsonConvert.DeserializeObject<ExpandoObject>(responseString);
+                    objResut = new()
+                    {
+                        Status = true,
+                        Message = "Success",
+                        Data = result
+                    };
+                }
+                else
+                {
+                    dynamic result = new System.Dynamic.ExpandoObject();
+                    result.Error = responseString.Split("Error:")[1].Trim();
+                    objResut = new()
+                    {
+                        Status = true,
+                        Message = "Success",
+                        Data = result
+                    };
+                }
+
+                return objResut;
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it differently
+                Console.WriteLine($"Error occurred: {ex.Message}");
+                throw;
+            }
+        }
+
+        public async Task<ResponseWithoutPaginationModel> Search_by_Case_Number_CIN(string est_code, string case_type, string reg_no, string reg_year, string accessToken, EcourtCredentials data)
+        {
+            try
+            {
+                ResponseWithoutPaginationModel objResut = new();
+                string requestStr = $"est_code={est_code}|case_type={case_type}|reg_no={reg_no}|reg_year={reg_year}";
+                string requestToken = HashHMAC("15081947", requestStr);
+                requestStr = Encrypt(requestStr, data.AuthenticationKey, data.Iv);
+                requestStr = Uri.EscapeDataString(requestStr);
+
+                var credentials = new Dictionary<string, string>
+                {
+                    { "accessToken", accessToken },
+                    { "AuthenticationKey", data.AuthenticationKey },
+                    { "Iv", data.Iv },
+                    { "DeptId", data.DeptId },
+                    { "requestStr", requestStr},
+                    { "requestToken", requestToken },
+                    { "url", data.BaseUrl},
+                    { "version", data.version}
+                };
+                var responseString = await Search_by_Case_Number_CINDts(credentials);
+                if (!responseString.Contains("Error"))
+                {
+                    var result = Newtonsoft.Json.JsonConvert.DeserializeObject<ExpandoObject>(responseString);
+                    objResut = new()
+                    {
+                        Status = true,
+                        Message = "Success",
+                        Data = result
+                    };
+                }
+                else
+                {
+                    dynamic result = new System.Dynamic.ExpandoObject();
+                    result.Error = responseString.Split("Error:")[1].Trim();
+                    objResut = new()
+                    {
+                        Status = true,
+                        Message = "Success",
+                        Data = result
+                    };
+                }
+
+                return objResut;
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it differently
+                Console.WriteLine($"Error occurred: {ex.Message}");
+                throw;
+            }
+        }
+        public async Task<string> Conviction_DetailsDts(Dictionary<string, string> credentials)
+        {
+            string accessToken = credentials["accessToken"];
+            string AuthenticationKey = credentials["AuthenticationKey"];
+            string Iv = credentials["Iv"];
+            string DeptId = credentials["DeptId"];
+            string requestStr = credentials["requestStr"];
+            string requestToken = credentials["requestToken"];
+            string version = credentials["version"];
+            string url = $"{credentials["url"]}/dc-convicted-api/convictedDetails?dept_id={DeptId}&request_str={requestStr}&request_token={requestToken}&version={version}";
+
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
+                var response = await client.GetAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    var resultApi = JsonConvert.DeserializeObject<Dictionary<string, string>>(responseBody);
+
+                    if (resultApi.ContainsKey("response_str"))
+                    {
+                        string responseStr = resultApi["response_str"];
+                        byte[] payload = Convert.FromBase64String(responseStr);
+                        string decrypt = Decrypt(payload, AuthenticationKey, Iv);
+                        return decrypt;
+                    }
+                    else if (resultApi.ContainsKey("status"))
+                    {
+                        return $"Error: {resultApi["status"]}";
+                    }
+                    else
+                    {
+                        // Handle unexpected response format
+                        return "Unexpected response format";
+                    }
+                }
+                else
+                {
+                    return $"Error: {response.StatusCode} - {response.ReasonPhrase}";
+                }
+            }
+        }
+
+        public async Task<string> Search_by_Case_Number_CINDts(Dictionary<string, string> credentials)
+        {
+            string accessToken = credentials["accessToken"];
+            string AuthenticationKey = credentials["AuthenticationKey"];
+            string Iv = credentials["Iv"];
+            string DeptId = credentials["DeptId"];
+            string requestStr = credentials["requestStr"];
+            string requestToken = credentials["requestToken"];
+            string version = credentials["version"];
+            string url = $"{credentials["url"]}/dc-case-number-api/caseSearch?dept_id={DeptId}&request_str={requestStr}&request_token={requestToken}&version={version}";
 
             using (var client = new HttpClient())
             {

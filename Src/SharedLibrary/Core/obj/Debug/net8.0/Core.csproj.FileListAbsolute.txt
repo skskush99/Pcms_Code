@@ -48,3 +48,29 @@ D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Core\obj\Debug\net8.0\Cor
 D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Core\obj\Debug\net8.0\refint\Core.dll
 D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Core\obj\Debug\net8.0\Core.pdb
 D:\Working Sandeep\PCMS_Project\PCMS\Src\SharedLibrary\Core\obj\Debug\net8.0\ref\Core.dll
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Core\bin\Debug\net8.0\Core.deps.json
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Core\bin\Debug\net8.0\Core.dll
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Core\bin\Debug\net8.0\Core.pdb
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Core\obj\Debug\net8.0\Core.csproj.AssemblyReference.cache
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Core\obj\Debug\net8.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Core\obj\Debug\net8.0\Core.AssemblyInfoInputs.cache
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Core\obj\Debug\net8.0\Core.AssemblyInfo.cs
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Core\obj\Debug\net8.0\Core.csproj.CoreCompileInputs.cache
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Core\obj\Debug\net8.0\Core.sourcelink.json
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Core\obj\Debug\net8.0\Core.dll
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Core\obj\Debug\net8.0\refint\Core.dll
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Core\obj\Debug\net8.0\Core.pdb
+D:\Working Sandeep\PCMS_Project\PcmsCode\Src\SharedLibrary\Core\obj\Debug\net8.0\ref\Core.dll
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Core\bin\Debug\net8.0\Core.deps.json
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Core\bin\Debug\net8.0\Core.dll
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Core\bin\Debug\net8.0\Core.pdb
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Core\obj\Debug\net8.0\Core.csproj.AssemblyReference.cache
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Core\obj\Debug\net8.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Core\obj\Debug\net8.0\Core.AssemblyInfoInputs.cache
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Core\obj\Debug\net8.0\Core.AssemblyInfo.cs
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Core\obj\Debug\net8.0\Core.csproj.CoreCompileInputs.cache
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Core\obj\Debug\net8.0\Core.sourcelink.json
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Core\obj\Debug\net8.0\Core.dll
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Core\obj\Debug\net8.0\refint\Core.dll
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Core\obj\Debug\net8.0\Core.pdb
+D:\PCMS_Projects\PcmsCode\Src\SharedLibrary\Core\obj\Debug\net8.0\ref\Core.dll

@@ -1,10 +1,11 @@
-﻿using EcourtDto.Shared;
-using Microsoft.AspNetCore.Mvc;
-using EcourtServiceBus.UnitOfWork;
+﻿using Common.Repository;
+using Core.Enums.User;
 using EcourtDto;
 using EcourtDto.Ecourt;
+using EcourtDto.Shared;
+using EcourtServiceBus.UnitOfWork;
+using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
-using Common.Repository;
 
 namespace EcourtService.Controllers
 {
@@ -54,6 +55,312 @@ namespace EcourtService.Controllers
                 };
             }
         }
+
+        /// <summary>
+        /// API provides complete history of the case including, case details, party names, current status, 
+        /// daily proceedings, orders, judgments, IA details and process issued information based on 
+        /// CNR number of the case.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /api/EcourtService/GetMasterAct/SearchByCnr?CinNo=RJAJ1A0000862019
+        ///     
+        ///  this API provides Case Detail by Providing CNR Number 
+        /// </remarks>
+        [HttpGet]
+        [Route("MasterAct")]
+        public async Task<ResponseWithoutPaginationModel> GetMasterAct()
+        {
+            try
+            {
+                var result = new ResponseWithoutPaginationModel();
+                int attempt = 0;
+                const int MaxRetries = 3; // Max retries
+                const int RetryDelayMilliseconds = 1000; // Delay between retries
+
+                try
+                {
+                    while (attempt < MaxRetries)
+                    {
+                        attempt++;
+                        try
+                        {
+                            // Get Ecourt credentials
+                            var data = _Configuration.GetSection("Credentials:Ecourt").Get<EcourtCredentials>();
+
+                            // Get authentication token
+                            var tokenObject = await unitOfWork.EcourtService.GetAuthToken(data);
+
+                            // If token is valid
+                            if (!string.IsNullOrEmpty(Convert.ToString(tokenObject?.Data?.access_token)))
+                            {
+                                var authToken = tokenObject.Data.access_token;
+
+                                // Make the actual call to get details by CNR
+                                var apiResponse = await unitOfWork.EcourtService.GetDetailMasterACT(authToken, data);
+
+                                if (apiResponse != null)
+                                {
+                                    // Success response
+                                    result.Status = true;
+                                    result.Message = "Success";
+                                    result.Data = apiResponse;
+                                    return result;
+                                }
+                                else
+                                {
+                                    // If the API response is null, handle this case
+                                    result.Status = false;
+                                    result.Message = "Failed to retrieve details.";
+                                    result.Data = null;
+                                    return result;
+                                }
+                            }
+                            else
+                            {
+                                // If access token is not available
+                                result.Status = false;
+                                result.Message = tokenObject?.Data?.Error ?? "Failed to get access token.";
+                                result.Data = tokenObject?.Data;
+                                return result;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            await Task.Delay(RetryDelayMilliseconds); // Wait before retrying
+                        }
+                    }
+
+                    // After all retries are exhausted, return a failure message
+                    result.Status = false;
+                    result.Message = "You have reached the retry limit. Please try again later.";
+                    result.Data = null;
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    // Handle unexpected exceptions
+                    result.Status = false;
+                    result.Message = $"An unexpected error occurred: {ex.Message}";
+                    result.Data = null;
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetDetailByCNR", ex.Message, ex.StackTrace, ex.Source, "EcourtService/EcourtServiceController/GetDetailByCNR");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+
+        }
+
+        /// <summary>
+        /// Creates an Token To Access Other API's.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /api/EcourtService/GetAuthToken/Token
+        ///     
+        ///  this API provide Authorization token to Access Other API's
+        /// </remarks>
+        [HttpGet]
+        [Route("MasterCourtList")]
+        public async Task<ResponseWithoutPaginationModel> GetMasterCourtList( string est_code)
+        {
+            try
+            {
+                var result = new ResponseWithoutPaginationModel();
+                int attempt = 0;
+                const int MaxRetries = 3; // Max retries
+                const int RetryDelayMilliseconds = 1000; // Delay between retries
+
+                try
+                {
+                    while (attempt < MaxRetries)
+                    {
+                        attempt++;
+                        try
+                        {
+                            // Get Ecourt credentials
+                            var data = _Configuration.GetSection("Credentials:Ecourt").Get<EcourtCredentials>();
+
+                            // Get authentication token
+                            var tokenObject = await unitOfWork.EcourtService.GetAuthToken(data);
+
+                            // If token is valid
+                            if (!string.IsNullOrEmpty(Convert.ToString(tokenObject?.Data?.access_token)))
+                            {
+                                var authToken = tokenObject.Data.access_token;
+
+                                // Make the actual call to get details by CNR
+                                var apiResponse = await unitOfWork.EcourtService.GetMasterCourtListDts(est_code,authToken, data);
+
+                                if (apiResponse != null)
+                                {
+                                    // Success response
+                                    result.Status = true;
+                                    result.Message = "Success";
+                                    result.Data = apiResponse;
+                                    return result;
+                                }
+                                else
+                                {
+                                    // If the API response is null, handle this case
+                                    result.Status = false;
+                                    result.Message = "Failed to retrieve details.";
+                                    result.Data = null;
+                                    return result;
+                                }
+                            }
+                            else
+                            {
+                                // If access token is not available
+                                result.Status = false;
+                                result.Message = tokenObject?.Data?.Error ?? "Failed to get access token.";
+                                result.Data = tokenObject?.Data;
+                                return result;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            await Task.Delay(RetryDelayMilliseconds); // Wait before retrying
+                        }
+                    }
+
+                    // After all retries are exhausted, return a failure message
+                    result.Status = false;
+                    result.Message = "You have reached the retry limit. Please try again later.";
+                    result.Data = null;
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    // Handle unexpected exceptions
+                    result.Status = false;
+                    result.Message = $"An unexpected error occurred: {ex.Message}";
+                    result.Data = null;
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetDetailByCNR", ex.Message, ex.StackTrace, ex.Source, "EcourtService/EcourtServiceController/GetDetailByCNR");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+
+        }
+
+        /// <summary>
+        /// Creates an Token To Access Other API's.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /api/EcourtService/GetAuthToken/Token
+        ///     
+        ///  this API provide Authorization token to Access Other API's
+        /// </remarks>
+        [HttpGet]
+        [Route("SearchByFIR")]
+        public async Task<ResponseWithoutPaginationModel> GetDetailByFIR(string EstCode, string PoliceStnCode, string FIRNO, string FIRYear)
+        {
+            try
+            {
+                var result = new ResponseWithoutPaginationModel();
+                int attempt = 0;
+                const int MaxRetries = 3; // Max retries
+                const int RetryDelayMilliseconds = 1000; // Delay between retries
+
+                try
+                {
+                    while (attempt < MaxRetries)
+                    {
+                        attempt++;
+                        try
+                        {
+                            // Get Ecourt credentials
+                            var data = _Configuration.GetSection("Credentials:Ecourt").Get<EcourtCredentials>();
+
+                            // Get authentication token
+                            var tokenObject = await unitOfWork.EcourtService.GetAuthToken(data);
+
+                            // If token is valid
+                            if (!string.IsNullOrEmpty(Convert.ToString(tokenObject?.Data?.access_token)))
+                            {
+                                var authToken = tokenObject.Data.access_token;
+
+                                // Make the actual call to get details by CNR
+                                var apiResponse = await unitOfWork.EcourtService.GetDetailByFIR( EstCode,  PoliceStnCode,  FIRNO,  FIRYear, authToken, data);
+
+                                if (apiResponse != null)
+                                {
+                                    // Success response
+                                    result.Status = true;
+                                    result.Message = "Success";
+                                    result.Data = apiResponse;
+                                    return result;
+                                }
+                                else
+                                {
+                                    // If the API response is null, handle this case
+                                    result.Status = false;
+                                    result.Message = "Failed to retrieve details.";
+                                    result.Data = null;
+                                    return result;
+                                }
+                            }
+                            else
+                            {
+                                // If access token is not available
+                                result.Status = false;
+                                result.Message = tokenObject?.Data?.Error ?? "Failed to get access token.";
+                                result.Data = tokenObject?.Data;
+                                return result;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            await Task.Delay(RetryDelayMilliseconds); // Wait before retrying
+                        }
+                    }
+
+                    // After all retries are exhausted, return a failure message
+                    result.Status = false;
+                    result.Message = "You have reached the retry limit. Please try again later.";
+                    result.Data = null;
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    // Handle unexpected exceptions
+                    result.Status = false;
+                    result.Message = $"An unexpected error occurred: {ex.Message}";
+                    result.Data = null;
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetDetailByCNR", ex.Message, ex.StackTrace, ex.Source, "EcourtService/EcourtServiceController/GetDetailByCNR");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+
+        }
+
 
         /// <summary>
         /// API provides complete history of the case including, case details, party names, current status, 
@@ -847,6 +1154,563 @@ namespace EcourtService.Controllers
                 };
             }
         }
+
+        /// <summary>
+        /// Creates an Token To Access Other API's.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /api/EcourtService/GetAuthToken/Token
+        ///     
+        ///  this API provide Authorization token to Access Other API's
+        /// </remarks>
+        [HttpGet]
+        [Route("MasterPoliceStation")]
+        public async Task<ResponseWithoutPaginationModel> GetMasterPoliceStation(string est_code)
+        {
+            try
+            {
+                var result = new ResponseWithoutPaginationModel();
+                int attempt = 0;
+                const int MaxRetries = 3; // Max retries
+                const int RetryDelayMilliseconds = 1000; // Delay between retries
+
+                try
+                {
+                    while (attempt < MaxRetries)
+                    {
+                        attempt++;
+                        try
+                        {
+                            // Get Ecourt credentials
+                            var data = _Configuration.GetSection("Credentials:Ecourt").Get<EcourtCredentials>();
+
+                            // Get authentication token
+                            var tokenObject = await unitOfWork.EcourtService.GetAuthToken(data);
+
+                            // If token is valid
+                            if (!string.IsNullOrEmpty(Convert.ToString(tokenObject?.Data?.access_token)))
+                            {
+                                var authToken = tokenObject.Data.access_token;
+
+                                // Make the actual call to get details by CNR
+                                var apiResponse = await unitOfWork.EcourtService.GetDetailMasterPoliceStation(est_code, authToken, data);
+
+                                if (apiResponse != null)
+                                {
+                                    // Success response
+                                    result.Status = true;
+                                    result.Message = "Success";
+                                    result.Data = apiResponse;
+                                    return result;
+                                }
+                                else
+                                {
+                                    // If the API response is null, handle this case
+                                    result.Status = false;
+                                    result.Message = "Failed to retrieve details.";
+                                    result.Data = null;
+                                    return result;
+                                }
+                            }
+                            else
+                            {
+                                // If access token is not available
+                                result.Status = false;
+                                result.Message = tokenObject?.Data?.Error ?? "Failed to get access token.";
+                                result.Data = tokenObject?.Data;
+                                return result;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            await Task.Delay(RetryDelayMilliseconds); // Wait before retrying
+                        }
+                    }
+
+                    // After all retries are exhausted, return a failure message
+                    result.Status = false;
+                    result.Message = "You have reached the retry limit. Please try again later.";
+                    result.Data = null;
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    // Handle unexpected exceptions
+                    result.Status = false;
+                    result.Message = $"An unexpected error occurred: {ex.Message}";
+                    result.Data = null;
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetDetailByCNR", ex.Message, ex.StackTrace, ex.Source, "EcourtService/EcourtServiceController/GetDetailByCNR");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+
+        }
+        //===API for ICJS
+        [HttpGet]
+        [Route("CaseStatusICJS")]
+        public async Task<ResponseWithoutPaginationModel> Criminal_Case_Status_ICJS(string state_code,string flag,string transaction_date)
+        {
+            try
+            {
+                var result = new ResponseWithoutPaginationModel();
+                int attempt = 0;
+                const int MaxRetries = 3; // Max retries
+                const int RetryDelayMilliseconds = 1000; // Delay between retries
+
+                try
+                {
+                    while (attempt < MaxRetries)
+                    {
+                        attempt++;
+                        try
+                        {
+                            // Get Ecourt credentials
+                            var data = _Configuration.GetSection("Credentials:Ecourt").Get<EcourtCredentials>();
+
+                            // Get authentication token
+                            var tokenObject = await unitOfWork.EcourtService.GetAuthToken(data);
+
+                            // If token is valid
+                            if (!string.IsNullOrEmpty(Convert.ToString(tokenObject?.Data?.access_token)))
+                            {
+                                var authToken = tokenObject.Data.access_token;
+
+                                // Make the actual call to get details by CNR
+                                var apiResponse = await unitOfWork.EcourtService.Criminal_Case_Status_ICJS( state_code,  flag,  transaction_date, authToken, data);
+
+                                if (apiResponse != null)
+                                {
+                                    // Success response
+                                    result.Status = true;
+                                    result.Message = "Success";
+                                    result.Data = apiResponse;
+                                    return result;
+                                }
+                                else
+                                {
+                                    // If the API response is null, handle this case
+                                    result.Status = false;
+                                    result.Message = "Failed to retrieve details.";
+                                    result.Data = null;
+                                    return result;
+                                }
+                            }
+                            else
+                            {
+                                // If access token is not available
+                                result.Status = false;
+                                result.Message = tokenObject?.Data?.Error ?? "Failed to get access token.";
+                                result.Data = tokenObject?.Data;
+                                return result;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            await Task.Delay(RetryDelayMilliseconds); // Wait before retrying
+                        }
+                    }
+
+                    // After all retries are exhausted, return a failure message
+                    result.Status = false;
+                    result.Message = "You have reached the retry limit. Please try again later.";
+                    result.Data = null;
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    // Handle unexpected exceptions
+                    result.Status = false;
+                    result.Message = $"An unexpected error occurred: {ex.Message}";
+                    result.Data = null;
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetDetailByCNR", ex.Message, ex.StackTrace, ex.Source, "EcourtService/EcourtServiceController/GetDetailByCNR");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+
+        }
+
+        [HttpGet]
+        [Route("PretrialCaseStatusICJS")]
+        public async Task<ResponseWithoutPaginationModel> Pretrial_Case_Update_Status_ICJS(string state_code, string flag, string transaction_date)
+        {
+            try
+            {
+                var result = new ResponseWithoutPaginationModel();
+                int attempt = 0;
+                const int MaxRetries = 3; // Max retries
+                const int RetryDelayMilliseconds = 1000; // Delay between retries
+
+                try
+                {
+                    while (attempt < MaxRetries)
+                    {
+                        attempt++;
+                        try
+                        {
+                            // Get Ecourt credentials
+                            var data = _Configuration.GetSection("Credentials:Ecourt").Get<EcourtCredentials>();
+
+                            // Get authentication token
+                            var tokenObject = await unitOfWork.EcourtService.GetAuthToken(data);
+
+                            // If token is valid
+                            if (!string.IsNullOrEmpty(Convert.ToString(tokenObject?.Data?.access_token)))
+                            {
+                                var authToken = tokenObject.Data.access_token;
+
+                                // Make the actual call to get details by CNR
+                                var apiResponse = await unitOfWork.EcourtService.Pretrial_Criminal_Case_Status_ICJS(state_code, flag, transaction_date, authToken, data);
+
+                                if (apiResponse != null)
+                                {
+                                    // Success response
+                                    result.Status = true;
+                                    result.Message = "Success";
+                                    result.Data = apiResponse;
+                                    return result;
+                                }
+                                else
+                                {
+                                    // If the API response is null, handle this case
+                                    result.Status = false;
+                                    result.Message = "Failed to retrieve details.";
+                                    result.Data = null;
+                                    return result;
+                                }
+                            }
+                            else
+                            {
+                                // If access token is not available
+                                result.Status = false;
+                                result.Message = tokenObject?.Data?.Error ?? "Failed to get access token.";
+                                result.Data = tokenObject?.Data;
+                                return result;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            await Task.Delay(RetryDelayMilliseconds); // Wait before retrying
+                        }
+                    }
+
+                    // After all retries are exhausted, return a failure message
+                    result.Status = false;
+                    result.Message = "You have reached the retry limit. Please try again later.";
+                    result.Data = null;
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    // Handle unexpected exceptions
+                    result.Status = false;
+                    result.Message = $"An unexpected error occurred: {ex.Message}";
+                    result.Data = null;
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetDetailByCNR", ex.Message, ex.StackTrace, ex.Source, "EcourtService/EcourtServiceController/GetDetailByCNR");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+
+        }
+
+        [HttpGet]
+        [Route("RemandDetailsofAccused")]
+        public async Task<ResponseWithoutPaginationModel> Remand_Details_of_Accused(string est_code, string police_station_code, string fir_no, string fir_year)
+        {
+            try
+            {
+                var result = new ResponseWithoutPaginationModel();
+                int attempt = 0;
+                const int MaxRetries = 3; // Max retries
+                const int RetryDelayMilliseconds = 1000; // Delay between retries
+
+                try
+                {
+                    while (attempt < MaxRetries)
+                    {
+                        attempt++;
+                        try
+                        {
+                            // Get Ecourt credentials
+                            var data = _Configuration.GetSection("Credentials:Ecourt").Get<EcourtCredentials>();
+
+                            // Get authentication token
+                            var tokenObject = await unitOfWork.EcourtService.GetAuthToken(data);
+
+                            // If token is valid
+                            if (!string.IsNullOrEmpty(Convert.ToString(tokenObject?.Data?.access_token)))
+                            {
+                                var authToken = tokenObject.Data.access_token;
+
+                                // Make the actual call to get details by CNR
+                                var apiResponse = await unitOfWork.EcourtService.Remand_Details_of_Accused(est_code, police_station_code, fir_no, fir_year, authToken, data);
+
+                                if (apiResponse != null)
+                                {
+                                    // Success response
+                                    result.Status = true;
+                                    result.Message = "Success";
+                                    result.Data = apiResponse;
+                                    return result;
+                                }
+                                else
+                                {
+                                    // If the API response is null, handle this case
+                                    result.Status = false;
+                                    result.Message = "Failed to retrieve details.";
+                                    result.Data = null;
+                                    return result;
+                                }
+                            }
+                            else
+                            {
+                                // If access token is not available
+                                result.Status = false;
+                                result.Message = tokenObject?.Data?.Error ?? "Failed to get access token.";
+                                result.Data = tokenObject?.Data;
+                                return result;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            await Task.Delay(RetryDelayMilliseconds); // Wait before retrying
+                        }
+                    }
+
+                    // After all retries are exhausted, return a failure message
+                    result.Status = false;
+                    result.Message = "You have reached the retry limit. Please try again later.";
+                    result.Data = null;
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    // Handle unexpected exceptions
+                    result.Status = false;
+                    result.Message = $"An unexpected error occurred: {ex.Message}";
+                    result.Data = null;
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetDetailByCNR", ex.Message, ex.StackTrace, ex.Source, "EcourtService/EcourtServiceController/GetDetailByCNR");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+
+        }
+        [HttpGet]
+        [Route("ConvictionDetails")]
+        public async Task<ResponseWithoutPaginationModel> Conviction_Details(string state_code, string dist_code)
+        {
+            try
+            {
+                var result = new ResponseWithoutPaginationModel();
+                int attempt = 0;
+                const int MaxRetries = 3; // Max retries
+                const int RetryDelayMilliseconds = 1000; // Delay between retries
+
+                try
+                {
+                    while (attempt < MaxRetries)
+                    {
+                        attempt++;
+                        try
+                        {
+                            // Get Ecourt credentials
+                            var data = _Configuration.GetSection("Credentials:Ecourt").Get<EcourtCredentials>();
+
+                            // Get authentication token
+                            var tokenObject = await unitOfWork.EcourtService.GetAuthToken(data);
+
+                            // If token is valid
+                            if (!string.IsNullOrEmpty(Convert.ToString(tokenObject?.Data?.access_token)))
+                            {
+                                var authToken = tokenObject.Data.access_token;
+
+                                // Make the actual call to get details by CNR
+                                var apiResponse = await unitOfWork.EcourtService.Conviction_Details(state_code, dist_code, authToken, data);
+
+                                if (apiResponse != null)
+                                {
+                                    // Success response
+                                    result.Status = true;
+                                    result.Message = "Success";
+                                    result.Data = apiResponse;
+                                    return result;
+                                }
+                                else
+                                {
+                                    // If the API response is null, handle this case
+                                    result.Status = false;
+                                    result.Message = "Failed to retrieve details.";
+                                    result.Data = null;
+                                    return result;
+                                }
+                            }
+                            else
+                            {
+                                // If access token is not available
+                                result.Status = false;
+                                result.Message = tokenObject?.Data?.Error ?? "Failed to get access token.";
+                                result.Data = tokenObject?.Data;
+                                return result;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            await Task.Delay(RetryDelayMilliseconds); // Wait before retrying
+                        }
+                    }
+
+                    // After all retries are exhausted, return a failure message
+                    result.Status = false;
+                    result.Message = "You have reached the retry limit. Please try again later.";
+                    result.Data = null;
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    // Handle unexpected exceptions
+                    result.Status = false;
+                    result.Message = $"An unexpected error occurred: {ex.Message}";
+                    result.Data = null;
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetDetailByCNR", ex.Message, ex.StackTrace, ex.Source, "EcourtService/EcourtServiceController/GetDetailByCNR");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+
+        }
+
+        //===API CIN  
+        [HttpGet]
+        [Route("SearchbyCaseNumberCIN")]
+        public async Task<ResponseWithoutPaginationModel> Search_by_Case_Number_CIN(string est_code, string case_type, string reg_no, string reg_year)
+        {
+            try
+            {
+                var result = new ResponseWithoutPaginationModel();
+                int attempt = 0;
+                const int MaxRetries = 3; // Max retries
+                const int RetryDelayMilliseconds = 1000; // Delay between retries
+
+                try
+                {
+                    while (attempt < MaxRetries)
+                    {
+                        attempt++;
+                        try
+                        {
+                            // Get Ecourt credentials
+                            var data = _Configuration.GetSection("Credentials:Ecourt").Get<EcourtCredentials>();
+
+                            // Get authentication token
+                            var tokenObject = await unitOfWork.EcourtService.GetAuthToken(data);
+
+                            // If token is valid
+                            if (!string.IsNullOrEmpty(Convert.ToString(tokenObject?.Data?.access_token)))
+                            {
+                                var authToken = tokenObject.Data.access_token;
+
+                                // Make the actual call to get details by CNR
+                                var apiResponse = await unitOfWork.EcourtService.Search_by_Case_Number_CIN(est_code, case_type, reg_no,reg_year, authToken, data);
+
+                                if (apiResponse != null)
+                                {
+                                    // Success response
+                                    result.Status = true;
+                                    result.Message = "Success";
+                                    result.Data = apiResponse;
+                                    return result;
+                                }
+                                else
+                                {
+                                    // If the API response is null, handle this case
+                                    result.Status = false;
+                                    result.Message = "Failed to retrieve details.";
+                                    result.Data = null;
+                                    return result;
+                                }
+                            }
+                            else
+                            {
+                                // If access token is not available
+                                result.Status = false;
+                                result.Message = tokenObject?.Data?.Error ?? "Failed to get access token.";
+                                result.Data = tokenObject?.Data;
+                                return result;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            await Task.Delay(RetryDelayMilliseconds); // Wait before retrying
+                        }
+                    }
+
+                    // After all retries are exhausted, return a failure message
+                    result.Status = false;
+                    result.Message = "You have reached the retry limit. Please try again later.";
+                    result.Data = null;
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    // Handle unexpected exceptions
+                    result.Status = false;
+                    result.Message = $"An unexpected error occurred: {ex.Message}";
+                    result.Data = null;
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetDetailByCNR", ex.Message, ex.StackTrace, ex.Source, "EcourtService/EcourtServiceController/GetDetailByCNR");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+
+        }
+
 
     }
 }
