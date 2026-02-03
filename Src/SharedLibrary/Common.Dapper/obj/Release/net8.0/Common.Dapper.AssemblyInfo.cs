@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Common.Dapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+251ea760c1af589a45d547419709705d6cd14917")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f015fe1f08fa8b76d5d887b8266f1ddab5a8f019")]
 [assembly: System.Reflection.AssemblyProductAttribute("Common.Dapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Common.Dapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

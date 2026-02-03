@@ -14,6 +14,7 @@ using Master.ServiceBus.CrimeClassificationService;
 using Master.ServiceBus.CrimeSubActService;
 using Master.ServiceBus.DesignationService;
 using Master.ServiceBus.FirStatusService;
+using Master.ServiceBus.JanPratinidhiService;
 using Master.ServiceBus.LevelService;
 using Master.ServiceBus.NewsService;
 using Master.ServiceBus.NodalOfficerService;
@@ -47,6 +48,7 @@ public static class ServiceExtensions
         services.AddTransient<ICrimeSubActServiceBus, CrimeSubActServiceBus>();
         services.AddTransient<IDesignationServiceBus, DesignationServiceBus>();
         services.AddTransient<IFirStatusServiceBus, FirStatusServiceBus>();
+        services.AddTransient<IJanPratinidhiServiceBus, JanPratinidhiServiceBus>();
         services.AddTransient<ILevelServiceBus, LevelServiceBus>();
         services.AddTransient<INewsServiceBus, NewsServiceBus>();
         services.AddTransient<INodalOfficerServiceBus, NodalOfficerServiceBus>();

@@ -7,11 +7,16 @@ namespace Case.Repository.DierRegistrations
     public interface IDierRegistrationsRepository
     {
         Task<ResponseModel> GetDierList(DierListFilterModel objModel);
-        Task<DierRegistrationsResponseModel> AddEditDierRegistrations(DierRegistrationsModel objModel, int UserId);
+        Task<ResponseWithoutPaginationModel> AddEditDierRegistrations(DierRegistrationsModel objModel, int UserId);
 
         Task<ResponseWithoutPaginationModel> GetDierAccused(long AccusedGroupNo);
         Task<ResponseWithoutPaginationModel> AddEditDierAccused(DierAccusedModel objModel, int UserId);
         Task<ResponseWithoutPaginationModel> DeleteDierAccused(long AccusedId, int UserId);
+
+        Task<ResponseWithoutPaginationModel> GetDierVictimWitness(long GroupNo);
+        Task<ResponseWithoutPaginationModel> AddEditDierVictimWitness(DierVictimWitnessModel objModel, int UserId);
+        Task<ResponseWithoutPaginationModel> DeleteDierVictimWitness(long Id, int UserId);
+
 
         Task<ResponseWithoutPaginationModel> GetDierVictim(long VictimGroupNo);
         Task<ResponseWithoutPaginationModel> AddEditDierVictim(DierVictimModel objModel, int UserId);

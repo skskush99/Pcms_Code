@@ -10,33 +10,32 @@
     public class DierListFilterModel
     {
         public string? CNRNo { get; set; }
+        public string? FIRNo { get; set; }
+        public int DistrictId { get; set; } = 0;
         public int OfficeId { get; set; } = 0;
         public int JCourtId { get; set; } = 0;
-        public int? FIRNo { get; set; }
-        public int DistrictId { get; set; } = 0;
         public string? SortBy { get; set; }
         public bool? IsSortByDesc { get; set; }
         public int PageNo { get; set; }
         public int PageSize { get; set; }
-        public int CaseType { get; set; } = 1;
     }
     public class DierRegistrationsModel
     {
-        public long DirRegId { get; set; }
+        public long? DirRegId { get; set; }
         public string? TitleOfCase { get; set; }
         public string? DierNo { get; set; }
         public string? CNRNo { get; set; }
         public string? FIRNo { get; set; }
-        public long FIRYear { get; set; }
-        public int PoliceStationId { get; set; }
-        public int CClassificationId { get; set; }
-        public int CrimeActId { get; set; }
-        public int CrimeActSubId { get; set; }
+        public long? FIRYear { get; set; }
+        public int? PoliceStationId { get; set; }
+        public int? CClassificationId { get; set; }
+        public int? CrimeActId { get; set; }
+        public int? CrimeActSubId { get; set; }
         public int FirStatusId { get; set; }
-        public long AccusedGroupNo { get; set; }
-        public long VictimGroupNo { get; set; }
-        public long WitnessGroupNo { get; set; }
-        public long InvestigationDtId { get; set; }
+        public long? AccusedGroupNo { get; set; }
+        public long? VictimGroupNo { get; set; }
+        public long? WitnessGroupNo { get; set; }
+        public long? InvestigationDtId { get; set; }
         public string? ChargeSheetNo { get; set; }
         public string? ChargeSheetDate { get; set; }
         public string? DateBeforeFillingCourt { get; set; }
@@ -69,6 +68,23 @@
         public long? ThanaId { get; set; }
         public int? FIRStatusId { get; set; }
     }
+
+    public class DierVictimWitnessModel
+    {
+        public long Id { get; set; }
+        public int IsVictimWitness { get; set; }
+        public long GroupNo { get; set; }
+        public string?  Name { get; set; }
+        public string? FatherName { get; set; }
+        public int? Gender { get; set; }
+        public string? Address { get; set; }
+        public string? MobileNo { get; set; }
+        public string? UIDNo { get; set; }
+        public long? DistrictId { get; set; }
+        public long? ThanaId { get; set; }
+        public int? Status { get; set; }
+    }
+
 
     public class DierVictimModel
     {

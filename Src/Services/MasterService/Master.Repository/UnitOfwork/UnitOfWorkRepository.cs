@@ -11,6 +11,7 @@ using Master.Repository.CrimeClassification;
 using Master.Repository.CrimeSubAct;
 using Master.Repository.Designation;
 using Master.Repository.FirStatus;
+using Master.Repository.JanPratinidhi;
 using Master.Repository.Level;
 using Master.Repository.News;
 using Master.Repository.NodalOfficer;
@@ -28,7 +29,7 @@ namespace Master.Repository.UnitOfwork;
 
 public class UnitOfWorkRepository(IRoles Roles, IUserLogin UserLogins, IMenu Menu, IAdminDepartment AdminDepartments, ICircularOrder CircularOrder, ICourtNames CourtNames, 
     ICourtPlaces CourtPlaces, ICourtTypes CourtTypes, ICrimeAct CrimeAct, ICrimeClassification CrimeClassification, ICrimeSubAct CrimeSubAct, IDesignation Designation, 
-    IFirStatus FirStatus, ILevel Level, INews News, INodalOfficer NodalOfficer, IOffices Offices, IPoliceThana PoliceThana, IRajMaster RajMaster, 
+    IFirStatus FirStatus, IJanPratinidhi JanPratinidhi, ILevel Level, INews News, INodalOfficer NodalOfficer, IOffices Offices, IPoliceThana PoliceThana, IRajMaster RajMaster, 
     IReqInformation ReqInformation, IState State, IUnitsDepartment UnitsDepartment, IUploadFilesRepository UploadFiles, IWebSiteRepository WebSite) : IUnitOfWorkRepository
 {
     public IRoles Roles { get; set; } = Roles;
@@ -44,6 +45,7 @@ public class UnitOfWorkRepository(IRoles Roles, IUserLogin UserLogins, IMenu Men
     public ICrimeSubAct CrimeSubAct { get; set; } = CrimeSubAct;
     public IDesignation Designation { get; set; } = Designation;
     public IFirStatus FirStatus { get; set; }= FirStatus; 
+    public IJanPratinidhi JanPratinidhi { get; set; } = JanPratinidhi;
     public ILevel Level { get; set; } = Level;
     public INews News { get; set; } = News;
     public INodalOfficer NodalOfficer { get; set; }= NodalOfficer;

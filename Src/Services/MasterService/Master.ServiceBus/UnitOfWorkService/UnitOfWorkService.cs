@@ -11,6 +11,7 @@ using Master.ServiceBus.CrimeClassificationService;
 using Master.ServiceBus.CrimeSubActService;
 using Master.ServiceBus.DesignationService;
 using Master.ServiceBus.FirStatusService;
+using Master.ServiceBus.JanPratinidhiService;
 using Master.ServiceBus.LevelService;
 using Master.ServiceBus.NewsService;
 using Master.ServiceBus.NodalOfficerService;
@@ -29,7 +30,7 @@ namespace Master.ServiceBus.UnitOfWork
     public class UnitOfWorkService(IRolesServiceBus Roles, IUserLoginServiceBus UserLogins, IMenuServiceBus Menu, IAdminDepartmentServiceBus AdminDepartmentServiceBus,
         ICircularOrderServiceBus CircularOrderServiceBus, ICourtNamesServiceBus CourtNamesServiceBus, ICourtPlacesServiceBus CourtPlacesServiceBus, 
         ICourtTypesServiceBus CourtTypesServiceBus, ICrimeActServiceBus CrimeActServiceBus, ICrimeClassificationServiceBus CrimeClassificationServiceBus, ICrimeSubActServiceBus CrimeSubActServiceBus, 
-        IDesignationServiceBus DesignationServiceBus, IFirStatusServiceBus FirStatusServiceBus, ILevelServiceBus LevelServiceBus, INewsServiceBus NewsServiceBus, 
+        IDesignationServiceBus DesignationServiceBus, IFirStatusServiceBus FirStatusServiceBus, IJanPratinidhiServiceBus JanPratinidhiServiceBus, ILevelServiceBus LevelServiceBus, INewsServiceBus NewsServiceBus, 
         INodalOfficerServiceBus NodalOfficerServiceBus, IOfficeServiceBus OfficeServiceBus, IRajMasterServiceBus RajMasterServiceBus, 
         IReqInformationServiceBus ReqInformationServiceBus, IStateServiceBus StateServiceBus, IUnitsDepartmentServiceBus UnitsDepartmentServiceBus, 
         IPoliceThanaServiceBus PoliceThanaServiceBus, IUploadFilesServiceBus UploadFiles, IWebSiteServiceBus WebSite) : IUnitOfWorkService
@@ -47,6 +48,7 @@ namespace Master.ServiceBus.UnitOfWork
         public ICrimeSubActServiceBus CrimeSubActServiceBus { get; set; } = CrimeSubActServiceBus;
         public IDesignationServiceBus DesignationServiceBus { get; set; } = DesignationServiceBus;
         public IFirStatusServiceBus FirStatusServiceBus { get; set; } = FirStatusServiceBus;
+        public IJanPratinidhiServiceBus JanPratinidhiServiceBus { get; set; } = JanPratinidhiServiceBus;    
         public ILevelServiceBus LevelServiceBus { get; set; } = LevelServiceBus;
         public INewsServiceBus NewsServiceBus { get; set; } = NewsServiceBus;
         public INodalOfficerServiceBus NodalOfficerServiceBus { get; set; }= NodalOfficerServiceBus;
