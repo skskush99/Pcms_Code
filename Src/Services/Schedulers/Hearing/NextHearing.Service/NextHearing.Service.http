@@ -1,6 +1,0 @@
-@NextHearing.Service_HostAddress = http://localhost:5089
-
-GET {{NextHearing.Service_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

@@ -6,7 +6,12 @@ using Master.Repository.CircularOrder;
 using Master.Repository.CourtName;
 using Master.Repository.CourtPlaces;
 using Master.Repository.CourtTypes;
+using Master.Repository.CrimeAct;
+using Master.Repository.CrimeSubAct;
+using Master.Repository.CrimeClassification;
 using Master.Repository.Designation;
+using Master.Repository.FirStatus;
+using Master.Repository.JanPratinidhi;
 using Master.Repository.Level;
 using Master.Repository.News;
 using Master.Repository.NodalOfficer;
@@ -32,7 +37,12 @@ public interface IUnitOfWorkRepository
     ICourtNames CourtNames { get; set; }
     ICourtPlaces CourtPlaces { get; set; }
     ICourtTypes CourtTypes { get; set; }
+    ICrimeAct CrimeAct { get; set; }
+    ICrimeSubAct CrimeSubAct { get; set; }
+    ICrimeClassification CrimeClassification { get; set; }
     IDesignation Designation { get; set; }
+    IFirStatus FirStatus { get; set; }
+    IJanPratinidhi JanPratinidhi { get; set; }
     ILevel Level { get; set; }
     INews News { get; set; }
     INodalOfficer NodalOfficer { get; set; }

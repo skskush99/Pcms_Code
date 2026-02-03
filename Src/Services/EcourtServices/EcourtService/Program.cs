@@ -1,5 +1,6 @@
 namespace EcourtService;
 
+using Common.Repository;
 using EcourtService.Middleware;
 using EcourtServiceBus;
 using System.Reflection;
@@ -24,7 +25,7 @@ public class Program
         //builder.Services.AddSwaggerGen();
 
         builder.Services.AddServiceInfrastructure(builder.Configuration);
-
+        builder.Services.AddScoped<LogsService>();
         var app = builder.Build();
 
         app.UseCors(builder =>
@@ -32,6 +33,18 @@ public class Program
             .AllowAnyOrigin()//WithOrigins("http://example.com", "http://example2.com")
             .AllowAnyMethod()
             .AllowAnyHeader());
+        // Configure the HTTP request pipeline.   // 
+
+        //builder.Services.AddCors(options =>
+        //{
+        //    options.AddDefaultPolicy(builder =>
+        //    {
+        //        //builder.AllowAnyHeader()
+        //        //    .WithMethods("POST", "GET")
+        //        //    .WithOrigins("http://10.70.234.9", "http://10.70.234.9:80", "http://localhost:4200");
+        //        builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+        //    });
+        //});
 
         // Configure the HTTP request pipeline.
 
