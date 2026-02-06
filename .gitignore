@@ -438,3 +438,9 @@ FodyWeavers.xsd
 /Src/SharedLibrary/Core/obj/Debug/net8.0/Core.dll
 /Src/SharedLibrary/Core/obj/Debug/net8.0/Core.pdb
 /Src/SharedLibrary/Core/obj/Debug/net8.0/refint/Core.dll
+/Src/SharedLibrary/Common.Dapper/obj
+/Src/SharedLibrary/Common.Dapper/bin
+/Src/SharedLibrary/Core/obj
+/Src/SharedLibrary/Core/bin
+/Src/SharedLibrary/Core.Insfrastructure/bin
+/Src/SharedLibrary/Core.Insfrastructure/obj
