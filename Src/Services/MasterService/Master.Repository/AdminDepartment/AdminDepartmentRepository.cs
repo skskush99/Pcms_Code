@@ -24,7 +24,6 @@ namespace Master.Repository.AdminDepartment
                 {
                     var parmeters = new DynamicParameters();
                     parmeters.Add("@Action", "GetAdminDepartment");
-                    parmeters.Add("@MajorMinor", objModel.MajorMinor == null ? "" : objModel.MajorMinor);
                     parmeters.Add("@PageNo", objModel.PageNo);
                     parmeters.Add("@Pagesize", objModel.PageSize);
                     parmeters.Add("@SortBy", objModel.SortBy == null ? "" : objModel.SortBy);
@@ -96,8 +95,6 @@ namespace Master.Repository.AdminDepartment
                     parmeters.Add("@AdmDeptId", objModel.AdmDeptId);
                     parmeters.Add("@AdmDeptName", objModel.AdmDeptName);
                     parmeters.Add("@AdmDeptShortName", objModel.AdmDeptShortName);
-                    parmeters.Add("@MajorMinor", objModel.MajorMinor);
-                    //parmeters.Add("@Active", objModel.Active == true ? 1 : 0);
                     parmeters.Add("@CreatedBy", UserId);
                     parmeters.Add("@UpdatedBy", UserId);
                     var objData = await Con.QueryAsync<ResponseModel>("spMstAdmDep", parmeters, commandType: CommandType.StoredProcedure);
