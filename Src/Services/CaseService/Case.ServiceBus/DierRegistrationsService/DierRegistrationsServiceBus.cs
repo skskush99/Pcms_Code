@@ -26,7 +26,59 @@ namespace Case.ServiceBus.DierRegistrationsService
             }
         }
 
-        public async Task<ResponseWithoutPaginationModel> AddEditDierRegistrations(DierRegistrationsModel objModel, int UserId)
+        public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps1(DierRegistrationsSteps1Model objModel, int UserId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.AddEditDierRegistrationsSteps1(objModel, UserId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps2(DierRegistrationsSteps2Model objModel, int UserId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.AddEditDierRegistrationsSteps2(objModel, UserId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps3(DierRegistrationsSteps3Model objModel, int UserId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.AddEditDierRegistrationsSteps3(objModel, UserId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps4(DierRegistrationsSteps4Model objModel, int UserId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.AddEditDierRegistrationsSteps4(objModel, UserId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<ResponseWithoutPaginationModel> AddEditDierRegistrations(DierRegistrations_OldModel objModel, int UserId)
         {
             try
             {

@@ -2778,7 +2778,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/CaseService/Uploads/DierRegistrations/{everything}",
+      "UpstreamPathTemplate": "/PcmsCase/Uploads/DierRegistrations/{everything}",
       "UpstreamHttpMethod": [
         "GET"
       ],
@@ -2792,7 +2792,7 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/CaseService/DierRegistrations/DierList",
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/DierList",
       "UpstreamHttpMethod": [
         "POST"
       ],
@@ -2809,7 +2809,75 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/CaseService/DierRegistrations/AddEdit",
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/AddEditDierSteps1",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/DierRegistrations/AddEditDierRegistrationsSteps1",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/AddEditDierSteps2",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/DierRegistrations/AddEditDierRegistrationsSteps2",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/AddEditDierSteps3",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/DierRegistrations/AddEditDierRegistrationsSteps3",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/AddEditDierSteps4",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/DierRegistrations/AddEditDierRegistrationsSteps4",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/AddEdit",
       "UpstreamHttpMethod": [
         "POST"
       ],
@@ -2826,7 +2894,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/CaseService/DierRegistrations/GetAccused",
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/GetAccused",
       "UpstreamHttpMethod": [
         "GET"
       ],
@@ -2843,7 +2911,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/CaseService/DierRegistrations/AddEditAccused",
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/AddEditAccused",
       "UpstreamHttpMethod": [
         "POST"
       ],
@@ -2860,7 +2928,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/CaseService/DierRegistrations/DeleteAccused",
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/DeleteAccused",
       "UpstreamHttpMethod": [
         "POST"
       ],
@@ -2877,7 +2945,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/CaseService/DierRegistrations/GetVictimWitness",
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/GetVictimWitness",
       "UpstreamHttpMethod": [
         "GET"
       ],
@@ -2894,7 +2962,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/CaseService/DierRegistrations/AddEditVictimWitness",
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/AddEditVictimWitness",
       "UpstreamHttpMethod": [
         "POST"
       ],
@@ -2911,7 +2979,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/CaseService/DierRegistrations/DeleteVictimWitness",
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/DeleteVictimWitness",
       "UpstreamHttpMethod": [
         "POST"
       ],
@@ -2928,7 +2996,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/CaseService/DierRegistrations/GetVictim",
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/GetVictim",
       "UpstreamHttpMethod": [
         "GET"
       ],
@@ -2945,7 +3013,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/CaseService/DierRegistrations/AddEditVictim",
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/AddEditVictim",
       "UpstreamHttpMethod": [
         "POST"
       ],
@@ -2962,7 +3030,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/CaseService/DierRegistrations/DeleteVictim",
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/DeleteVictim",
       "UpstreamHttpMethod": [
         "POST"
       ],
@@ -2979,7 +3047,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/CaseService/DierRegistrations/GetWitness",
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/GetWitness",
       "UpstreamHttpMethod": [
         "GET"
       ],
@@ -2996,7 +3064,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/CaseService/DierRegistrations/AddEditWitness",
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/AddEditWitness",
       "UpstreamHttpMethod": [
         "POST"
       ],
@@ -3013,7 +3081,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/CaseService/DierRegistrations/DeleteWitness",
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/DeleteWitness",
       "UpstreamHttpMethod": [
         "POST"
       ],
@@ -3030,7 +3098,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/CaseService/DierRegistrations/GetInvestigation",
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/GetInvestigation",
       "UpstreamHttpMethod": [
         "GET"
       ],
@@ -3047,7 +3115,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/CaseService/DierRegistrations/AddEditInvestigation",
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/AddEditInvestigation",
       "UpstreamHttpMethod": [
         "POST"
       ],
@@ -3064,7 +3132,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/CaseService/DierRegistrations/DeleteInvestigation",
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/DeleteInvestigation",
       "UpstreamHttpMethod": [
         "POST"
       ],
@@ -3081,7 +3149,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/CaseService/DierRegistrations/GetComplaintPerson",
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/GetComplaintPerson",
       "UpstreamHttpMethod": [
         "GET"
       ],
@@ -3098,7 +3166,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/CaseService/DierRegistrations/AddEditComplaintPerson",
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/AddEditComplaintPerson",
       "UpstreamHttpMethod": [
         "POST"
       ],
@@ -3115,7 +3183,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/CaseService/DierRegistrations/DeleteComplaintPerson",
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/DeleteComplaintPerson",
       "UpstreamHttpMethod": [
         "POST"
       ],
