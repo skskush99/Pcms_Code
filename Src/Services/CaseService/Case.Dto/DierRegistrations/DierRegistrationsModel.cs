@@ -19,7 +19,99 @@
         public int PageNo { get; set; }
         public int PageSize { get; set; }
     }
+    public class DierRegistrationsSteps1Model
+    {
+        public long? DirRegId { get; set; }
+        public int Steps { get; set; }
+        public int? DistrictId { get; set; }
+        public int? OfficeId { get; set; }
+        public int? JCourtId { get; set; }
+        public int? RegisterType { get; set; }
+        public int? SearchCaseVia { get; set; }
+        public string? DierNo { get; set; }
+        public long? PoliceStationId { get; set; }
+        public string? CNRNo { get; set; }
+        public string? FIRNo { get; set; }
+        public long? FIRYear { get; set; }
+    }
+
+    public class DierRegistrationsSteps2Model
+    {
+        public long? DirRegId { get; set; }
+        public int Steps { get; set; }
+        public string? FIRNo { get; set; }
+        public string? FIRDt { get; set; }
+        public string? PSName { get; set; }
+        public string? PSCode { get; set; }
+        public long? InvestGroupNo { get; set; }
+        public string? ChargeSheetNo { get; set; }
+        public string? ChargeSheetDate { get; set; }
+        public string? DateBeforeFillingCourt { get; set; }
+        public string? InvestigatingNameRank { get; set; }
+        public string? TitleOfCase { get; set; }
+        public int? CClassificationId { get; set; }
+        public int? CrimeActId { get; set; }
+        public int? CrimeActSubId { get; set; }
+    }
+
+    public class DierRegistrationsSteps3Model
+    {
+        public long? DirRegId { get; set; }
+        public int Steps { get; set; }
+        public int? IsAccusedType { get; set; }
+        public long? AccusedGroupNo { get; set; }
+        public long? VictimWitnessGroupNo { get; set; }
+    }
+
+    public class DierRegistrationsSteps4Model
+    {
+        public long? DirRegId { get; set; }
+        public int Steps { get; set; }
+        public string? Remarks { get; set; }
+        public string? ChargeSheetDocs { get; set; }
+        public string? FullChargeSheetDocs { get; set; }
+        public string? OtherDocs { get; set; }
+        public string? CaseStatus { get; set; }
+
+    }
+
     public class DierRegistrationsModel
+    {
+        public long? DirRegId { get; set; }
+        public int Steps { get; set; }
+        public int? DistrictId { get; set; }
+        public int? OfficeId { get; set; }
+        public int? JCourtId { get; set; }
+        public int? RegisterType { get; set; }
+        public int? SearchCaseVia { get; set; }
+        public string? DierNo { get; set; }
+        public string? CNRNo { get; set; }
+        public string? FIRNo { get; set; }
+        public long? FIRYear { get; set; }
+        public string? FIRDt { get; set; }
+        public int FirStatusId { get; set; }
+        public string? PSName { get; set; }
+        public string? PSCode { get; set; }
+        public long? InvestGroupNo { get; set; }
+        public string? ChargeSheetNo { get; set; }
+        public string? ChargeSheetDate { get; set; }
+        public string? DateBeforeFillingCourt { get; set; }
+        public string? InvestigatingNameRank { get; set; }
+        public string? TitleOfCase { get; set; }
+        public int? CClassificationId { get; set; }
+        public int? CrimeActId { get; set; }
+        public int? CrimeActSubId { get; set; }
+        public int? IsAccusedType { get; set; }
+        public long? AccusedGroupNo { get; set; }
+        public long? VictimWitnessGroupNo { get; set; }
+        public string? Remarks { get; set; }
+        public string? ChargeSheetDocs { get; set; }
+        public string? FullChargeSheetDocs { get; set; }
+        public string? OtherDocs { get; set; }
+        public string? CaseStatus { get; set; }
+    }  
+
+    public class DierRegistrations_OldModel
     {
         public long? DirRegId { get; set; }
         public string? TitleOfCase { get; set; }
@@ -84,7 +176,6 @@
         public long? ThanaId { get; set; }
         public int? Status { get; set; }
     }
-
 
     public class DierVictimModel
     {

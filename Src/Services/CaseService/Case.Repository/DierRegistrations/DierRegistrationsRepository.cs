@@ -59,7 +59,161 @@ namespace Case.Repository.DierRegistrations
             }
         }
 
-        public async Task<ResponseWithoutPaginationModel> AddEditDierRegistrations(DierRegistrationsModel objModel, int UserId)
+        public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps1(DierRegistrationsSteps1Model objModel, int UserId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+
+                    if (objModel.DirRegId > 0)
+                    {
+                        parmeters.Add("@Action", "DierEdit1");
+                        parmeters.Add("@UpdatedBy", UserId);
+                        parmeters.Add("@DirRegId", objModel.DirRegId);
+                    }
+                    else
+                    {
+                        parmeters.Add("@Action", "DierAdd1");
+                        parmeters.Add("@CreatedBy", UserId);
+                    }
+
+                    parmeters.Add("@Steps", objModel.Steps);
+                    parmeters.Add("@DistrictId", objModel.DistrictId);
+                    parmeters.Add("@OfficeId", objModel.OfficeId);
+                    parmeters.Add("@JCourtId", objModel.JCourtId);
+                    parmeters.Add("@RegisterType", objModel.RegisterType);
+                    parmeters.Add("@SearchCaseVia", objModel.SearchCaseVia);
+                    parmeters.Add("@DierNo", objModel.DierNo == null ? "" : objModel.DierNo);
+                    parmeters.Add("@PoliceStationId", objModel.PoliceStationId); 
+                    parmeters.Add("@CNRNo", objModel.CNRNo == null ? "" : objModel.CNRNo);                    
+                    parmeters.Add("@FIRNo", objModel.FIRNo == null ? "" : objModel.FIRNo);
+                    parmeters.Add("@FIRYear", objModel.FIRYear);
+                    var objData = await Con.QueryAsync<DierRegistrationsResponseModel>("spTrn_DierRegistrations", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objResut = objData.FirstOrDefault();
+                    DisposeCurrentSqlConnection();
+                    return objResut != null ? objResut : new DierRegistrationsResponseModel();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "AddEditDierRegistrationsSteps1", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/AddEditDierRegistrationsSteps1");
+                return new DierRegistrationsResponseModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps2(DierRegistrationsSteps2Model objModel, int UserId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+                    parmeters.Add("@Action", "DierEdit2");
+                    parmeters.Add("@UpdatedBy", UserId);
+                    parmeters.Add("@DirRegId", objModel.DirRegId);
+                    parmeters.Add("@Steps", objModel.Steps);
+                    parmeters.Add("@FIRNo", objModel.FIRNo == null ? "" : objModel.FIRNo);
+                    parmeters.Add("@FIRDt", objModel.FIRDt);
+                    parmeters.Add("@PSName", objModel.PSName);
+                    parmeters.Add("@PSCode", objModel.PSCode);
+                    parmeters.Add("@InvestGroupNo", objModel.InvestGroupNo);
+                    parmeters.Add("@ChargeSheetNo", objModel.ChargeSheetNo);
+                    parmeters.Add("@ChargeSheetDate", objModel.ChargeSheetDate);
+                    parmeters.Add("@DateBeforeFillingCourt", objModel.DateBeforeFillingCourt);
+                    parmeters.Add("@InvestigatingNameRank", objModel.InvestigatingNameRank);
+                    parmeters.Add("@TitleOfCase", objModel.TitleOfCase);
+                    parmeters.Add("@CClassificationId", objModel.CClassificationId);
+                    parmeters.Add("@CrimeActId", objModel.CrimeActId);
+                    parmeters.Add("@CrimeActSubId", objModel.CrimeActSubId);
+                    var objData = await Con.QueryAsync<DierRegistrationsResponseModel>("spTrn_DierRegistrations", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objResut = objData.FirstOrDefault();
+                    DisposeCurrentSqlConnection();
+                    return objResut != null ? objResut : new DierRegistrationsResponseModel();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "AddEditDierRegistrationsSteps2", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/AddEditDierRegistrationsSteps2");
+                return new DierRegistrationsResponseModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps3(DierRegistrationsSteps3Model objModel, int UserId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+                    parmeters.Add("@Action", "DierEdit3");
+                    parmeters.Add("@UpdatedBy", UserId);
+                    parmeters.Add("@DirRegId", objModel.DirRegId);
+                    parmeters.Add("@Steps", objModel.Steps);
+                    parmeters.Add("@IsAccusedType", objModel.IsAccusedType);
+                    parmeters.Add("@AccusedGroupNo", objModel.AccusedGroupNo);
+                    parmeters.Add("@VictimWitnessGroupNo", objModel.VictimWitnessGroupNo);
+                    var objData = await Con.QueryAsync<DierRegistrationsResponseModel>("spTrn_DierRegistrations", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objResut = objData.FirstOrDefault();
+                    DisposeCurrentSqlConnection();
+                    return objResut != null ? objResut : new DierRegistrationsResponseModel();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "AddEditDierRegistrationsSteps3", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/AddEditDierRegistrationsSteps3");
+                return new DierRegistrationsResponseModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps4(DierRegistrationsSteps4Model objModel, int UserId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+
+                    parmeters.Add("@Action", "DierEdit4");
+                    parmeters.Add("@UpdatedBy", UserId);
+                    parmeters.Add("@DirRegId", objModel.DirRegId);
+                    parmeters.Add("@Steps", objModel.Steps);
+                    parmeters.Add("@Remarks", objModel.Remarks == null ? "" : objModel.Remarks);
+                    parmeters.Add("@ChargeSheetDocs", objModel.ChargeSheetDocs == null ? "" : objModel.ChargeSheetDocs);
+                    parmeters.Add("@FullChargeSheetDocs", objModel.FullChargeSheetDocs == null ? "" : objModel.FullChargeSheetDocs);
+                    parmeters.Add("@OtherDocs", objModel.OtherDocs == null ? "" : objModel.OtherDocs);
+                    parmeters.Add("@CaseStatus", objModel.CaseStatus == null ? "" : objModel.CaseStatus);
+                    var objData = await Con.QueryAsync<DierRegistrationsResponseModel>("spTrn_DierRegistrations", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objResut = objData.FirstOrDefault();
+                    DisposeCurrentSqlConnection();
+                    return objResut != null ? objResut : new DierRegistrationsResponseModel();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "AddEditDierRegistrationsSteps4", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/AddEditDierRegistrationsSteps4");
+                return new DierRegistrationsResponseModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        public async Task<ResponseWithoutPaginationModel> AddEditDierRegistrations(DierRegistrations_OldModel objModel, int UserId)
         {
             try
             {
