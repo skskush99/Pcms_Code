@@ -62,7 +62,7 @@ namespace Case.ServiceBus.ComplaintRegisterService
                 throw;
             }
         }
-        public async Task<ComplaintRegisterResponseModel> DeletePersonAgainstDetails(int PersonAgainstId, int UserId)
+        public async Task<ComplaintRegisterResponseModel> DeletePersonAgainstDetails(long PersonAgainstId, int UserId)
         {
             try
             {
