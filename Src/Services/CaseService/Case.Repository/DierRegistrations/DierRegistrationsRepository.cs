@@ -927,5 +927,112 @@ namespace Case.Repository.DierRegistrations
         }
 
 
+        public async Task<ResponseWithoutPaginationModel> GetOffenceClassification(long OffenceClassifGroupNo)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+                    parmeters.Add("@Action", "GetOffence");
+                    parmeters.Add("@OffenceClassifGroupNo", OffenceClassifGroupNo);
+                    var objResult = await Con.QueryAsync("spTrn_OffenceClassification", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+
+                    ResponseWithoutPaginationModel objResut = new()
+                    {
+                        Status = true,
+                        Message = "",
+                        Data = objResult,
+                    };
+                    DisposeCurrentSqlConnection();
+
+                    return objResut;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetOffenceClassification", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/GetOffenceClassification");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        public async Task<ResponseWithoutPaginationModel> AddEditOffenceClassification(OffenceClassificationModel objModel, int UserId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+
+                    if (objModel.OffenceClassifId > 0)
+                    {
+                        parmeters.Add("@Action", "EditOffence");
+                        parmeters.Add("@UpdatedBy", UserId);
+                    }
+                    else
+                    {
+                        parmeters.Add("@Action", "AddOffence");
+                        parmeters.Add("@CreatedBy", UserId);
+                    }
+                    parmeters.Add("@OffenceClassifId", objModel.OffenceClassifId);
+                    parmeters.Add("@OffenceClassifGroupNo", objModel.OffenceClassifGroupNo);
+                    parmeters.Add("@IsCaseComplaintReg", objModel.IsCaseComplaintReg);
+                    parmeters.Add("@ClassificationID", objModel.ClassificationID);
+                    parmeters.Add("@ClassificationName", objModel.ClassificationName);
+                    parmeters.Add("@ActsID", objModel.ActsID);
+                    parmeters.Add("@ActsName", objModel.ActsName);
+                    parmeters.Add("@SectionsID", objModel.SectionsID);
+                    parmeters.Add("@SectionsName", objModel.SectionsName);
+
+                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_OffenceClassification", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objResult = objData.FirstOrDefault();
+                    DisposeCurrentSqlConnection();
+                    return objResult != null ? objResult : new ResponseWithoutPaginationModel();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "AddEditOffenceClassification", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/AddEditOffenceClassification");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        public async Task<ResponseWithoutPaginationModel> DeleteOffenceClassification(long OffenceClassifId, int UserId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+                    parmeters.Add("@Action", "DeleteOffence");
+                    parmeters.Add("@DeletedBy", UserId);
+                    parmeters.Add("@OffenceClassifId", OffenceClassifId);
+
+                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_OffenceClassification", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objResut = objData.FirstOrDefault();
+                    DisposeCurrentSqlConnection();
+                    return objResut != null ? objResut : new ResponseWithoutPaginationModel();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "DeleteOffenceClassification", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/DeleteOffenceClassification");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+
     }
 }
