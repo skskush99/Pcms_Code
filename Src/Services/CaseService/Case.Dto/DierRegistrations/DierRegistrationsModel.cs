@@ -235,6 +235,19 @@
         public string? Institution { get; set; }
     }
 
+    public class OffenceClassificationModel
+    {
+        public long? OffenceClassifId { get; set; }
+        public long? OffenceClassifGroupNo { get; set; }
+        public int IsCaseComplaintReg { get; set; }
+        public long ClassificationID { get; set; }
+        public string ClassificationName { get; set; }
+        public long ActsID { get; set; }
+        public string ActsName { get; set; }
+        public long SectionsID { get; set; }
+        public string SectionsName { get; set; }
+    }
+
 
 
 }

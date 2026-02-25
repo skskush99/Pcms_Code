@@ -2778,6 +2778,105 @@
       }
     },
     {
+      "UpstreamPathTemplate": "/PcmsCase/Uploads/ComplaintRegister/{everything}",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/Uploads/ComplaintRegister/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsCase/ComplaintRegister/ComplaintList",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/ComplaintRegister/GetComplaintList",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsCase/ComplaintRegister/AddEditComplaint",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/ComplaintRegister/AddEditComplaintRegister",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsCase/ComplaintRegister/GetPersonAgainst",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/ComplaintRegister/GetPersonAgainstDetails",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsCase/ComplaintRegister/AddEditPersonAgainst",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/ComplaintRegister/AddEditPersonAgainstDetails",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsCase/ComplaintRegister/DeletePersonAgainst",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/ComplaintRegister/DeletePersonAgainstDetails",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
       "UpstreamPathTemplate": "/PcmsCase/Uploads/DierRegistrations/{everything}",
       "UpstreamHttpMethod": [
         "GET"
@@ -3188,6 +3287,57 @@
         "POST"
       ],
       "DownstreamPathTemplate": "/PcmsCaseService/api/DierRegistrations/DeleteDierComplaintAgainstPerson",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/GetOffence",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/DierRegistrations/GetOffenceClassification",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/AddEditOffence",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/DierRegistrations/AddEditOffenceClassification",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/DeleteOffence",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/DierRegistrations/DeleteOffenceClassification",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
