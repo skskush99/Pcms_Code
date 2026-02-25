@@ -230,7 +230,7 @@ namespace CaseService.Controllers
             }
         }
         [HttpPost]
-        public async Task<ComplaintRegisterResponseModel> AddEditPersonAgainstDetails(PersonAgainstDetailsModel objModel, int UserId)
+        public async Task<ComplaintRegisterResponseModel> AddEditPersonAgainstDetails(PersonAgainstDetailsModel objModel)
         {
             try
             {
@@ -247,7 +247,7 @@ namespace CaseService.Controllers
             }
         }
         [HttpPost]
-        public async Task<ComplaintRegisterResponseModel> DeletePersonAgainstDetails(int PersonAgainstId, int UserId)
+        public async Task<ComplaintRegisterResponseModel> DeletePersonAgainstDetails(long PersonAgainstId)
         {
             try
             {

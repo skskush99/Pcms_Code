@@ -12,7 +12,7 @@ namespace Case.Repository.ComplaintRegister
 
         Task<ResponseWithoutPaginationModel> GetPersonAgainstDetails(long ComplaintRegId);
         Task<ComplaintRegisterResponseModel> AddEditPersonAgainstDetails(PersonAgainstDetailsModel objModel, int UserId);
-        Task<ComplaintRegisterResponseModel> DeletePersonAgainstDetails(int PersonAgainstId, int UserId);
+        Task<ComplaintRegisterResponseModel> DeletePersonAgainstDetails(long PersonAgainstId, int UserId);
     }
 
 
