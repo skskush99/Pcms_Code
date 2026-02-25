@@ -316,6 +316,45 @@ namespace Case.ServiceBus.DierRegistrationsService
             }
         }
 
+        public async Task<ResponseWithoutPaginationModel> GetOffenceClassification(long OffenceClassifGroupNo)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.GetOffenceClassification(OffenceClassifGroupNo);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<ResponseWithoutPaginationModel> AddEditOffenceClassification(OffenceClassificationModel objModel, int UserId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.AddEditOffenceClassification(objModel, UserId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<ResponseWithoutPaginationModel> DeleteOffenceClassification(long OffenceClassifId, int UserId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.DeleteOffenceClassification(OffenceClassifId, UserId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
 
 
     }

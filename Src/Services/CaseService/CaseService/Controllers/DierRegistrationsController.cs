@@ -772,5 +772,59 @@ namespace CaseService.Controllers
         }
 
 
+        [HttpGet]
+        public async Task<ResponseWithoutPaginationModel> GetOffenceClassification(long OffenceClassifGroupNo)
+        {
+            try
+            {
+                return await unitOfWork.DierRegistrationsService.GetOffenceClassification(OffenceClassifGroupNo);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetOffenceClassification", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/GetOffenceClassification");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        [HttpPost]
+        public async Task<ResponseWithoutPaginationModel> AddEditOffenceClassification(OffenceClassificationModel objModel)
+        {
+            try
+            {
+                return await unitOfWork.DierRegistrationsService.AddEditOffenceClassification(objModel, UserSession.Current.UserId);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "AddEditOffenceClassification", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/AddEditOffenceClassification");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        [HttpPost]
+        public async Task<ResponseWithoutPaginationModel> DeleteOffenceClassification(long OffenceClassifId)
+        {
+            try
+            {
+                return await unitOfWork.DierRegistrationsService.DeleteOffenceClassification(OffenceClassifId, UserSession.Current.UserId);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "DeleteOffenceClassification", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/DeleteOffenceClassification");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
     }
 }
