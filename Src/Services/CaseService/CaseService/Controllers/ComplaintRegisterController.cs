@@ -247,7 +247,7 @@ namespace CaseService.Controllers
             }
         }
         [HttpPost]
-        public async Task<ComplaintRegisterResponseModel> DeletePersonAgainstDetails(int PersonAgainstId)
+        public async Task<ComplaintRegisterResponseModel> DeletePersonAgainstDetails(long PersonAgainstId)
         {
             try
             {

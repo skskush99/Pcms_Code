@@ -40,7 +40,6 @@ namespace Case.Repository.ComplaintRegister
                         Pagination = objResult.Read<PaginationModel>()
                     };
                     DisposeCurrentSqlConnection();
-
                     return objResut;
                 }
             }
@@ -89,32 +88,17 @@ namespace Case.Repository.ComplaintRegister
                     parameters.Add("@IsDeclaration", objModel.IsDeclaration);
                     parameters.Add("@CaseStatus", objModel.CaseStatus);
                     parameters.Add("@PersonAgainstId", objModel.PersonAgainstId);
+                    parameters.Add("@IsCognizance", objModel.IsCognizance);
 
-                    var objData = await Con.QueryAsync<ComplaintRegisterResponseModel>(
-                        "spTrn_ComplaintRegister",
-                        parameters,
-                        commandTimeout: 300,
-                        commandType: CommandType.StoredProcedure
-                    );
-
+                    var objData = await Con.QueryAsync<ComplaintRegisterResponseModel>("spTrn_ComplaintRegister",parameters,commandTimeout: 300,commandType: CommandType.StoredProcedure);
                     var objResult = objData.FirstOrDefault();
-
                     DisposeCurrentSqlConnection();
-
                     return objResult ?? new ComplaintRegisterResponseModel();
                 }
             }
             catch (Exception ex)
             {
-                _logsService.Logs(
-                    "Error",
-                    "AddEditComplaintRegister",
-                    ex.Message,
-                    ex.StackTrace,
-                    ex.Source,
-                    "CaseService/Case.Repository/ComplaintRegisterRepository/AddEditComplaintRegister"
-                );
-
+                _logsService.Logs("Error","AddEditComplaintRegister",ex.Message,ex.StackTrace,ex.Source,"CaseService/Case.Repository/ComplaintRegisterRepository/AddEditComplaintRegister");
                 return new ComplaintRegisterResponseModel()
                 {
                     Status = false,
@@ -142,7 +126,6 @@ namespace Case.Repository.ComplaintRegister
                         Data = objResult,
                     };
                     DisposeCurrentSqlConnection();
-
                     return objResut;
                 }
             }
@@ -176,22 +159,14 @@ namespace Case.Repository.ComplaintRegister
                         parameters.Add("@Action", "PersonAgainstAdd");
                         parameters.Add("@CreatedBy", UserId);
                     }
-
                     parameters.Add("@ComplaintRegId", objModel.ComplaintRegId);
                     parameters.Add("@Name", objModel.Name);
                     parameters.Add("@Address", objModel.Address);
                     parameters.Add("@Designation", objModel.Designation);
                     parameters.Add("@Institution", objModel.Institution);
 
-                    var objData = await Con.QueryAsync<ComplaintRegisterResponseModel>(
-                        "spTrn_PersonAgainstDetails",
-                        parameters,
-                        commandTimeout: 300,
-                        commandType: CommandType.StoredProcedure
-                    );
-
+                    var objData = await Con.QueryAsync<ComplaintRegisterResponseModel>("spTrn_PersonAgainstDetails", parameters,commandTimeout: 300,commandType: CommandType.StoredProcedure);
                     var result = objData.FirstOrDefault();
-
                     DisposeCurrentSqlConnection();
 
                     return result ?? new ComplaintRegisterResponseModel();
@@ -199,14 +174,7 @@ namespace Case.Repository.ComplaintRegister
             }
             catch (Exception ex)
             {
-                _logsService.Logs(
-                    "Error",
-                    "AddEditPersonAgainstDetails",
-                    ex.Message,
-                    ex.StackTrace,
-                    ex.Source,
-                    "CaseService/Case.Repository/ComplaintRegisterRepository/AddEditPersonAgainstDetails"
-                );
+                _logsService.Logs("Error","AddEditPersonAgainstDetails",ex.Message,ex.StackTrace,ex.Source,"CaseService/Case.Repository/ComplaintRegisterRepository/AddEditPersonAgainstDetails");
 
                 return new ComplaintRegisterResponseModel()
                 {
@@ -217,7 +185,7 @@ namespace Case.Repository.ComplaintRegister
         }
 
 
-        public async Task<ComplaintRegisterResponseModel> DeletePersonAgainstDetails(int PersonAgainstId, int UserId)
+        public async Task<ComplaintRegisterResponseModel> DeletePersonAgainstDetails(long PersonAgainstId, int UserId)
         {
             try
             {
@@ -229,31 +197,15 @@ namespace Case.Repository.ComplaintRegister
                     parameters.Add("@DeletedBy", UserId);
                     parameters.Add("@PersonAgainstId", PersonAgainstId);
 
-                    var objData = await Con.QueryAsync<ComplaintRegisterResponseModel>(
-                        "spTrn_PersonAgainstDetails",
-                        parameters,
-                        commandTimeout: 300,
-                        commandType: CommandType.StoredProcedure
-                    );
-
+                    var objData = await Con.QueryAsync<ComplaintRegisterResponseModel>("spTrn_PersonAgainstDetails",parameters,commandTimeout: 300,commandType: CommandType.StoredProcedure);
                     var objResult = objData.FirstOrDefault();
-
                     DisposeCurrentSqlConnection();
-
                     return objResult ?? new ComplaintRegisterResponseModel();
                 }
             }
             catch (Exception ex)
             {
-                _logsService.Logs(
-                    "Error",
-                    "DeletePersonAgainstDetails",
-                    ex.Message,
-                    ex.StackTrace,
-                    ex.Source,
-                    "CaseService/Case.Repository/ComplaintRegisterRepository/DeletePersonAgainstDetails"
-                );
-
+                _logsService.Logs("Error","DeletePersonAgainstDetails",ex.Message,ex.StackTrace,ex.Source,"CaseService/Case.Repository/ComplaintRegisterRepository/DeletePersonAgainstDetails");
                 return new ComplaintRegisterResponseModel()
                 {
                     Status = false,
