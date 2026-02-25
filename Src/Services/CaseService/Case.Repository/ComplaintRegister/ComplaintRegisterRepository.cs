@@ -88,6 +88,7 @@ namespace Case.Repository.ComplaintRegister
                     parameters.Add("@OtherDocs", objModel.OtherDocs ?? "");
                     parameters.Add("@IsDeclaration", objModel.IsDeclaration);
                     parameters.Add("@CaseStatus", objModel.CaseStatus);
+                    parameters.Add("@PersonAgainstId", objModel.PersonAgainstId);
 
                     var objData = await Con.QueryAsync<ComplaintRegisterResponseModel>(
                         "spTrn_ComplaintRegister",
