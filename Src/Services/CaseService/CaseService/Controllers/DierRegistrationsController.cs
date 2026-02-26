@@ -791,7 +791,7 @@ namespace CaseService.Controllers
         }
 
         [HttpPost]
-        public async Task<ResponseWithoutPaginationModel> AddEditOffenceClassification(OffenceClassificationModel objModel)
+        public async Task<DierRegistrationsResponseModel> AddEditOffenceClassification(OffenceClassificationModel objModel)
         {
             try
             {
@@ -800,7 +800,7 @@ namespace CaseService.Controllers
             catch (Exception ex)
             {
                 _logsService.Logs("Error", "AddEditOffenceClassification", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/AddEditOffenceClassification");
-                return new ResponseWithoutPaginationModel()
+                return new DierRegistrationsResponseModel()
                 {
                     Status = false,
                     Message = ex.Message,
@@ -809,7 +809,7 @@ namespace CaseService.Controllers
         }
 
         [HttpPost]
-        public async Task<ResponseWithoutPaginationModel> DeleteOffenceClassification(long OffenceClassifId)
+        public async Task<DierRegistrationsResponseModel> DeleteOffenceClassification(long OffenceClassifId)
         {
             try
             {
@@ -818,7 +818,7 @@ namespace CaseService.Controllers
             catch (Exception ex)
             {
                 _logsService.Logs("Error", "DeleteOffenceClassification", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/DeleteOffenceClassification");
-                return new ResponseWithoutPaginationModel()
+                return new DierRegistrationsResponseModel()
                 {
                     Status = false,
                     Message = ex.Message,
