@@ -960,7 +960,7 @@ namespace Case.Repository.DierRegistrations
             }
         }
 
-        public async Task<ResponseWithoutPaginationModel> AddEditOffenceClassification(OffenceClassificationModel objModel, int UserId)
+        public async Task<DierRegistrationsResponseModel> AddEditOffenceClassification(OffenceClassificationModel objModel, int UserId)
         {
             try
             {
@@ -988,16 +988,16 @@ namespace Case.Repository.DierRegistrations
                     parmeters.Add("@SectionsID", objModel.SectionsID);
                     parmeters.Add("@SectionsName", objModel.SectionsName);
 
-                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_OffenceClassification", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objData = await Con.QueryAsync<DierRegistrationsResponseModel>("spTrn_OffenceClassification", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
                     var objResult = objData.FirstOrDefault();
                     DisposeCurrentSqlConnection();
-                    return objResult != null ? objResult : new ResponseWithoutPaginationModel();
+                    return objResult != null ? objResult : new DierRegistrationsResponseModel();
                 }
             }
             catch (Exception ex)
             {
                 _logsService.Logs("Error", "AddEditOffenceClassification", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/AddEditOffenceClassification");
-                return new ResponseWithoutPaginationModel()
+                return new DierRegistrationsResponseModel()
                 {
                     Status = false,
                     Message = ex.Message,
@@ -1005,7 +1005,7 @@ namespace Case.Repository.DierRegistrations
             }
         }
 
-        public async Task<ResponseWithoutPaginationModel> DeleteOffenceClassification(long OffenceClassifId, int UserId)
+        public async Task<DierRegistrationsResponseModel> DeleteOffenceClassification(long OffenceClassifId, int UserId)
         {
             try
             {
@@ -1016,16 +1016,16 @@ namespace Case.Repository.DierRegistrations
                     parmeters.Add("@DeletedBy", UserId);
                     parmeters.Add("@OffenceClassifId", OffenceClassifId);
 
-                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_OffenceClassification", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objData = await Con.QueryAsync<DierRegistrationsResponseModel>("spTrn_OffenceClassification", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
                     var objResut = objData.FirstOrDefault();
                     DisposeCurrentSqlConnection();
-                    return objResut != null ? objResut : new ResponseWithoutPaginationModel();
+                    return objResut != null ? objResut : new DierRegistrationsResponseModel();
                 }
             }
             catch (Exception ex)
             {
                 _logsService.Logs("Error", "DeleteOffenceClassification", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/DeleteOffenceClassification");
-                return new ResponseWithoutPaginationModel()
+                return new DierRegistrationsResponseModel()
                 {
                     Status = false,
                     Message = ex.Message,
