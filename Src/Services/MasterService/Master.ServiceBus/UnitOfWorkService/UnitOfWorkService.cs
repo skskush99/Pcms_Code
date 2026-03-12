@@ -2,6 +2,8 @@
 using Master.ServiceBus.Roles;
 using Master.ServiceBus.Users;
 using Master.ServiceBus.AdminDepartmentService;
+using Master.ServiceBus.CaseDecisionReasonService;
+using Master.ServiceBus.CaseDecisionTypeService;
 using Master.ServiceBus.CircularOrderService;
 using Master.ServiceBus.CourtNamesService;
 using Master.ServiceBus.CourtPlacesService;
@@ -28,9 +30,10 @@ using Master.ServiceBus.WebSiteService;
 namespace Master.ServiceBus.UnitOfWork
 {
     public class UnitOfWorkService(IRolesServiceBus Roles, IUserLoginServiceBus UserLogins, IMenuServiceBus Menu, IAdminDepartmentServiceBus AdminDepartmentServiceBus,
-        ICircularOrderServiceBus CircularOrderServiceBus, ICourtNamesServiceBus CourtNamesServiceBus, ICourtPlacesServiceBus CourtPlacesServiceBus, 
-        ICourtTypesServiceBus CourtTypesServiceBus, ICrimeActServiceBus CrimeActServiceBus, ICrimeClassificationServiceBus CrimeClassificationServiceBus, ICrimeSubActServiceBus CrimeSubActServiceBus, 
-        IDesignationServiceBus DesignationServiceBus, IFirStatusServiceBus FirStatusServiceBus, IJanPratinidhiServiceBus JanPratinidhiServiceBus, ILevelServiceBus LevelServiceBus, INewsServiceBus NewsServiceBus, 
+        ICaseDecisionReasonServiceBus CaseDecisionReasonServiceBus, ICaseDecisionTypeServiceBus CaseDecisionTypeServiceBus, ICircularOrderServiceBus CircularOrderServiceBus, 
+        ICourtNamesServiceBus CourtNamesServiceBus, ICourtPlacesServiceBus CourtPlacesServiceBus, ICourtTypesServiceBus CourtTypesServiceBus, ICrimeActServiceBus CrimeActServiceBus, 
+        ICrimeClassificationServiceBus CrimeClassificationServiceBus, ICrimeSubActServiceBus CrimeSubActServiceBus, IDesignationServiceBus DesignationServiceBus, 
+        IFirStatusServiceBus FirStatusServiceBus, IJanPratinidhiServiceBus JanPratinidhiServiceBus, ILevelServiceBus LevelServiceBus, INewsServiceBus NewsServiceBus, 
         INodalOfficerServiceBus NodalOfficerServiceBus, IOfficeServiceBus OfficeServiceBus, IRajMasterServiceBus RajMasterServiceBus, 
         IReqInformationServiceBus ReqInformationServiceBus, IStateServiceBus StateServiceBus, IUnitsDepartmentServiceBus UnitsDepartmentServiceBus, 
         IPoliceThanaServiceBus PoliceThanaServiceBus, IUploadFilesServiceBus UploadFiles, IWebSiteServiceBus WebSite) : IUnitOfWorkService
@@ -39,6 +42,8 @@ namespace Master.ServiceBus.UnitOfWork
         public IMenuServiceBus Menu { get; set; } = Menu;
         public IUserLoginServiceBus UserLogins { get; set; } = UserLogins;
         public IAdminDepartmentServiceBus AdminDepartmentServiceBus { get; set; } = AdminDepartmentServiceBus;
+        public ICaseDecisionReasonServiceBus CaseDecisionReasonServiceBus { get; set; } = CaseDecisionReasonServiceBus;
+        public ICaseDecisionTypeServiceBus CaseDecisionTypeServiceBus { get; set; } = CaseDecisionTypeServiceBus;
         public ICircularOrderServiceBus CircularOrderServiceBus { get; set; } = CircularOrderServiceBus;
         public ICourtNamesServiceBus CourtNamesServiceBus { get; set; } = CourtNamesServiceBus;
         public ICourtPlacesServiceBus CourtPlacesServiceBus { get; set; } = CourtPlacesServiceBus;

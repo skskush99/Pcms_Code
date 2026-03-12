@@ -2,6 +2,8 @@
 using Master.Repository.Roles;
 using Master.Repository.Users;
 using Master.Repository.AdminDepartment;
+using Master.Repository.CaseDecisionReason;
+using Master.Repository.CaseDecisionType;
 using Master.Repository.CircularOrder;
 using Master.Repository.CourtName;
 using Master.Repository.CourtPlaces;
@@ -33,6 +35,8 @@ public interface IUnitOfWorkRepository
     IUserLogin UserLogins { get; set; }
     IMenu Menu { get; set; }
     IAdminDepartment AdminDepartments { get; set; }
+    ICaseDecisionReason CaseDecisionReason { get; set; }
+    ICaseDecisionType CaseDecisionType { get; set; }
     ICircularOrder CircularOrder { get; set; }
     ICourtNames CourtNames { get; set; }
     ICourtPlaces CourtPlaces { get; set; }

@@ -5,6 +5,8 @@ using Master.ServiceBus.Roles;
 using Master.ServiceBus.UnitOfWork;
 using Master.ServiceBus.Users;
 using Master.ServiceBus.AdminDepartmentService;
+using Master.ServiceBus.CaseDecisionReasonService;
+using Master.ServiceBus.CaseDecisionTypeService;
 using Master.ServiceBus.CircularOrderService;
 using Master.ServiceBus.CourtNamesService;
 using Master.ServiceBus.CourtPlacesService;
@@ -39,6 +41,8 @@ public static class ServiceExtensions
         services.AddTransient<IUnitOfWorkService, UnitOfWorkService>();
         services.AddTransient<IUserLoginServiceBus, UserLoginServiceBus>();
         services.AddTransient<IAdminDepartmentServiceBus, AdminDepartmentServiceBus>();
+        services.AddTransient<ICaseDecisionReasonServiceBus, CaseDecisionReasonServiceBus>();
+        services.AddTransient<ICaseDecisionTypeServiceBus, CaseDecisionTypeServiceBus>();
         services.AddTransient<ICircularOrderServiceBus, CircularOrderServiceBus>();
         services.AddTransient<ICourtNamesServiceBus, CourtNamesServiceBus>();
         services.AddTransient<ICourtPlacesServiceBus, CourtPlacesServiceBus>();
