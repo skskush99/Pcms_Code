@@ -7,49 +7,15 @@ using System.Threading.Tasks;
 
 namespace CCTNSDto
 {
-    public class HcourtCredentials
-    {
-        [JsonProperty("Username")]
-        public string Username { get; set; }
-        [JsonProperty("Password")]
-        public string Password { get; set; }
-        [JsonProperty("grant_type")]
-        public string grant_type { get; set; }
-        [JsonProperty("scope")]
-        public string Scope { get; set; }
-        [JsonProperty("BaseUrl")]
-        public string BaseUrl { get; set; }
-        [JsonProperty("AuthenticationKey")]
-        public string AuthenticationKey { get; set; }
-        [JsonProperty("Iv")]
-        public string Iv { get; set; }
-        [JsonProperty("DeptId")]
-        public string DeptId { get; set; }
-        [JsonProperty("version")]
-        public string version { get; set; }
-    }
-
     public class CCTNSCredentials
     {
-        [JsonProperty("Username")]
-        public string Username { get; set; }
-        [JsonProperty("Password")]
-        public string Password { get; set; }
-        [JsonProperty("grant_type")]
-        public string grant_type { get; set; }
-        [JsonProperty("scope")]
-        public string Scope { get; set; } 
-        [JsonProperty("AuthKey")]
-        public string AuthKey { get; set; }
-        [JsonProperty("BaseUrl")]
+        public string ClientId { get; set; }
+        public string Content_Type { get; set; }
         public string BaseUrl { get; set; }
-        [JsonProperty("AuthenticationKey")]
-        public string AuthenticationKey { get; set; }
-        [JsonProperty("Iv")]
-        public string Iv { get; set; }
-        [JsonProperty("DeptId")]
-        public string DeptId { get; set; }
-        [JsonProperty("version")]
-        public string version { get; set; }
+        public string ClientSecret { get; set; }
+        public string Token { get; set; }
+        public string V1 { get; set; }
+        public string V2 { get; set; }
+
     }
 }

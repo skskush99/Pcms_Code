@@ -26,86 +26,46 @@ namespace CCTNSService.Controllers
             _logsService = logsService;
 
         }
-        [HttpGet]
-        [Route("Token")]
-        public async Task<ResponseWithoutPaginationModel> GetAuthToken()
+        [HttpPost]
+        [Route("ClientAppToken")]
+        public async Task<ResponseWithoutPaginationModel> GetClientAppToken()
         {
             try
             {
-                var authUser = new TokenAuthModel();
                 var data = _Configuration.GetSection("Credentials:CCTNS").Get<CCTNSCredentials>();
-                return await unitOfWork.CCTNSService.GetAuthToken(data);
+
+                return await unitOfWork.CCTNSService.GetClientAppToken(data);
             }
             catch (Exception ex)
             {
-                _logsService.Logs("Error", "GetAuthToken", ex.Message, ex.StackTrace, ex.Source, "CCTNSService/CCTNSServiceController/GetAuthToken");
-                return new ResponseWithoutPaginationModel()
+                _logsService.Logs("Error", "GetClientAppToken", ex.Message, ex.StackTrace, ex.Source,"CCTNSService/CCTNSServiceController/GetClientAppToken");
+
+                return new ResponseWithoutPaginationModel
                 {
                     Status = false,
-                    Message = ex.Message,
+                    Message = ex.Message
                 };
             }
         }
 
-        [HttpGet]
-        [Route("District")]
-        public async Task<ResponseWithoutPaginationModel> GetDistrictDetail(string StateCode)
+        [HttpPost]
+        [Route("FIRDetails")]
+        public async Task<ResponseWithoutPaginationModel> GetFIRDetails(string firNum)
         {
             try
             {
-                var result = new ResponseWithoutPaginationModel();
-                try
-                {
-                    int attempt = 0;
-                    while (attempt < MaxRetries)
-                    {
-                        attempt++;
-                        // Attempt the API call
-                        var data = _Configuration.GetSection("Credentials:CCTNS").Get<CCTNSCredentials>();
-                        var tokenobject = await unitOfWork.CCTNSService.GetAuthToken(data);
-                        if (!string.IsNullOrEmpty(Convert.ToString(tokenobject?.Data?.access_token)))
-                        {
-                            var auth = tokenobject.Data.access_token;
-                            return await unitOfWork.CCTNSService.GetDistrictDetail(StateCode, auth, data);
-                        }
-                        else
-                        {
-                            result = new ResponseWithoutPaginationModel()
-                            {
-                                Status = true,
-                                Message = tokenobject?.Data?.Error,
-                                Data = tokenobject?.Data
-                            };
-                            return result;
-                        }
-                    }
-                    result = new ResponseWithoutPaginationModel()
-                    {
-                        Status = true,
-                        Message = "You have Reached Limit Please try again",
-                        Data = null
-                    };
-                    return result;
-                }
-                catch (Exception ex)
-                {
-                    result = new ResponseWithoutPaginationModel()
-                    {
-                        Status = true,
-                        Message = ex.Message,
-                        Data = null
-                    };
-                    return result;
-                    throw;
-                }
+                var data = _Configuration.GetSection("Credentials:CCTNS").Get<CCTNSCredentials>();
+
+                return await unitOfWork.CCTNSService.GetFIRDetails(data, firNum);
             }
             catch (Exception ex)
             {
-                _logsService.Logs("Error", "GetDistrictDetail", ex.Message, ex.StackTrace, ex.Source, "CCTNSService/CCTNSServiceController/GetDistrictDetail");
-                return new ResponseWithoutPaginationModel()
+                _logsService.Logs("Error", "GetFIRDetails", ex.Message, ex.StackTrace, ex.Source, "CCTNSService/CCTNSServiceController/GetFIRDetails");
+
+                return new ResponseWithoutPaginationModel
                 {
                     Status = false,
-                    Message = ex.Message,
+                    Message = ex.Message
                 };
             }
         }

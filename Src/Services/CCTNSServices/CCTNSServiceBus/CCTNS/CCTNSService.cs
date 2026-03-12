@@ -1,270 +1,417 @@
 ﻿using CCTNSDto;
 using CCTNSDto.Shared;
-using static System.Formats.Asn1.AsnWriter;
-using System;
-using System.Text;
-using System.Net.Http.Headers;
 using Newtonsoft.Json;
-using System.Security.Cryptography;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 using Newtonsoft.Json.Linq;
-using System.Text.Json.Serialization;
+using System.Buffers.Text;
+using System.Data;
 using System.Dynamic;
+using System.Net.Http.Headers;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace CCTNSServiceBus.CCTNS
 {
     public class CCTNSService : ICCTNSService
     {
-        public async Task<ResponseWithoutPaginationModel> GetAuthToken(CCTNSCredentials data)
+        private readonly string encryptionKey = "897J4n32yd323K09vf9E654328756431";
+        private const string EncryptionAlgoType = "AES";
+        private const string ALGO = "AES/GCM/NoPadding";
+        private const string UtfFormat = "UTF-8";
+
+        private const int GcmTagSize = 16;
+        private const int GcmNonceSize = 12;
+
+
+        // =========================
+        // Generate Random IV
+        // =========================
+        public string GenerateRandomIV()
+        {
+            int length = 16;
+            byte[] aesKey = new byte[16];
+
+            using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
+            {
+                rng.GetBytes(aesKey);
+            }
+
+            StringBuilder result = new StringBuilder();
+            foreach (byte b in aesKey)
+            {
+                result.Append(b.ToString("x2")); // hex
+            }
+
+            string hex = result.ToString();
+
+            return length > hex.Length ? hex : hex.Substring(0, length);
+        }
+
+        // =========================
+        // Encrypt
+        // =========================
+
+        public string Encrypt(string value, string initVector, string encryptionKey)
         {
             try
             {
-                ResponseWithoutPaginationModel objResut = new();
-                string combineKey = $"{data.Username}:{data.Password}";
-                string basicAuthValue = Convert.ToBase64String(Encoding.UTF8.GetBytes(combineKey));
-                var credentials = new Dictionary<string, string>
-                {
-                    { "grant_type", data.grant_type },
-                    { "scope", data.Scope },
-                    { "username", data.Username },
-                    { "password", data.Password },
-                    { "authorization", basicAuthValue },
-                    { "url", data.BaseUrl }
-                };
+                byte[] ivBytes = Encoding.UTF8.GetBytes(initVector);
+                byte[] keyBytes = Encoding.UTF8.GetBytes(encryptionKey);
+                byte[] plainTextBytes = Encoding.UTF8.GetBytes(value);
 
-                var responseString = await GetToken(credentials); // Await the asynchronous task
-                if (!responseString.Contains("Error"))
+                using (Aes aes = Aes.Create())
                 {
-                    var result = Newtonsoft.Json.JsonConvert.DeserializeObject<ExpandoObject>(responseString);
-                    objResut = new()
+                    aes.Mode = CipherMode.CBC;
+                    aes.Padding = PaddingMode.PKCS7; // PKCS5 == PKCS7 in .NET
+                    aes.Key = keyBytes;
+                    aes.IV = ivBytes;
+
+                    using (ICryptoTransform encryptor = aes.CreateEncryptor())
                     {
-                        Status = true,
-                        Message = "Success",
-                        Data = result
-                    };
+                        byte[] encryptedBytes =
+                            encryptor.TransformFinalBlock(plainTextBytes, 0, plainTextBytes.Length);
+
+                        return Convert.ToBase64String(encryptedBytes);
+                    }
                 }
-                else
-                {
-                    dynamic result = new System.Dynamic.ExpandoObject();
-                    result.Error = responseString.Split("Error:")[1].Trim();
-                    objResut = new()
-                    {
-                        Status = true,
-                        Message = "Success",
-                        Data = result
-                    };
-                }
-                return objResut;
             }
             catch (Exception ex)
             {
-                // Log the exception or handle it differently
-                Console.WriteLine($"Error occurred: {ex.Message}");
-                throw;
+                Console.WriteLine("MasterCrypto Encrypt Error: " + ex);
             }
-
-        }
-        private async Task<string> GetToken(Dictionary<string, string> credentials)
-        {
-            string grantType = credentials["grant_type"];
-            string scope = credentials["scope"];
-            string authorization = credentials["authorization"];
-            string url = credentials["url"] + "oauth2/token";
-            string postFields = $"grant_type={grantType}&scope={scope}";
-
-            using (var client = new HttpClient())
-            {
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authorization);
-                var content = new StringContent(postFields, Encoding.UTF8, "application/x-www-form-urlencoded");
-                var response = await client.PostAsync(url, content);
-                if (response.IsSuccessStatusCode)
-                {
-                    var responseString = await response.Content.ReadAsStringAsync();
-                    return responseString;
-                }
-                else
-                {
-                    // Handle error cases (e.g., return an empty string or throw an exception)
-                    return "";
-                }
-            }
+            return null;
         }
 
-        
-        public async Task<ResponseWithoutPaginationModel> GetDistrictDetail(string state_code, string accessToken, CCTNSCredentials data)
+        // =========================
+        // Decrypt
+        // =========================
+        public string Decrypt(string encrypted, string initVector, string encryptionKey)
         {
             try
             {
-                ResponseWithoutPaginationModel objResut = new();
-                string requestStr = $"state_code={state_code}";
-                string requestToken = HashHMAC("15081947", requestStr);
-                requestStr = Encrypt(requestStr, data.AuthenticationKey, data.Iv);
-                requestStr = Uri.EscapeDataString(requestStr);
+                byte[] ivBytes = Encoding.UTF8.GetBytes(initVector);
+                byte[] keyBytes = Encoding.UTF8.GetBytes(encryptionKey);
+                byte[] cipherTextBytes = Convert.FromBase64String(encrypted);
 
-                var credentials = new Dictionary<string, string>
+                using (Aes aes = Aes.Create())
                 {
-                    { "accessToken", accessToken },
-                    { "AuthenticationKey", data.AuthenticationKey },
-                    { "Iv", data.Iv },
-                    { "DeptId", data.DeptId },
-                    { "requestStr", requestStr},
-                    { "requestToken", requestToken },
-                    { "url", data.BaseUrl},
-                    { "version", data.version}
-                };
-                var responseString = await GetDistrictDetail(credentials);
-                if (!responseString.Contains("Error"))
-                {
-                    var result = Newtonsoft.Json.JsonConvert.DeserializeObject<ExpandoObject>(responseString);
-                    objResut = new()
-                    {
-                        Status = true,
-                        Message = "Success",
-                        Data = result
-                    };
-                }
-                else
-                {
-                    dynamic result = new System.Dynamic.ExpandoObject();
-                    result.Error = responseString.Split("Error:")[1].Trim();
-                    objResut = new()
-                    {
-                        Status = true,
-                        Message = "Success",
-                        Data = result
-                    };
-                }
+                    aes.Mode = CipherMode.CBC;
+                    aes.Padding = PaddingMode.PKCS7;
+                    aes.Key = keyBytes;
+                    aes.IV = ivBytes;
 
-                return objResut;
+                    using (ICryptoTransform decryptor = aes.CreateDecryptor())
+                    {
+                        byte[] originalBytes =
+                            decryptor.TransformFinalBlock(cipherTextBytes, 0, cipherTextBytes.Length);
+
+                        return Encoding.UTF8.GetString(originalBytes);
+                    }
+                }
             }
             catch (Exception ex)
             {
-                // Log the exception or handle it differently
-                Console.WriteLine($"Error occurred: {ex.Message}");
-                throw;
+                Console.WriteLine("MasterCrypto Decrypt Error: " + ex);
             }
+
+            return null;
         }
-        public async Task<string> GetDistrictDetail(Dictionary<string, string> credentials)
+
+        // ================================
+        // MAIN PUBLIC METHOD
+        // ================================       
+        public async Task<ResponseWithoutPaginationModel> GetClientAppToken(CCTNSCredentials data)
         {
-            string accessToken = credentials["accessToken"];
-            string AuthenticationKey = credentials["AuthenticationKey"];
-            string Iv = credentials["Iv"];
-            string DeptId = credentials["DeptId"];
-            string requestStr = credentials["requestStr"];
-            string requestToken = credentials["requestToken"];
-            string version = credentials["version"];
-            string url = $"{credentials["url"]}/dc-district-api/district?dept_id={DeptId}&request_str={requestStr}&request_token={requestToken}&version={version}";
+            ResponseWithoutPaginationModel result = new();
 
-            using (var client = new HttpClient())
+            try
             {
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
-                var response = await client.GetAsync(url);
+                CCTNSService crypto = new CCTNSService();
 
-                if (response.IsSuccessStatusCode)
+                string encryptionKey = "897J4n32yd323K09vf9E654328756431";
+
+                // Payload (same as console)
+                var payload = new
                 {
-                    string responseBody = await response.Content.ReadAsStringAsync();
-                    var resultApi = JsonConvert.DeserializeObject<Dictionary<string, string>>(responseBody);
+                    clientId = data.ClientId,
+                    clientSecret = data.ClientSecret
+                };
 
-                    if (resultApi.ContainsKey("response_str"))
+                string payloadJson = JsonConvert.SerializeObject(payload);
+
+                // Generate IV
+                string iv = crypto.GenerateRandomIV();
+
+                // Encrypt payload
+                string encryptedPayload = crypto.Encrypt(payloadJson, iv, encryptionKey);
+
+                // Encode IV to Base64 (IMPORTANT)
+                string encodedIV = Convert.ToBase64String(Encoding.UTF8.GetBytes(iv));
+
+                var requestBody = new
+                {
+                    v1 = encryptedPayload,
+                    v2 = encodedIV
+                };
+
+                string jsonRequest = JsonConvert.SerializeObject(requestBody);
+
+                using (HttpClient client = new HttpClient())
+                {
+                    client.DefaultRequestHeaders.Add("clientId", data.ClientId);
+
+                    var content = new StringContent(
+                        jsonRequest,
+                        Encoding.UTF8,
+                        "application/json"
+                    );
+
+                    var response = await client.PostAsync(data.BaseUrl, content);
+
+                    string responseText = await response.Content.ReadAsStringAsync();
+
+                    if (!response.IsSuccessStatusCode)
                     {
-                        string responseStr = resultApi["response_str"];
-                        byte[] payload = Convert.FromBase64String(responseStr);
-                        string decrypt = Decrypt(payload, AuthenticationKey, Iv);
-                        return decrypt;
+                        result.Status = false;
+                        result.Message = responseText;
+                        return result;
                     }
-                    else if (resultApi.ContainsKey("status"))
-                    {
-                        return $"Error: {resultApi["status"]}";
-                    }
-                    else
-                    {
-                        // Handle unexpected response format
-                        return "Unexpected response format";
-                    }
+
+                    dynamic apiResponse = JsonConvert.DeserializeObject(responseText);
+
+                    string responseV1 = apiResponse.v1;
+                    string responseV2 = apiResponse.v2;
+
+                    // Decode IV from Base64
+                    string responseIV = Encoding.UTF8.GetString(
+                        Convert.FromBase64String(responseV2));
+
+                    // Decrypt response
+                    string decryptedResponse = crypto.Decrypt(
+                        responseV1,
+                        responseIV,
+                        encryptionKey
+                    );
+
+                    result.Status = true;
+                    result.Message = "Success";
+                    result.Data = JsonConvert.DeserializeObject<ExpandoObject>(decryptedResponse);
                 }
-                else
+            }
+            catch (Exception ex)
+            {
+                result.Status = false;
+                result.Message = ex.Message;
+            }
+
+            return result;
+        }
+
+        // ================================
+        // Get FIR Details METHOD
+        // ================================
+        // 
+        // =========================
+        // FIREncrypt
+        // =========================
+
+        public string FIREncrypt(string plainText, string secretKey, string ivBase64)
+        {
+            try
+            {
+                byte[] iv = Convert.FromBase64String(ivBase64);
+                byte[] keyBytes = Encoding.UTF8.GetBytes(secretKey);
+                byte[] plainBytes = Encoding.UTF8.GetBytes(plainText);
+
+                byte[] cipherText = new byte[plainBytes.Length];
+                byte[] tag = new byte[GcmTagSize];
+
+                using (AesGcm aesGcm = new AesGcm(keyBytes))
                 {
-                    return $"Error: {response.StatusCode} - {response.ReasonPhrase}";
+                    aesGcm.Encrypt(
+                        nonce: iv,
+                        plaintext: plainBytes,
+                        ciphertext: cipherText,
+                        tag: tag
+                    );
                 }
+
+                // Java GCM returns: ciphertext + tag
+                byte[] combined = new byte[cipherText.Length + tag.Length];
+                Buffer.BlockCopy(cipherText, 0, combined, 0, cipherText.Length);
+                Buffer.BlockCopy(tag, 0, combined, cipherText.Length, tag.Length);
+
+                return Convert.ToBase64String(combined);
             }
-        }
-        private static string HashHMAC(string key, string data)
-        {
-            // Convert the secret key to a byte array
-            byte[] keyBytes = Encoding.ASCII.GetBytes(key);
-            using (HMACSHA256 hmac = new HMACSHA256(keyBytes))
+            catch (Exception ex)
             {
-                // Convert the request string to a byte array
-                byte[] dataBytes = Encoding.UTF8.GetBytes(data);
-                // Compute the HMAC-SHA256 hash
-                byte[] hashBytes = hmac.ComputeHash(dataBytes);
-                // Convert the hash to a hexadecimal string
-                string stoken = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
-                return stoken;
+                Console.WriteLine("Error in MasterCryptoAESGCM Encrypt: " + ex.Message);
             }
+
+            return null;
         }
-        private static string Encrypt(string inputStr, string key, string iv)
+
+        // =========================
+        // FIRDecrypt
+        // =========================
+        public string FIRDecrypt(string cipherTextEncoded, string secretKey, string ivBase64)
         {
-            using (var aes = Aes.Create())
+            try
             {
-                aes.Key = Encoding.ASCII.GetBytes(key);
-                aes.IV = Encoding.ASCII.GetBytes(iv); ;
-                aes.Mode = CipherMode.CBC;
-                aes.Padding = PaddingMode.PKCS7;
-                ICryptoTransform encryptor = aes.CreateEncryptor();
-                byte[] encryptedBytes;
-                using (var msEncrypt = new System.IO.MemoryStream())
+                byte[] iv = Convert.FromBase64String(ivBase64);
+                byte[] keyBytes = Encoding.UTF8.GetBytes(secretKey);
+                byte[] combined = Convert.FromBase64String(cipherTextEncoded);
+
+                byte[] cipherText = new byte[combined.Length - GcmTagSize];
+                byte[] tag = new byte[GcmTagSize];
+
+                Buffer.BlockCopy(combined, 0, cipherText, 0, cipherText.Length);
+                Buffer.BlockCopy(combined, cipherText.Length, tag, 0, tag.Length);
+
+                byte[] plainText = new byte[cipherText.Length];
+
+                using (AesGcm aesGcm = new AesGcm(keyBytes))
                 {
-                    using (var csEncrypt = new CryptoStream(msEncrypt,
-                   encryptor, CryptoStreamMode.Write))
+                    aesGcm.Decrypt(
+                        nonce: iv,
+                        ciphertext: cipherText,
+                        tag: tag,
+                        plaintext: plainText
+                    );
+                }
+
+                return Encoding.UTF8.GetString(plainText);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in MasterCryptoAESGCM Decrypt: " + ex.Message);
+            }
+
+            return null;
+        }
+
+
+        public string GenerateBase64IV()
+        {
+            byte[] iv = new byte[GcmNonceSize];
+
+            using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
+            {
+                rng.GetBytes(iv);
+            }
+
+            return Convert.ToBase64String(iv);
+        }
+
+        public async Task<ResponseWithoutPaginationModel> GetFIRDetails(CCTNSCredentials data, string firNum)
+        {
+            ResponseWithoutPaginationModel result = new();
+
+            try
+            {
+                var urls = "https://policetraining.rajasthan.gov.in/psa-client/firDetails";
+                string url = urls;
+                string secretKey = "348U7c55wd348L07ah7E333443345678";
+
+
+                CCTNSService cryptoAESGCM = new CCTNSService();
+
+                // Payload (same as console)
+                var payload = new
+                {
+                    clientId = data.ClientId,
+                    clientSecret = secretKey
+                };
+                string payloadJson = JsonConvert.SerializeObject(payload);
+
+                var plainText = new
+                {
+                    //firNum = "27564051250030",
+                    firNum = firNum
+                };
+                string plainTextJsons = JsonConvert.SerializeObject(plainText);                
+
+                // Generate IV
+                string iv = cryptoAESGCM.GenerateBase64IV();
+
+                // Encrypt payload
+                string encryptedPayload = cryptoAESGCM.FIREncrypt(plainTextJsons, secretKey, iv);
+
+                // Encode IV to Base64 (IMPORTANT)
+                string encodedIV = Convert.ToBase64String(Encoding.UTF8.GetBytes(iv));
+
+                var requestBody = new
+                {
+                    v1 = encryptedPayload,
+                    v2 = iv
+                };
+                var BearerToken = GetClientAppToken(data).Result;
+
+                Dictionary<string, string> tokenData = new Dictionary<string, string>();
+
+                foreach (var row in BearerToken.Data)
+                {
+                    var pair = (KeyValuePair<string, object>)row;
+
+                    tokenData.Add(
+                        pair.Key,
+                        pair.Value.ToString()
+                    );
+                }
+
+                string jwtToken = tokenData["jwtToken"];
+                string status = tokenData["status"];
+                string message = tokenData["message"];
+                if (status == "True")
+                {
+                    using (HttpClient client = new HttpClient())
                     {
-                        using (var swEncrypt = new
-                       System.IO.StreamWriter(csEncrypt))
+                        client.DefaultRequestHeaders.Add("Authorization", "Bearer " + jwtToken);
+                        client.DefaultRequestHeaders.Add("clientId", data.ClientId);
+
+                        var json = JsonConvert.SerializeObject(requestBody);
+
+                        var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                        var response = await client.PostAsync(url, content);
+
+                        string responseData = await response.Content.ReadAsStringAsync();
+
+                        if (!response.IsSuccessStatusCode)
                         {
-                            swEncrypt.Write(inputStr);
+                            result.Status = false;
+                            result.Message = responseData;
+                            return result;
                         }
-                    }
-                    encryptedBytes = msEncrypt.ToArray();
-                }
-                string requestStr = Convert.ToBase64String(encryptedBytes);
-                return requestStr;
-            }
-        }
-        private static string Decrypt(byte[] inputBytes, string key, string iv)
-        {
-            byte[] ivByte = Encoding.ASCII.GetBytes(iv);
-            // Convert Base64-encoded ciphertext to bytes
-            byte[] encryptedBytes = inputBytes;
-            // Create AES key and IV
-            byte[] keyBytes = Encoding.ASCII.GetBytes(key);
-            // Ensure the key and IV have the correct lengths
-            Array.Resize(ref keyBytes, 16); // For AES-128
-            Array.Resize(ref ivByte, 16);
-            using (var aes = Aes.Create())
-            {
-                aes.Key = keyBytes;
-                aes.IV = ivByte;
-                aes.Mode = CipherMode.CBC;
-                aes.Padding = PaddingMode.PKCS7;
 
-                ICryptoTransform decryptor = aes.CreateDecryptor();
-                byte[] decryptedBytes;
-                using (var msDecrypt = new
-                System.IO.MemoryStream(encryptedBytes))
-                {
-                    using (var csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
-                    {
-                        using (var srDecrypt = new System.IO.StreamReader(csDecrypt))
-                        {
-                            string decryptedText = srDecrypt.ReadToEnd();
-                            return decryptedText;
-                        }
+                        // Fix double JSON response
+                        string cleanJson = JsonConvert.DeserializeObject<string>(responseData);
+
+                        var apiResponse = JsonConvert.DeserializeObject<ApiResponse>(cleanJson);
+
+
+                        // Decrypt response
+                        string decrypted = cryptoAESGCM.FIRDecrypt(apiResponse.v1, secretKey, apiResponse.v2);
+
+                        result.Status = true;
+                        result.Message = "Success";
+                        result.Data = JsonConvert.DeserializeObject<ExpandoObject>(decrypted);
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                result.Status = false;
+                result.Message = ex.Message;
+            }
+
+            return result;
         }
+
+        public class ApiResponse
+        {
+            public string v1 { get; set; }
+            public string v2 { get; set; }
+        }
+
     }
-
-
 }
