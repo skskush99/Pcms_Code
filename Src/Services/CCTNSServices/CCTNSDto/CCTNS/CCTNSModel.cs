@@ -15,5 +15,4 @@ namespace CCTNSDto.CCTNS
         public required string CinNo { get; set; }
     }
 
-    
 }

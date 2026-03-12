@@ -11,7 +11,7 @@ namespace CCTNSServiceBus.CCTNS
 {
     public interface ICCTNSService
     {
-        Task<ResponseWithoutPaginationModel> GetAuthToken(CCTNSCredentials data);
-        Task<ResponseWithoutPaginationModel> GetDistrictDetail(string state_code, string accessToken, CCTNSCredentials data);
+        Task<ResponseWithoutPaginationModel> GetClientAppToken(CCTNSCredentials data);       
+        Task<ResponseWithoutPaginationModel> GetFIRDetails(CCTNSCredentials data, string firNum);       
     }
 }
