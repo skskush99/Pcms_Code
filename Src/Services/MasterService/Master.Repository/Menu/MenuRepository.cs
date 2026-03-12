@@ -189,7 +189,7 @@ namespace Master.Repository.Menu
                     var parmeters = new DynamicParameters();
                     parmeters.Add("@Action", "GetMenuMapping");
                     parmeters.Add("@RoleId", RoleId);
-                    var objResult = await Con.QueryMultipleAsync("spUsr_Menu", parmeters, commandType: CommandType.StoredProcedure);
+                    var objResult = await Con.QueryMultipleAsync("spMst_Menu", parmeters, commandType: CommandType.StoredProcedure);
 
                     var mainMenu = objResult.Read<MenuMappingModel>();
                     var subMenu = objResult.Read<SubMenuModel>();
@@ -226,7 +226,7 @@ namespace Master.Repository.Menu
                     parmeters.Add("@RoleId", RoleId);
                     parmeters.Add("@MenuMappingXML", GetMenuMappingModelXML(objModel));
                     parmeters.Add("@CreatedBy", UserId);
-                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spUsr_Menu", parmeters, commandType: CommandType.StoredProcedure);
+                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spMst_Menu", parmeters, commandType: CommandType.StoredProcedure);
                     var objResut = objData.FirstOrDefault();
                     DisposeCurrentSqlConnection();
                     return objResut != null ? objResut : new ResponseWithoutPaginationModel();
@@ -253,7 +253,7 @@ namespace Master.Repository.Menu
                     parmeters.Add("@Action", "GetMenuMappingUser");
                     parmeters.Add("@RoleId", RoleId);
                     parmeters.Add("@UserId", UserId);
-                    var objResult = await Con.QueryMultipleAsync("spUsr_Menu", parmeters, commandType: CommandType.StoredProcedure);
+                    var objResult = await Con.QueryMultipleAsync("spMst_Menu", parmeters, commandType: CommandType.StoredProcedure);
 
                     var mainMenu = objResult.Read<MenuMappingModel>();
                     var subMenu = objResult.Read<SubMenuModel>();

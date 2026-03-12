@@ -6,6 +6,8 @@ using Master.Repository.Roles;
 using Master.Repository.UnitOfwork;
 using Master.Repository.Users;
 using Master.Repository.AdminDepartment;
+using Master.Repository.CaseDecisionReason;
+using Master.Repository.CaseDecisionType;
 using Master.Repository.CircularOrder;
 using Master.Repository.CourtName;
 using Master.Repository.CourtPlaces;
@@ -44,6 +46,8 @@ public static class ServiceRegistration
         services.AddTransient<IUserLogin, UserLoginRepository>();
         services.AddTransient<IGenericRepository, SqlRepository>();
         services.AddTransient<IAdminDepartment, AdminDepartmentRepository>();
+        services.AddTransient<ICaseDecisionReason, CaseDecisionReasonRepository>();
+        services.AddTransient<ICaseDecisionType, CaseDecisionTypeRepository>();
         services.AddTransient<ICircularOrder, CircularOrderRepository>();
         services.AddTransient<ICourtNames, CourtNamesRepository>();
         services.AddTransient<ICourtPlaces, CourtPlacesRepository>();
