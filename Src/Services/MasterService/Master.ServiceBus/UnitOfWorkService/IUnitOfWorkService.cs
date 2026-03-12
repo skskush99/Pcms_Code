@@ -2,6 +2,8 @@
 using Master.ServiceBus.Roles;
 using Master.ServiceBus.Users;
 using Master.ServiceBus.AdminDepartmentService;
+using Master.ServiceBus.CaseDecisionReasonService;
+using Master.ServiceBus.CaseDecisionTypeService;
 using Master.ServiceBus.CircularOrderService;
 using Master.ServiceBus.CourtNamesService;
 using Master.ServiceBus.CourtPlacesService;
@@ -33,6 +35,8 @@ public interface IUnitOfWorkService
     IUserLoginServiceBus UserLogins { get; set; }
     IMenuServiceBus Menu { get; set; }
     IAdminDepartmentServiceBus AdminDepartmentServiceBus { get; set; }
+    ICaseDecisionReasonServiceBus CaseDecisionReasonServiceBus { get; set; }
+    ICaseDecisionTypeServiceBus CaseDecisionTypeServiceBus { get; set; }
     ICircularOrderServiceBus CircularOrderServiceBus { get; set; }
     ICourtNamesServiceBus CourtNamesServiceBus { get; set; }
     ICourtPlacesServiceBus CourtPlacesServiceBus { get; set; }

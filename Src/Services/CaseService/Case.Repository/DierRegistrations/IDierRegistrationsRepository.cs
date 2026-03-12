@@ -46,8 +46,8 @@ namespace Case.Repository.DierRegistrations
         Task<ResponseWithoutPaginationModel> DeleteDierComplaintAgainstPerson(long ComplaintPerId, int UserId);
 
         Task<ResponseWithoutPaginationModel> GetOffenceClassification(long OffenceClassifGroupNo);
-        Task<ResponseWithoutPaginationModel> AddEditOffenceClassification(OffenceClassificationModel objModel, int UserId);
-        Task<ResponseWithoutPaginationModel> DeleteOffenceClassification(long OffenceClassifId, int UserId);
+        Task<DierRegistrationsResponseModel> AddEditOffenceClassification(OffenceClassificationModel objModel, int UserId);
+        Task<DierRegistrationsResponseModel> DeleteOffenceClassification(long OffenceClassifId, int UserId);
 
     }
 

@@ -296,6 +296,142 @@
       }
     },
     {
+      "UpstreamPathTemplate": "/PcmsMaster/CaseDecisionReason/GetReason",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsMasterService/api/CaseDecisionReason/GetDecisionReason",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsMaster/CaseDecisionReason/GetReasonDropdown",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/PcmsMasterService/api/CaseDecisionReason/GetDecisionReasonDropdownList",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsMaster/CaseDecisionReason/AddEditReason",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsMasterService/api/CaseDecisionReason/AddEditDecisionReason",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsMaster/CaseDecisionReason/ActiveDeactiveReason",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsMasterService/api/CaseDecisionReason/ActiveDeactiveDecisionReason",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsMaster/CaseDecisionType/GetType",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsMasterService/api/CaseDecisionType/GetCaseDecisionType",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsMaster/CaseDecisionType/GetTypeDropdown",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/PcmsMasterService/api/CaseDecisionType/GetCaseDecisionTypeDropdownList",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsMaster/CaseDecisionType/AddEditType",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsMasterService/api/CaseDecisionType/AddEditCaseDecisionType",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsMaster/CaseDecisionType/ActiveDeactiveType",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsMasterService/api/CaseDecisionType/ActiveDeactiveCaseDecisionType",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
       "UpstreamPathTemplate": "/PcmsMaster/CircularOrder/Get",
       "UpstreamHttpMethod": [
         "POST"
@@ -1112,7 +1248,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/PcmsMaster/MenuMapping/Get",
+      "UpstreamPathTemplate": "/PcmsMaster/MenuMapping/GetMenu",
       "UpstreamHttpMethod": [
         "GET"
       ],
@@ -1129,7 +1265,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/PcmsMaster/MenuMapping/AddEdit",
+      "UpstreamPathTemplate": "/PcmsMaster/MenuMapping/AddEditMenu",
       "UpstreamHttpMethod": [
         "POST"
       ],
@@ -1146,7 +1282,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/PcmsMaster/MenuMapping/GetMenuMappingUser",
+      "UpstreamPathTemplate": "/PcmsMaster/MenuMapping/GetMenuUser",
       "UpstreamHttpMethod": [
         "GET"
       ],
@@ -2489,7 +2625,7 @@
       }
     },
     {
-      "UpstreamPathTemplate": "/PcmsMaster/UserLogin/GetUserMenu",
+      "UpstreamPathTemplate": "/PcmsMaster/UserLogin/GetUserMenuList",
       "UpstreamHttpMethod": [
         "GET"
       ],

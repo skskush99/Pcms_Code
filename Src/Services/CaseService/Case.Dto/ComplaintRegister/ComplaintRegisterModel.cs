@@ -44,18 +44,19 @@
         public long? ComplaintRegId { get; set; }
         public string? ComplaintRegNo { get; set; }
         public string? ComplaintNo { get; set; }
-        public string? ComplaintDate { get; set; }
+        public DateTime ComplaintDate { get; set; }
         public long ComplaintTypeID { get; set; }
         public long? DepartmentId { get; set; }
         public string? DeptOfficerNameDesignation { get; set; }
         public string? OffenceBrief { get; set; }
-        public string? DateFiledInCourt { get; set; }
+        public DateTime? DateFiledInCourt { get; set; }
         public string? ComplaintFirstPageDocs { get; set; }
         public string? FullComplaintDocs { get; set; }
         public string? OtherDocs { get; set; }
         public bool IsDeclaration { get; set; }
         public int? CaseStatus { get; set; }
         public string? PersonAgainstId { get; set; }
+        public string? ClassificationID { get; set; }
         public bool IsCognizance { get; set; }
     }
 

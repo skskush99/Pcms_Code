@@ -2,6 +2,8 @@
 using Master.Repository.Roles;
 using Master.Repository.Users;
 using Master.Repository.AdminDepartment;
+using Master.Repository.CaseDecisionReason;
+using Master.Repository.CaseDecisionType;
 using Master.Repository.CircularOrder;
 using Master.Repository.CourtName;
 using Master.Repository.CourtPlaces;
@@ -27,15 +29,18 @@ using Master.Repository.WebSite;
 
 namespace Master.Repository.UnitOfwork;
 
-public class UnitOfWorkRepository(IRoles Roles, IUserLogin UserLogins, IMenu Menu, IAdminDepartment AdminDepartments, ICircularOrder CircularOrder, ICourtNames CourtNames, 
-    ICourtPlaces CourtPlaces, ICourtTypes CourtTypes, ICrimeAct CrimeAct, ICrimeClassification CrimeClassification, ICrimeSubAct CrimeSubAct, IDesignation Designation, 
-    IFirStatus FirStatus, IJanPratinidhi JanPratinidhi, ILevel Level, INews News, INodalOfficer NodalOfficer, IOffices Offices, IPoliceThana PoliceThana, IRajMaster RajMaster, 
-    IReqInformation ReqInformation, IState State, IUnitsDepartment UnitsDepartment, IUploadFilesRepository UploadFiles, IWebSiteRepository WebSite) : IUnitOfWorkRepository
+public class UnitOfWorkRepository(IRoles Roles, IUserLogin UserLogins, IMenu Menu, IAdminDepartment AdminDepartments, ICaseDecisionReason CaseDecisionReason,
+    ICaseDecisionType CaseDecisionType, ICircularOrder CircularOrder, ICourtNames CourtNames, ICourtPlaces CourtPlaces, ICourtTypes CourtTypes, ICrimeAct CrimeAct, 
+    ICrimeClassification CrimeClassification, ICrimeSubAct CrimeSubAct, IDesignation Designation, IFirStatus FirStatus, IJanPratinidhi JanPratinidhi, ILevel Level, 
+    INews News, INodalOfficer NodalOfficer, IOffices Offices, IPoliceThana PoliceThana, IRajMaster RajMaster, IReqInformation ReqInformation, IState State, 
+    IUnitsDepartment UnitsDepartment, IUploadFilesRepository UploadFiles, IWebSiteRepository WebSite) : IUnitOfWorkRepository
 {
     public IRoles Roles { get; set; } = Roles;
     public IUserLogin UserLogins { get; set; } = UserLogins;
     public IMenu Menu { get; set; } = Menu;
     public IAdminDepartment AdminDepartments { get; set; } = AdminDepartments;
+    public ICaseDecisionReason CaseDecisionReason { get; set; } = CaseDecisionReason;
+    public ICaseDecisionType CaseDecisionType { get; set; } = CaseDecisionType;
     public ICircularOrder CircularOrder { get; set; } = CircularOrder;
     public ICourtNames CourtNames { get; set; } = CourtNames;
     public ICourtPlaces CourtPlaces { get; set; } = CourtPlaces;

@@ -329,7 +329,7 @@ namespace Case.ServiceBus.DierRegistrationsService
             }
         }
 
-        public async Task<ResponseWithoutPaginationModel> AddEditOffenceClassification(OffenceClassificationModel objModel, int UserId)
+        public async Task<DierRegistrationsResponseModel> AddEditOffenceClassification(OffenceClassificationModel objModel, int UserId)
         {
             try
             {
@@ -342,7 +342,7 @@ namespace Case.ServiceBus.DierRegistrationsService
             }
         }
 
-        public async Task<ResponseWithoutPaginationModel> DeleteOffenceClassification(long OffenceClassifId, int UserId)
+        public async Task<DierRegistrationsResponseModel> DeleteOffenceClassification(long OffenceClassifId, int UserId)
         {
             try
             {
