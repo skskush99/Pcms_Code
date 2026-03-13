@@ -1,25 +1,30 @@
 ﻿using CCTNSDto;
 using CCTNSDto.Shared;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Buffers.Text;
-using System.Data;
 using System.Dynamic;
-using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
+
 
 namespace CCTNSServiceBus.CCTNS
 {
     public class CCTNSService : ICCTNSService
     {
+        private readonly CCTNSCredentials _cctnsCredentials;
         private readonly string encryptionKey = "897J4n32yd323K09vf9E654328756431";
         private const string EncryptionAlgoType = "AES";
         private const string ALGO = "AES/GCM/NoPadding";
         private const string UtfFormat = "UTF-8";
+        private readonly IConfiguration _configuration;
 
         private const int GcmTagSize = 16;
         private const int GcmNonceSize = 12;
+        public CCTNSService(IConfiguration configuration)
+        {
+            _cctnsCredentials = configuration.GetSection("Credentials:CCTNS").Get<CCTNSCredentials>();
+            _configuration = configuration;
+        }
 
 
         // =========================
@@ -125,7 +130,7 @@ namespace CCTNSServiceBus.CCTNS
 
             try
             {
-                CCTNSService crypto = new CCTNSService();
+                CCTNSService crypto = new CCTNSService(_configuration);
 
                 string encryptionKey = "897J4n32yd323K09vf9E654328756431";
 
@@ -302,24 +307,24 @@ namespace CCTNSServiceBus.CCTNS
             return Convert.ToBase64String(iv);
         }
 
-        public async Task<ResponseWithoutPaginationModel> GetFIRDetails(CCTNSCredentials data, string firNum)
+        public async Task<ResponseWithoutPaginationModel> GetFIRDetails(AuthCCTNSCredentials data, string firNum)
         {
             ResponseWithoutPaginationModel result = new();
 
             try
             {
-                var urls = "https://policetraining.rajasthan.gov.in/psa-client/firDetails";
-                string url = urls;
-                string secretKey = "348U7c55wd348L07ah7E333443345678";
+                //var urls = "https://policetraining.rajasthan.gov.in/psa-client/firDetails";
+                //string url = urls;
+                //string secretKey = "348U7c55wd348L07ah7E333443345678";
 
 
-                CCTNSService cryptoAESGCM = new CCTNSService();
+                CCTNSService cryptoAESGCM = new CCTNSService(_configuration);
 
                 // Payload (same as console)
                 var payload = new
                 {
                     clientId = data.ClientId,
-                    clientSecret = secretKey
+                    clientSecret = data.AuthsecretKey
                 };
                 string payloadJson = JsonConvert.SerializeObject(payload);
 
@@ -328,13 +333,13 @@ namespace CCTNSServiceBus.CCTNS
                     //firNum = "27564051250030",
                     firNum = firNum
                 };
-                string plainTextJsons = JsonConvert.SerializeObject(plainText);                
+                string plainTextJsons = JsonConvert.SerializeObject(plainText);
 
                 // Generate IV
                 string iv = cryptoAESGCM.GenerateBase64IV();
 
                 // Encrypt payload
-                string encryptedPayload = cryptoAESGCM.FIREncrypt(plainTextJsons, secretKey, iv);
+                string encryptedPayload = cryptoAESGCM.FIREncrypt(plainTextJsons, data.AuthsecretKey, iv);
 
                 // Encode IV to Base64 (IMPORTANT)
                 string encodedIV = Convert.ToBase64String(Encoding.UTF8.GetBytes(iv));
@@ -344,7 +349,7 @@ namespace CCTNSServiceBus.CCTNS
                     v1 = encryptedPayload,
                     v2 = iv
                 };
-                var BearerToken = GetClientAppToken(data).Result;
+                var BearerToken = GetClientAppToken(_cctnsCredentials).Result;
 
                 Dictionary<string, string> tokenData = new Dictionary<string, string>();
 
@@ -372,7 +377,7 @@ namespace CCTNSServiceBus.CCTNS
 
                         var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                        var response = await client.PostAsync(url, content);
+                        var response = await client.PostAsync(data.urls, content);
 
                         string responseData = await response.Content.ReadAsStringAsync();
 
@@ -390,7 +395,7 @@ namespace CCTNSServiceBus.CCTNS
 
 
                         // Decrypt response
-                        string decrypted = cryptoAESGCM.FIRDecrypt(apiResponse.v1, secretKey, apiResponse.v2);
+                        string decrypted = cryptoAESGCM.FIRDecrypt(apiResponse.v1, data.AuthsecretKey, apiResponse.v2);
 
                         result.Status = true;
                         result.Message = "Success";
