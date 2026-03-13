@@ -54,7 +54,7 @@ namespace CCTNSService.Controllers
         {
             try
             {
-                var data = _Configuration.GetSection("Credentials:CCTNS").Get<CCTNSCredentials>();
+                var data = _Configuration.GetSection("Credentials1:AuthCCTNS").Get<AuthCCTNSCredentials>();
 
                 return await unitOfWork.CCTNSService.GetFIRDetails(data, firNum);
             }

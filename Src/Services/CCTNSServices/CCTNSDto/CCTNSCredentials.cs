@@ -9,13 +9,23 @@ namespace CCTNSDto
 {
     public class CCTNSCredentials
     {
-        public string ClientId { get; set; }
-        public string Content_Type { get; set; }
-        public string BaseUrl { get; set; }
-        public string ClientSecret { get; set; }
-        public string Token { get; set; }
-        public string V1 { get; set; }
-        public string V2 { get; set; }
+        public string ClientId { get; set; } =null!;
+        public string Content_Type { get; set; } = null!;
+        public string BaseUrl { get; set; } = null!;
+        public string ClientSecret { get; set; } = null!;
+        
 
     }
+
+    public class AuthCCTNSCredentials
+    {
+        public string ClientId { get; set; } = null!;
+        public string Content_Type { get; set; } = null!;
+        public string urls { get; set; } = null!;
+        public string AuthsecretKey { get; set; } = null!;
+
+    }
+
+
+
 }
