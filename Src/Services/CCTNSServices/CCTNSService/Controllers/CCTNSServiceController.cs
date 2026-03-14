@@ -38,7 +38,7 @@ namespace CCTNSService.Controllers
             }
             catch (Exception ex)
             {
-                _logsService.Logs("Error", "GetClientAppToken", ex.Message, ex.StackTrace, ex.Source,"CCTNSService/CCTNSServiceController/GetClientAppToken");
+                _logsService.Logs("Error", "GetClientAppToken", ex.Message, ex.StackTrace, ex.Source, "CCTNSService/CCTNSServiceController/GetClientAppToken");
 
                 return new ResponseWithoutPaginationModel
                 {
@@ -50,11 +50,19 @@ namespace CCTNSService.Controllers
 
         [HttpPost]
         [Route("FIRDetails")]
-        public async Task<ResponseWithoutPaginationModel> GetFIRDetails(string firNum)
+        public async Task<ResponseWithoutPaginationModel> GetFIRDetails(string PSCode, string FIRNum, string FIRYear)
         {
             try
             {
                 var data = _Configuration.GetSection("Credentials1:AuthCCTNS").Get<AuthCCTNSCredentials>();
+                // Ensure FIRNum is 4 digits (add leading zero)
+                var paddedFIRNum = FIRNum.PadLeft(4, '0');
+
+                // Get last 2 digits of year
+                var yearLastTwo = FIRYear.Substring(FIRYear.Length - 2);
+
+                // Create firNum
+                var firNum = PSCode + yearLastTwo + paddedFIRNum;
 
                 return await unitOfWork.CCTNSService.GetFIRDetails(data, firNum);
             }
@@ -69,6 +77,5 @@ namespace CCTNSService.Controllers
                 };
             }
         }
-
     }
 }
