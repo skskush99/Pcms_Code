@@ -177,35 +177,35 @@
         public int? Status { get; set; }
     }
 
-    public class DierVictimModel
-    {
-        public long VictimId { get; set; }
-        public long VictimGroupNo { get; set; }
-        public string? VictimName { get; set; }
-        public string? FatherName { get; set; }
-        public int? Gender { get; set; }
-        public string? Address { get; set; }
-        public string? MobileNo { get; set; }
-        public string? UIDNo { get; set; }
-        public long? DistrictId { get; set; }
-        public long? ThanaId { get; set; }
-        public int? VictimStatus { get; set; }
-    }
+    //public class DierVictimModel
+    //{
+    //    public long VictimId { get; set; }
+    //    public long VictimGroupNo { get; set; }
+    //    public string? VictimName { get; set; }
+    //    public string? FatherName { get; set; }
+    //    public int? Gender { get; set; }
+    //    public string? Address { get; set; }
+    //    public string? MobileNo { get; set; }
+    //    public string? UIDNo { get; set; }
+    //    public long? DistrictId { get; set; }
+    //    public long? ThanaId { get; set; }
+    //    public int? VictimStatus { get; set; }
+    //}
 
-    public class DierWitnessModel
-    {
-        public long WitnessId { get; set; }
-        public long WitnessGroupNo { get; set; }
-        public string? WitnessName { get; set; }
-        public string? FatherName { get; set; }
-        public int? Gender { get; set; }
-        public string? Address { get; set; }
-        public string? MobileNo { get; set; }
-        public string? UIDNo { get; set; }
-        public long? DistrictId { get; set; }
-        public long? ThanaId { get; set; }
-        public int? WitnessStatus { get; set; }
-    }
+    //public class DierWitnessModel
+    //{
+    //    public long WitnessId { get; set; }
+    //    public long WitnessGroupNo { get; set; }
+    //    public string? WitnessName { get; set; }
+    //    public string? FatherName { get; set; }
+    //    public int? Gender { get; set; }
+    //    public string? Address { get; set; }
+    //    public string? MobileNo { get; set; }
+    //    public string? UIDNo { get; set; }
+    //    public long? DistrictId { get; set; }
+    //    public long? ThanaId { get; set; }
+    //    public int? WitnessStatus { get; set; }
+    //}
 
     public class DierInvestigationModel
     {

@@ -11,9 +11,6 @@ namespace Case.ServiceBus.DierRegistrationsService
         Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps3(DierRegistrationsSteps3Model objModel, int UserId);
         Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps4(DierRegistrationsSteps4Model objModel, int UserId);
 
-
-
-
         Task<ResponseWithoutPaginationModel> AddEditDierRegistrations(DierRegistrations_OldModel objModel, int UserId);
 
         Task<ResponseWithoutPaginationModel> GetDierAccused(long AccusedGroupNo);
@@ -24,13 +21,6 @@ namespace Case.ServiceBus.DierRegistrationsService
         Task<ResponseWithoutPaginationModel> AddEditDierVictimWitness(DierVictimWitnessModel objModel, int UserId);
         Task<ResponseWithoutPaginationModel> DeleteDierVictimWitness(long Id, int UserId);
 
-        Task<ResponseWithoutPaginationModel> GetDierVictim(long VictimGroupNo);
-        Task<ResponseWithoutPaginationModel> AddEditDierVictim(DierVictimModel objModel, int UserId);
-        Task<ResponseWithoutPaginationModel> DeleteDierVictim(long VictimId, int UserId);
-
-        Task<ResponseWithoutPaginationModel> GetDierWitness(long WitnessGroupNo);
-        Task<ResponseWithoutPaginationModel> AddEditDierWitness(DierWitnessModel objModel, int UserId);
-        Task<ResponseWithoutPaginationModel> DeleteDierWitness(long WitnessId, int UserId);
 
         Task<ResponseWithoutPaginationModel> GetDierInvestigation(long InvestGroupNo);
         Task<ResponseWithoutPaginationModel> AddEditDierInvestigation(DierInvestigationModel objModel, int UserId);
@@ -44,6 +34,14 @@ namespace Case.ServiceBus.DierRegistrationsService
         Task<DierRegistrationsResponseModel> AddEditOffenceClassification(OffenceClassificationModel objModel, int UserId);
         Task<DierRegistrationsResponseModel> DeleteOffenceClassification(long OffenceClassifId, int UserId);
 
+
+        //Task<ResponseWithoutPaginationModel> GetDierVictim(long VictimGroupNo);
+        //Task<ResponseWithoutPaginationModel> AddEditDierVictim(DierVictimModel objModel, int UserId);
+        //Task<ResponseWithoutPaginationModel> DeleteDierVictim(long VictimId, int UserId);
+
+        //Task<ResponseWithoutPaginationModel> GetDierWitness(long WitnessGroupNo);
+        //Task<ResponseWithoutPaginationModel> AddEditDierWitness(DierWitnessModel objModel, int UserId);
+        //Task<ResponseWithoutPaginationModel> DeleteDierWitness(long WitnessId, int UserId);
 
     }
 
