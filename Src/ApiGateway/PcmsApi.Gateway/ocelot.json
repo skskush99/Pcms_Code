@@ -1656,6 +1656,23 @@
       }
     },
     {
+      "UpstreamPathTemplate": "/PcmsMaster/PoliceThana/AllPStationDropdown",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/PcmsMasterService/api/PoliceThana/AllPoliceStationDropdownList",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
       "UpstreamPathTemplate": "/PcmsMaster/RajMaster/AddState",
       "UpstreamHttpMethod": [
         "POST"

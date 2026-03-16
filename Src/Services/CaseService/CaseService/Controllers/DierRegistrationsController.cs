@@ -55,7 +55,6 @@ namespace CaseService.Controllers
             }
         }
 
-
         [HttpPost]
         public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps1(DierRegistrationsSteps1Model objModel)
         {
@@ -469,11 +468,63 @@ namespace CaseService.Controllers
                 };
             }
         }
+        
         [HttpPost]
-        public async Task<ResponseWithoutPaginationModel> AddEditDierAccused(DierAccusedModel objModel)
+        [RequestSizeLimit(52428800)]
+        public async Task<ResponseWithoutPaginationModel> AddEditDierAccused(IFormFile? SelectFile, [FromForm] DierAccusedModel objModel)
         {
             try
             {
+                //  Charge Sheet Docs Upload
+                if (SelectFile != null && SelectFile.Length != 0)
+                {
+                    if (Path.GetFileNameWithoutExtension(SelectFile.FileName).Contains("."))
+                    {
+                        return new ResponseWithoutPaginationModel()
+                        {
+                            Status = false,
+                            Message = "Please enter a filename without any dots (e.g., 'Uploadfile' instead of 'Uploadfile.xyz' )."
+                        };
+                    }
+                    var extension = Path.GetExtension(SelectFile.FileName).ToLowerInvariant();
+
+                    var permittedExtensions = new[] { ".pdf" };
+                    if (string.IsNullOrEmpty(extension) || !permittedExtensions.Contains(extension))
+                    {
+                        return new ResponseWithoutPaginationModel()
+                        {
+                            Status = false,
+                            Message = "Kindly upload documents in PDF format only."
+                        };
+                    }
+
+                    //Validate that the file size does not exceed 10 MB.
+                    if (SelectFile.Length > 10485760)       // Limit upto 10 MB  (1,048,576 bytes in 1 MB)  
+                    {
+                        return new ResponseWithoutPaginationModel()
+                        {
+                            Status = false,
+                            Message = "File size is too large. Maximum allowed size is 10 MB."
+                        };
+                    }
+
+                    string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(SelectFile.FileName);
+                    string fileName = Convert.ToString(fileNameWithoutExtension).Replace(" ", "-") + DateTime.Now.ToString("ddMMyyyyhhmmss") + extension;
+                    string folderName = "Uploads/DierAccused/";
+
+                    string filePath = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+                    if (!Directory.Exists(filePath))
+                        Directory.CreateDirectory(filePath);
+
+                    var filePathWithName = Path.Combine(Directory.GetCurrentDirectory(), filePath, fileName);
+                    using (var stream = new FileStream(filePathWithName, FileMode.Create, FileAccess.Write))
+                    {
+                        await SelectFile.CopyToAsync(stream);
+                    }
+
+                    objModel.SanctionDocs = folderName + fileName;
+                }
+
                 return await unitOfWork.DierRegistrationsService.AddEditDierAccused(objModel, UserSession.Current.UserId);
             }
             catch (Exception ex)
@@ -549,110 +600,6 @@ namespace CaseService.Controllers
             catch (Exception ex)
             {
                 _logsService.Logs("Error", "DeleteDierVictimWitness", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/DeleteDierVictimWitness");
-                return new ResponseWithoutPaginationModel()
-                {
-                    Status = false,
-                    Message = ex.Message,
-                };
-            }
-        }
-
-        [HttpGet]
-        public async Task<ResponseWithoutPaginationModel> GetDierVictim(long VictimGroupNo)
-        {
-            try
-            {
-                return await unitOfWork.DierRegistrationsService.GetDierVictim(VictimGroupNo);
-            }
-            catch (Exception ex)
-            {
-                _logsService.Logs("Error", "GetDierVictim", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/GetDierVictim");
-                return new ResponseWithoutPaginationModel()
-                {
-                    Status = false,
-                    Message = ex.Message,
-                };
-            }
-        }
-        [HttpPost]
-        public async Task<ResponseWithoutPaginationModel> AddEditDierVictim(DierVictimModel objModel)
-        {
-            try
-            {
-                return await unitOfWork.DierRegistrationsService.AddEditDierVictim(objModel, UserSession.Current.UserId);
-            }
-            catch (Exception ex)
-            {
-                _logsService.Logs("Error", "AddEditDierVictim", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/AddEditDierVictim");
-                return new ResponseWithoutPaginationModel()
-                {
-                    Status = false,
-                    Message = ex.Message,
-                };
-            }
-        }
-        [HttpPost]
-        public async Task<ResponseWithoutPaginationModel> DeleteDierVictim(long VictimId)
-        {
-            try
-            {
-                return await unitOfWork.DierRegistrationsService.DeleteDierVictim(VictimId, UserSession.Current.UserId);
-            }
-            catch (Exception ex)
-            {
-                _logsService.Logs("Error", "DeleteDierVictim", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/DeleteDierVictim");
-                return new ResponseWithoutPaginationModel()
-                {
-                    Status = false,
-                    Message = ex.Message,
-                };
-            }
-        }
-
-        [HttpGet]
-        public async Task<ResponseWithoutPaginationModel> GetDierWitness(long WitnessGroupNo)
-        {
-            try
-            {
-                return await unitOfWork.DierRegistrationsService.GetDierWitness(WitnessGroupNo);
-            }
-            catch (Exception ex)
-            {
-                _logsService.Logs("Error", "GetDierWitness", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/GetDierWitness");
-                return new ResponseWithoutPaginationModel()
-                {
-                    Status = false,
-                    Message = ex.Message,
-                };
-            }
-        }
-        [HttpPost]
-        public async Task<ResponseWithoutPaginationModel> AddEditDierWitness(DierWitnessModel objModel)
-        {
-            try
-            {
-                return await unitOfWork.DierRegistrationsService.AddEditDierWitness(objModel, UserSession.Current.UserId);
-            }
-            catch (Exception ex)
-            {
-                _logsService.Logs("Error", "AddEditDierWitness", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/AddEditDierWitness");
-                return new ResponseWithoutPaginationModel()
-                {
-                    Status = false,
-                    Message = ex.Message,
-                };
-            }
-        }
-        [HttpPost]
-        public async Task<ResponseWithoutPaginationModel> DeleteDierWitness(long WitnessId)
-        {
-            try
-            {
-                return await unitOfWork.DierRegistrationsService.DeleteDierWitness(WitnessId, UserSession.Current.UserId);
-            }
-            catch (Exception ex)
-            {
-                _logsService.Logs("Error", "DeleteDierWitness", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/DeleteDierWitness");
                 return new ResponseWithoutPaginationModel()
                 {
                     Status = false,
@@ -826,5 +773,111 @@ namespace CaseService.Controllers
             }
         }
 
+
+
+
+        //[HttpGet]
+        //public async Task<ResponseWithoutPaginationModel> GetDierVictim(long VictimGroupNo)
+        //{
+        //    try
+        //    {
+        //        return await unitOfWork.DierRegistrationsService.GetDierVictim(VictimGroupNo);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logsService.Logs("Error", "GetDierVictim", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/GetDierVictim");
+        //        return new ResponseWithoutPaginationModel()
+        //        {
+        //            Status = false,
+        //            Message = ex.Message,
+        //        };
+        //    }
+        //}
+        //[HttpPost]
+        //public async Task<ResponseWithoutPaginationModel> AddEditDierVictim(DierVictimModel objModel)
+        //{
+        //    try
+        //    {
+        //        return await unitOfWork.DierRegistrationsService.AddEditDierVictim(objModel, UserSession.Current.UserId);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logsService.Logs("Error", "AddEditDierVictim", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/AddEditDierVictim");
+        //        return new ResponseWithoutPaginationModel()
+        //        {
+        //            Status = false,
+        //            Message = ex.Message,
+        //        };
+        //    }
+        //}
+        //[HttpPost]
+        //public async Task<ResponseWithoutPaginationModel> DeleteDierVictim(long VictimId)
+        //{
+        //    try
+        //    {
+        //        return await unitOfWork.DierRegistrationsService.DeleteDierVictim(VictimId, UserSession.Current.UserId);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logsService.Logs("Error", "DeleteDierVictim", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/DeleteDierVictim");
+        //        return new ResponseWithoutPaginationModel()
+        //        {
+        //            Status = false,
+        //            Message = ex.Message,
+        //        };
+        //    }
+        //}
+
+        //[HttpGet]
+        //public async Task<ResponseWithoutPaginationModel> GetDierWitness(long WitnessGroupNo)
+        //{
+        //    try
+        //    {
+        //        return await unitOfWork.DierRegistrationsService.GetDierWitness(WitnessGroupNo);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logsService.Logs("Error", "GetDierWitness", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/GetDierWitness");
+        //        return new ResponseWithoutPaginationModel()
+        //        {
+        //            Status = false,
+        //            Message = ex.Message,
+        //        };
+        //    }
+        //}
+        //[HttpPost]
+        //public async Task<ResponseWithoutPaginationModel> AddEditDierWitness(DierWitnessModel objModel)
+        //{
+        //    try
+        //    {
+        //        return await unitOfWork.DierRegistrationsService.AddEditDierWitness(objModel, UserSession.Current.UserId);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logsService.Logs("Error", "AddEditDierWitness", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/AddEditDierWitness");
+        //        return new ResponseWithoutPaginationModel()
+        //        {
+        //            Status = false,
+        //            Message = ex.Message,
+        //        };
+        //    }
+        //}
+        //[HttpPost]
+        //public async Task<ResponseWithoutPaginationModel> DeleteDierWitness(long WitnessId)
+        //{
+        //    try
+        //    {
+        //        return await unitOfWork.DierRegistrationsService.DeleteDierWitness(WitnessId, UserSession.Current.UserId);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logsService.Logs("Error", "DeleteDierWitness", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/DeleteDierWitness");
+        //        return new ResponseWithoutPaginationModel()
+        //        {
+        //            Status = false,
+        //            Message = ex.Message,
+        //        };
+        //    }
+        //}
     }
 }

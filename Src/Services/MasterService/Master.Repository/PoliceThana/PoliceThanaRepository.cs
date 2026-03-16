@@ -290,5 +290,37 @@ namespace Master.Repository.PoliceThana
                 };
             }
         }
+
+        public async Task<ResponseWithoutPaginationModel> AllPoliceStationDropdownList()
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+                    parmeters.Add("@Action", "AllPoliceStationDropdownList");
+                    var objData = await Con.QueryAsync<DropdownlistModel>("spMstPoliceThana", parmeters, commandType: CommandType.StoredProcedure);
+
+                    ResponseWithoutPaginationModel objResut = new ResponseWithoutPaginationModel();
+                    {
+                        objResut.Status = true;
+                        objResut.Message = "";
+                        objResut.Data = objData;
+                    }
+                    ;
+                    DisposeCurrentSqlConnection();
+                    return objResut;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "AllPoliceStationDropdownList", ex.Message, ex.StackTrace, ex.Source, "MasterService/Master.Repository/PoliceThanaRepository/AllPoliceStationDropdownList");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
     }
 }

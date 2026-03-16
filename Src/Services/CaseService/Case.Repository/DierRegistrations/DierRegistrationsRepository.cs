@@ -59,7 +59,6 @@ namespace Case.Repository.DierRegistrations
                 };
             }
         }
-
         public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps1(DierRegistrationsSteps1Model objModel, int UserId)
         {
             try
@@ -108,7 +107,6 @@ namespace Case.Repository.DierRegistrations
                 };
             }
         }
-
         public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps2(DierRegistrationsSteps2Model objModel, int UserId)
         {
             try
@@ -154,7 +152,6 @@ namespace Case.Repository.DierRegistrations
                 };
             }
         }
-
         public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps3(DierRegistrationsSteps3Model objModel, int UserId)
         {
             try
@@ -185,7 +182,6 @@ namespace Case.Repository.DierRegistrations
                 };
             }
         }
-
         public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps4(DierRegistrationsSteps4Model objModel, int UserId)
         {
             try
@@ -219,7 +215,6 @@ namespace Case.Repository.DierRegistrations
                 };
             }
         }
-
         public async Task<ResponseWithoutPaginationModel> AddEditDierRegistrations(DierRegistrations_OldModel objModel, int UserId)
         {
             try
@@ -286,6 +281,7 @@ namespace Case.Repository.DierRegistrations
             }
         }
 
+
         public async Task<ResponseWithoutPaginationModel> GetDierAccused(long AccusedGroupNo)
         {
             try
@@ -318,7 +314,6 @@ namespace Case.Repository.DierRegistrations
                 };
             }
         }
-
         public async Task<ResponseWithoutPaginationModel> AddEditDierAccused(DierAccusedModel objModel, int UserId)
         {
             try
@@ -338,16 +333,29 @@ namespace Case.Repository.DierRegistrations
                         parmeters.Add("@CreatedBy", UserId);
                     }
                     parmeters.Add("@AccusedId", objModel.AccusedId);
+                    parmeters.Add("@IsAccusedType", objModel.IsAccusedType);
                     parmeters.Add("@AccusedGroupNo", objModel.AccusedGroupNo);
                     parmeters.Add("@AccuseName", objModel.AccuseName);
                     parmeters.Add("@FatherName", objModel.FatherName);
-                    parmeters.Add("@Gender", objModel.Gender);
                     parmeters.Add("@Address", objModel.Address);
+                    parmeters.Add("@Age", objModel.Age);
+                    parmeters.Add("@Gender", objModel.Gender);
+                    parmeters.Add("@FIRStatusId", objModel.FIRStatusId);
+                    parmeters.Add("@Remark", objModel.Remark);
+                    parmeters.Add("@DepartmentId", objModel.DepartmentId);
+                    parmeters.Add("@DepartmentName", objModel.DepartmentName);
+                    parmeters.Add("@DesignationId", objModel.DesignationId);
+                    parmeters.Add("@DesignationName", objModel.DesignationName);
+                    parmeters.Add("@EmpID", objModel.EmpID);
+                    parmeters.Add("@JanPratinidhiPostID", objModel.JanPratinidhiPostID);
+                    parmeters.Add("@JanPratinidhiPostName", objModel.JanPratinidhiPostName);
+                    parmeters.Add("@ConstitutionDT", objModel.ConstitutionDT);
+                    parmeters.Add("@IsSanction", objModel.IsSanction);
+                    parmeters.Add("@SanctionDocs", objModel.SanctionDocs);
                     parmeters.Add("@MobileNo", objModel.MobileNo);
                     parmeters.Add("@UIDNo", objModel.UIDNo);
                     parmeters.Add("@DistrictId", objModel.DistrictId);
-                    parmeters.Add("@ThanaId", objModel.ThanaId);
-                    parmeters.Add("@FIRStatusId", objModel.FIRStatusId);
+                    parmeters.Add("@PsId", objModel.PsId);
 
                     var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_DierAccused", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
                     var objResult = objData.FirstOrDefault();
@@ -365,7 +373,6 @@ namespace Case.Repository.DierRegistrations
                 };
             }
         }
-
         public async Task<ResponseWithoutPaginationModel> DeleteDierAccused(long AccusedId, int UserId)
         {
             try
@@ -393,6 +400,7 @@ namespace Case.Repository.DierRegistrations
                 };
             }
         }
+
 
         public async Task<ResponseWithoutPaginationModel> GetDierVictimWitness(long GroupNo)
         {
@@ -426,7 +434,6 @@ namespace Case.Repository.DierRegistrations
                 };
             }
         }
-
         public async Task<ResponseWithoutPaginationModel> AddEditDierVictimWitness(DierVictimWitnessModel objModel, int UserId)
         {
             try
@@ -474,7 +481,6 @@ namespace Case.Repository.DierRegistrations
                 };
             }
         }
-
         public async Task<ResponseWithoutPaginationModel> DeleteDierVictimWitness(long Id, int UserId)
         {
             try
@@ -503,221 +509,6 @@ namespace Case.Repository.DierRegistrations
             }
         }
 
-        public async Task<ResponseWithoutPaginationModel> GetDierVictim(long VictimGroupNo)
-        {
-            try
-            {
-                using (var Con = GetOpenConnection())
-                {
-                    var parmeters = new DynamicParameters();
-                    parmeters.Add("@Action", "GetDierVictim");
-                    parmeters.Add("@VictimGroupNo", VictimGroupNo);
-                    var objResult = await Con.QueryAsync("spTrn_DierVictim", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
-
-                    ResponseWithoutPaginationModel objResut = new()
-                    {
-                        Status = true,
-                        Message = "",
-                        Data = objResult,
-                    };
-                    DisposeCurrentSqlConnection();
-
-                    return objResut;
-                }
-            }
-            catch (Exception ex)
-            {
-                _logsService.Logs("Error", "GetDierVictim", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/GetDierVictim");
-                return new ResponseWithoutPaginationModel()
-                {
-                    Status = false,
-                    Message = ex.Message,
-                };
-            }
-        }
-
-        public async Task<ResponseWithoutPaginationModel> AddEditDierVictim(DierVictimModel objModel, int UserId)
-        {
-            try
-            {
-                using (var Con = GetOpenConnection())
-                {
-                    var parmeters = new DynamicParameters();
-
-                    if (objModel.VictimId > 0)
-                    {
-                        parmeters.Add("@Action", "VictimEdit");
-                        parmeters.Add("@UpdatedBy", UserId);
-                    }
-                    else
-                    {
-                        parmeters.Add("@Action", "VictimAdd");
-                        parmeters.Add("@CreatedBy", UserId);
-                    }
-                    parmeters.Add("@VictimId", objModel.VictimId);
-                    parmeters.Add("@VictimGroupNo", objModel.VictimGroupNo);
-                    parmeters.Add("@VictimName", objModel.VictimName);
-                    parmeters.Add("@FatherName", objModel.FatherName);
-                    parmeters.Add("@Gender", objModel.Gender);
-                    parmeters.Add("@Address", objModel.Address);
-                    parmeters.Add("@MobileNo", objModel.MobileNo);
-                    parmeters.Add("@UIDNo", objModel.UIDNo);
-                    parmeters.Add("@DistrictId", objModel.DistrictId);
-                    parmeters.Add("@ThanaId", objModel.ThanaId);
-                    parmeters.Add("@VictimStatus", objModel.VictimStatus);
-
-                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_DierVictim", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
-                    var objResult = objData.FirstOrDefault();
-                    DisposeCurrentSqlConnection();
-                    return objResult != null ? objResult : new ResponseWithoutPaginationModel();
-                }
-            }
-            catch (Exception ex)
-            {
-                _logsService.Logs("Error", "AddEditDierVictim", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/AddEditDierVictim");
-                return new ResponseWithoutPaginationModel()
-                {
-                    Status = false,
-                    Message = ex.Message,
-                };
-            }
-        }
-
-        public async Task<ResponseWithoutPaginationModel> DeleteDierVictim(long VictimId, int UserId)
-        {
-            try
-            {
-                using (var Con = GetOpenConnection())
-                {
-                    var parmeters = new DynamicParameters();
-                    parmeters.Add("@Action", "DeleteDierVictim");
-                    parmeters.Add("@DeletedBy", UserId);
-                    parmeters.Add("@VictimId", VictimId);
-
-                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_DierVictim", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
-                    var objResut = objData.FirstOrDefault();
-                    DisposeCurrentSqlConnection();
-                    return objResut != null ? objResut : new ResponseWithoutPaginationModel();
-                }
-            }
-            catch (Exception ex)
-            {
-                _logsService.Logs("Error", "DeleteDierVictim", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/DeleteDierVictim");
-                return new ResponseWithoutPaginationModel()
-                {
-                    Status = false,
-                    Message = ex.Message,
-                };
-            }
-        }
-
-        public async Task<ResponseWithoutPaginationModel> GetDierWitness(long WitnessGroupNo)
-        {
-            try
-            {
-                using (var Con = GetOpenConnection())
-                {
-                    var parmeters = new DynamicParameters();
-                    parmeters.Add("@Action", "GetDierWitness");
-                    parmeters.Add("@WitnessGroupNo", WitnessGroupNo);
-                    var objResult = await Con.QueryAsync("spTrn_DierWitness", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
-
-                    ResponseWithoutPaginationModel objResut = new()
-                    {
-                        Status = true,
-                        Message = "",
-                        Data = objResult,
-                    };
-                    DisposeCurrentSqlConnection();
-
-                    return objResut;
-                }
-            }
-            catch (Exception ex)
-            {
-                _logsService.Logs("Error", "GetDierWitness", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/GetDierWitness");
-                return new ResponseWithoutPaginationModel()
-                {
-                    Status = false,
-                    Message = ex.Message,
-                };
-            }
-        }
-
-        public async Task<ResponseWithoutPaginationModel> AddEditDierWitness(DierWitnessModel objModel, int UserId)
-        {
-            try
-            {
-                using (var Con = GetOpenConnection())
-                {
-                    var parmeters = new DynamicParameters();
-
-                    if (objModel.WitnessId > 0)
-                    {
-                        parmeters.Add("@Action", "WitnessEdit");
-                        parmeters.Add("@UpdatedBy", UserId);
-                    }
-                    else
-                    {
-                        parmeters.Add("@Action", "WitnessAdd");
-                        parmeters.Add("@CreatedBy", UserId);
-                    }
-                    parmeters.Add("@WitnessId", objModel.WitnessId);
-                    parmeters.Add("@WitnessGroupNo", objModel.WitnessGroupNo);
-                    parmeters.Add("@WitnessName", objModel.WitnessName);
-                    parmeters.Add("@FatherName", objModel.FatherName);
-                    parmeters.Add("@Gender", objModel.Gender);
-                    parmeters.Add("@Address", objModel.Address);
-                    parmeters.Add("@MobileNo", objModel.MobileNo);
-                    parmeters.Add("@UIDNo", objModel.UIDNo);
-                    parmeters.Add("@DistrictId", objModel.DistrictId);
-                    parmeters.Add("@ThanaId", objModel.ThanaId);
-                    parmeters.Add("@WitnessStatus", objModel.WitnessStatus);
-
-                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_DierWitness", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
-                    var objResult = objData.FirstOrDefault();
-                    DisposeCurrentSqlConnection();
-                    return objResult != null ? objResult : new ResponseWithoutPaginationModel();
-                }
-            }
-            catch (Exception ex)
-            {
-                _logsService.Logs("Error", "AddEditDierWitness", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/AddEditDierWitness");
-                return new ResponseWithoutPaginationModel()
-                {
-                    Status = false,
-                    Message = ex.Message,
-                };
-            }
-        }
-
-        public async Task<ResponseWithoutPaginationModel> DeleteDierWitness(long VictimId, int UserId)
-        {
-            try
-            {
-                using (var Con = GetOpenConnection())
-                {
-                    var parmeters = new DynamicParameters();
-                    parmeters.Add("@Action", "DeleteDierWitness");
-                    parmeters.Add("@DeletedBy", UserId);
-                    parmeters.Add("@VictimId", VictimId);
-
-                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_DierWitness", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
-                    var objResut = objData.FirstOrDefault();
-                    DisposeCurrentSqlConnection();
-                    return objResut != null ? objResut : new ResponseWithoutPaginationModel();
-                }
-            }
-            catch (Exception ex)
-            {
-                _logsService.Logs("Error", "DeleteDierWitness", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/DeleteDierWitness");
-                return new ResponseWithoutPaginationModel()
-                {
-                    Status = false,
-                    Message = ex.Message,
-                };
-            }
-        }
 
         public async Task<ResponseWithoutPaginationModel> GetDierInvestigation(long InvestGroupNo)
         {
@@ -751,7 +542,6 @@ namespace Case.Repository.DierRegistrations
                 };
             }
         }
-
         public async Task<ResponseWithoutPaginationModel> AddEditDierInvestigation(DierInvestigationModel objModel, int UserId)
         {
             try
@@ -798,7 +588,6 @@ namespace Case.Repository.DierRegistrations
                 };
             }
         }
-
         public async Task<ResponseWithoutPaginationModel> DeleteDierInvestigation(long InvestId, int UserId)
         {
             try
@@ -860,7 +649,6 @@ namespace Case.Repository.DierRegistrations
                 };
             }
         }
-
         public async Task<ResponseWithoutPaginationModel> AddEditDierComplaintAgainstPerson(DierComplaintAgainstPersonModel objModel, int UserId)
         {
             try
@@ -904,7 +692,6 @@ namespace Case.Repository.DierRegistrations
                 };
             }
         }
-
         public async Task<ResponseWithoutPaginationModel> DeleteDierComplaintAgainstPerson(long ComplaintPerId, int UserId)
         {
             try
@@ -966,7 +753,6 @@ namespace Case.Repository.DierRegistrations
                 };
             }
         }
-
         public async Task<DierRegistrationsResponseModel> AddEditOffenceClassification(OffenceClassificationModel objModel, int UserId)
         {
             try
@@ -1011,7 +797,6 @@ namespace Case.Repository.DierRegistrations
                 };
             }
         }
-
         public async Task<DierRegistrationsResponseModel> DeleteOffenceClassification(long OffenceClassifId, int UserId)
         {
             try
@@ -1040,6 +825,220 @@ namespace Case.Repository.DierRegistrations
             }
         }
 
+
+
+        //public async Task<ResponseWithoutPaginationModel> GetDierVictim(long VictimGroupNo)
+        //{
+        //    try
+        //    {
+        //        using (var Con = GetOpenConnection())
+        //        {
+        //            var parmeters = new DynamicParameters();
+        //            parmeters.Add("@Action", "GetDierVictim");
+        //            parmeters.Add("@VictimGroupNo", VictimGroupNo);
+        //            var objResult = await Con.QueryAsync("spTrn_DierVictim", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+
+        //            ResponseWithoutPaginationModel objResut = new()
+        //            {
+        //                Status = true,
+        //                Message = "",
+        //                Data = objResult,
+        //            };
+        //            DisposeCurrentSqlConnection();
+
+        //            return objResut;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logsService.Logs("Error", "GetDierVictim", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/GetDierVictim");
+        //        return new ResponseWithoutPaginationModel()
+        //        {
+        //            Status = false,
+        //            Message = ex.Message,
+        //        };
+        //    }
+        //}
+        //public async Task<ResponseWithoutPaginationModel> AddEditDierVictim(DierVictimModel objModel, int UserId)
+        //{
+        //    try
+        //    {
+        //        using (var Con = GetOpenConnection())
+        //        {
+        //            var parmeters = new DynamicParameters();
+
+        //            if (objModel.VictimId > 0)
+        //            {
+        //                parmeters.Add("@Action", "VictimEdit");
+        //                parmeters.Add("@UpdatedBy", UserId);
+        //            }
+        //            else
+        //            {
+        //                parmeters.Add("@Action", "VictimAdd");
+        //                parmeters.Add("@CreatedBy", UserId);
+        //            }
+        //            parmeters.Add("@VictimId", objModel.VictimId);
+        //            parmeters.Add("@VictimGroupNo", objModel.VictimGroupNo);
+        //            parmeters.Add("@VictimName", objModel.VictimName);
+        //            parmeters.Add("@FatherName", objModel.FatherName);
+        //            parmeters.Add("@Gender", objModel.Gender);
+        //            parmeters.Add("@Address", objModel.Address);
+        //            parmeters.Add("@MobileNo", objModel.MobileNo);
+        //            parmeters.Add("@UIDNo", objModel.UIDNo);
+        //            parmeters.Add("@DistrictId", objModel.DistrictId);
+        //            parmeters.Add("@ThanaId", objModel.ThanaId);
+        //            parmeters.Add("@VictimStatus", objModel.VictimStatus);
+
+        //            var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_DierVictim", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+        //            var objResult = objData.FirstOrDefault();
+        //            DisposeCurrentSqlConnection();
+        //            return objResult != null ? objResult : new ResponseWithoutPaginationModel();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logsService.Logs("Error", "AddEditDierVictim", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/AddEditDierVictim");
+        //        return new ResponseWithoutPaginationModel()
+        //        {
+        //            Status = false,
+        //            Message = ex.Message,
+        //        };
+        //    }
+        //}
+        //public async Task<ResponseWithoutPaginationModel> DeleteDierVictim(long VictimId, int UserId)
+        //{
+        //    try
+        //    {
+        //        using (var Con = GetOpenConnection())
+        //        {
+        //            var parmeters = new DynamicParameters();
+        //            parmeters.Add("@Action", "DeleteDierVictim");
+        //            parmeters.Add("@DeletedBy", UserId);
+        //            parmeters.Add("@VictimId", VictimId);
+
+        //            var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_DierVictim", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+        //            var objResut = objData.FirstOrDefault();
+        //            DisposeCurrentSqlConnection();
+        //            return objResut != null ? objResut : new ResponseWithoutPaginationModel();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logsService.Logs("Error", "DeleteDierVictim", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/DeleteDierVictim");
+        //        return new ResponseWithoutPaginationModel()
+        //        {
+        //            Status = false,
+        //            Message = ex.Message,
+        //        };
+        //    }
+        //}
+
+
+        //public async Task<ResponseWithoutPaginationModel> GetDierWitness(long WitnessGroupNo)
+        //{
+        //    try
+        //    {
+        //        using (var Con = GetOpenConnection())
+        //        {
+        //            var parmeters = new DynamicParameters();
+        //            parmeters.Add("@Action", "GetDierWitness");
+        //            parmeters.Add("@WitnessGroupNo", WitnessGroupNo);
+        //            var objResult = await Con.QueryAsync("spTrn_DierWitness", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+
+        //            ResponseWithoutPaginationModel objResut = new()
+        //            {
+        //                Status = true,
+        //                Message = "",
+        //                Data = objResult,
+        //            };
+        //            DisposeCurrentSqlConnection();
+
+        //            return objResut;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logsService.Logs("Error", "GetDierWitness", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/GetDierWitness");
+        //        return new ResponseWithoutPaginationModel()
+        //        {
+        //            Status = false,
+        //            Message = ex.Message,
+        //        };
+        //    }
+        //}
+        //public async Task<ResponseWithoutPaginationModel> AddEditDierWitness(DierWitnessModel objModel, int UserId)
+        //{
+        //    try
+        //    {
+        //        using (var Con = GetOpenConnection())
+        //        {
+        //            var parmeters = new DynamicParameters();
+
+        //            if (objModel.WitnessId > 0)
+        //            {
+        //                parmeters.Add("@Action", "WitnessEdit");
+        //                parmeters.Add("@UpdatedBy", UserId);
+        //            }
+        //            else
+        //            {
+        //                parmeters.Add("@Action", "WitnessAdd");
+        //                parmeters.Add("@CreatedBy", UserId);
+        //            }
+        //            parmeters.Add("@WitnessId", objModel.WitnessId);
+        //            parmeters.Add("@WitnessGroupNo", objModel.WitnessGroupNo);
+        //            parmeters.Add("@WitnessName", objModel.WitnessName);
+        //            parmeters.Add("@FatherName", objModel.FatherName);
+        //            parmeters.Add("@Gender", objModel.Gender);
+        //            parmeters.Add("@Address", objModel.Address);
+        //            parmeters.Add("@MobileNo", objModel.MobileNo);
+        //            parmeters.Add("@UIDNo", objModel.UIDNo);
+        //            parmeters.Add("@DistrictId", objModel.DistrictId);
+        //            parmeters.Add("@ThanaId", objModel.ThanaId);
+        //            parmeters.Add("@WitnessStatus", objModel.WitnessStatus);
+
+        //            var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_DierWitness", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+        //            var objResult = objData.FirstOrDefault();
+        //            DisposeCurrentSqlConnection();
+        //            return objResult != null ? objResult : new ResponseWithoutPaginationModel();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logsService.Logs("Error", "AddEditDierWitness", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/AddEditDierWitness");
+        //        return new ResponseWithoutPaginationModel()
+        //        {
+        //            Status = false,
+        //            Message = ex.Message,
+        //        };
+        //    }
+        //}
+        //public async Task<ResponseWithoutPaginationModel> DeleteDierWitness(long VictimId, int UserId)
+        //{
+        //    try
+        //    {
+        //        using (var Con = GetOpenConnection())
+        //        {
+        //            var parmeters = new DynamicParameters();
+        //            parmeters.Add("@Action", "DeleteDierWitness");
+        //            parmeters.Add("@DeletedBy", UserId);
+        //            parmeters.Add("@VictimId", VictimId);
+
+        //            var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_DierWitness", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+        //            var objResut = objData.FirstOrDefault();
+        //            DisposeCurrentSqlConnection();
+        //            return objResut != null ? objResut : new ResponseWithoutPaginationModel();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logsService.Logs("Error", "DeleteDierWitness", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/DeleteDierWitness");
+        //        return new ResponseWithoutPaginationModel()
+        //        {
+        //            Status = false,
+        //            Message = ex.Message,
+        //        };
+        //    }
+        //}
 
     }
 }

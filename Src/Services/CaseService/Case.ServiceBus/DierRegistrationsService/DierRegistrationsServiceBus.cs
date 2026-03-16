@@ -25,7 +25,6 @@ namespace Case.ServiceBus.DierRegistrationsService
                 throw;
             }
         }
-
         public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps1(DierRegistrationsSteps1Model objModel, int UserId)
         {
             try
@@ -38,7 +37,6 @@ namespace Case.ServiceBus.DierRegistrationsService
                 throw;
             }
         }
-
         public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps2(DierRegistrationsSteps2Model objModel, int UserId)
         {
             try
@@ -51,7 +49,6 @@ namespace Case.ServiceBus.DierRegistrationsService
                 throw;
             }
         }
-
         public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps3(DierRegistrationsSteps3Model objModel, int UserId)
         {
             try
@@ -64,7 +61,6 @@ namespace Case.ServiceBus.DierRegistrationsService
                 throw;
             }
         }
-
         public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps4(DierRegistrationsSteps4Model objModel, int UserId)
         {
             try
@@ -77,7 +73,6 @@ namespace Case.ServiceBus.DierRegistrationsService
                 throw;
             }
         }
-
         public async Task<ResponseWithoutPaginationModel> AddEditDierRegistrations(DierRegistrations_OldModel objModel, int UserId)
         {
             try
@@ -158,81 +153,6 @@ namespace Case.ServiceBus.DierRegistrationsService
             try
             {
                 var data = _IUnitOfWorkRepository.DierRegistrations.DeleteDierVictimWitness(Id, UserId);
-                return await data;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-
-        public async Task<ResponseWithoutPaginationModel> GetDierVictim(long VictimGroupNo)
-        {
-            try
-            {
-                var data = _IUnitOfWorkRepository.DierRegistrations.GetDierVictim(VictimGroupNo);
-                return await data;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-        public async Task<ResponseWithoutPaginationModel> AddEditDierVictim(DierVictimModel objModel, int UserId)
-        {
-            try
-            {
-                var data = _IUnitOfWorkRepository.DierRegistrations.AddEditDierVictim(objModel, UserId);
-                return await data;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-        public async Task<ResponseWithoutPaginationModel> DeleteDierVictim(long VictimId, int UserId)
-        {
-            try
-            {
-                var data = _IUnitOfWorkRepository.DierRegistrations.DeleteDierVictim(VictimId, UserId);
-                return await data;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        public async Task<ResponseWithoutPaginationModel> GetDierWitness(long WitnessGroupNo)
-        {
-            try
-            {
-                var data = _IUnitOfWorkRepository.DierRegistrations.GetDierWitness(WitnessGroupNo);
-                return await data;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-        public async Task<ResponseWithoutPaginationModel> AddEditDierWitness(DierWitnessModel objModel, int UserId)
-        {
-            try
-            {
-                var data = _IUnitOfWorkRepository.DierRegistrations.AddEditDierWitness(objModel, UserId);
-                return await data;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-        public async Task<ResponseWithoutPaginationModel> DeleteDierWitness(long WitnessId, int UserId)
-        {
-            try
-            {
-                var data = _IUnitOfWorkRepository.DierRegistrations.DeleteDierWitness(WitnessId, UserId);
                 return await data;
             }
             catch (Exception)
@@ -328,7 +248,6 @@ namespace Case.ServiceBus.DierRegistrationsService
                 throw;
             }
         }
-
         public async Task<DierRegistrationsResponseModel> AddEditOffenceClassification(OffenceClassificationModel objModel, int UserId)
         {
             try
@@ -341,7 +260,6 @@ namespace Case.ServiceBus.DierRegistrationsService
                 throw;
             }
         }
-
         public async Task<DierRegistrationsResponseModel> DeleteOffenceClassification(long OffenceClassifId, int UserId)
         {
             try
@@ -355,6 +273,80 @@ namespace Case.ServiceBus.DierRegistrationsService
             }
         }
 
+
+        //public async Task<ResponseWithoutPaginationModel> GetDierVictim(long VictimGroupNo)
+        //{
+        //    try
+        //    {
+        //        var data = _IUnitOfWorkRepository.DierRegistrations.GetDierVictim(VictimGroupNo);
+        //        return await data;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //}
+        //public async Task<ResponseWithoutPaginationModel> AddEditDierVictim(DierVictimModel objModel, int UserId)
+        //{
+        //    try
+        //    {
+        //        var data = _IUnitOfWorkRepository.DierRegistrations.AddEditDierVictim(objModel, UserId);
+        //        return await data;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //}
+        //public async Task<ResponseWithoutPaginationModel> DeleteDierVictim(long VictimId, int UserId)
+        //{
+        //    try
+        //    {
+        //        var data = _IUnitOfWorkRepository.DierRegistrations.DeleteDierVictim(VictimId, UserId);
+        //        return await data;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //}
+
+        //public async Task<ResponseWithoutPaginationModel> GetDierWitness(long WitnessGroupNo)
+        //{
+        //    try
+        //    {
+        //        var data = _IUnitOfWorkRepository.DierRegistrations.GetDierWitness(WitnessGroupNo);
+        //        return await data;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //}
+        //public async Task<ResponseWithoutPaginationModel> AddEditDierWitness(DierWitnessModel objModel, int UserId)
+        //{
+        //    try
+        //    {
+        //        var data = _IUnitOfWorkRepository.DierRegistrations.AddEditDierWitness(objModel, UserId);
+        //        return await data;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //}
+        //public async Task<ResponseWithoutPaginationModel> DeleteDierWitness(long WitnessId, int UserId)
+        //{
+        //    try
+        //    {
+        //        var data = _IUnitOfWorkRepository.DierRegistrations.DeleteDierWitness(WitnessId, UserId);
+        //        return await data;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //}
 
 
     }
