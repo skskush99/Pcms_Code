@@ -30,6 +30,7 @@ namespace Case.Repository.DierRegistrations
                     parmeters.Add("@DistrictId", objModel.DistrictId); 
                     parmeters.Add("@OfficeId", objModel.OfficeId);
                     parmeters.Add("@JCourtId", objModel.JCourtId);                                        
+                    parmeters.Add("@RegisterType", objModel.RegisterType);                                        
                     parmeters.Add("@SortBy", objModel.SortBy ?? "");
                     parmeters.Add("@IsSortByDesc", objModel.IsSortByDesc == true ? 1 : 0);
                     parmeters.Add("@PageNo", objModel.PageNo);
@@ -88,7 +89,8 @@ namespace Case.Repository.DierRegistrations
                     parmeters.Add("@PoliceStationId", objModel.PoliceStationId); 
                     parmeters.Add("@CNRNo", objModel.CNRNo == null ? "" : objModel.CNRNo);                    
                     parmeters.Add("@FIRNo", objModel.FIRNo == null ? "" : objModel.FIRNo);
-                    parmeters.Add("@FIRYear", objModel.FIRYear);
+                    parmeters.Add("@FIRYear", objModel.FIRYear);                    
+
                     var objData = await Con.QueryAsync<DierRegistrationsResponseModel>("spTrn_DierRegistrations", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
                     var objResut = objData.FirstOrDefault();
                     DisposeCurrentSqlConnection();
@@ -129,6 +131,11 @@ namespace Case.Repository.DierRegistrations
                     parmeters.Add("@CClassificationId", objModel.CClassificationId);
                     parmeters.Add("@CrimeActId", objModel.CrimeActId);
                     parmeters.Add("@CrimeActSubId", objModel.CrimeActSubId);
+                    parmeters.Add("@FRNo", objModel.FRNo == null ? "" : objModel.FRNo);
+                    parmeters.Add("@FRDate", objModel.FRDate);
+                    parmeters.Add("@CourtSubmissionDate", objModel.CourtSubmissionDate);
+                    parmeters.Add("@FRStatusID", objModel.FRStatusID);
+                    parmeters.Add("@FRStatusName", objModel.FRStatusName);
                     var objData = await Con.QueryAsync<DierRegistrationsResponseModel>("spTrn_DierRegistrations", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
                     var objResut = objData.FirstOrDefault();
                     DisposeCurrentSqlConnection();

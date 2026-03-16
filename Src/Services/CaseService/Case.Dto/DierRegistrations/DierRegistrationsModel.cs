@@ -5,6 +5,7 @@
         public bool Status { get; set; }
         public string? Message { get; set; }
         public long ReturnID { get; set; }
+        public int RegisterType { get; set; }
         public object? Data { get; set; }
     }
     public class DierListFilterModel
@@ -14,6 +15,7 @@
         public int DistrictId { get; set; } = 0;
         public int OfficeId { get; set; } = 0;
         public int JCourtId { get; set; } = 0;
+        public int RegisterType { get; set; }
         public string? SortBy { get; set; }
         public bool? IsSortByDesc { get; set; }
         public int PageNo { get; set; }
@@ -32,7 +34,7 @@
         public long? PoliceStationId { get; set; }
         public string? CNRNo { get; set; }
         public string? FIRNo { get; set; }
-        public long? FIRYear { get; set; }
+        public long? FIRYear { get; set; }        
     }
 
     public class DierRegistrationsSteps2Model
@@ -52,6 +54,11 @@
         public int? CClassificationId { get; set; }
         public int? CrimeActId { get; set; }
         public int? CrimeActSubId { get; set; }
+        public string? FRNo { get; set; }
+        public string? FRDate { get; set; }
+        public string? CourtSubmissionDate { get; set; }
+        public long? FRStatusID { get; set; }
+        public string? FRStatusName { get; set; }
     }
 
     public class DierRegistrationsSteps3Model
@@ -109,6 +116,12 @@
         public string? FullChargeSheetDocs { get; set; }
         public string? OtherDocs { get; set; }
         public string? CaseStatus { get; set; }
+
+        public string? FRNo { get; set; }
+        public string? FRDate { get; set; }
+        public string? CourtSubmissionDate { get; set; }
+        public long? FRStatusID { get; set; }
+        public string? FRStatusName { get; set; }
     }  
 
     public class DierRegistrations_OldModel
