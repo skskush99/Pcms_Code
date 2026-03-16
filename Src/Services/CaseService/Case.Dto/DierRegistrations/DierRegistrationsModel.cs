@@ -148,17 +148,30 @@
 
     public class DierAccusedModel
     {
-        public long AccusedId { get; set; }
+        public long? AccusedId { get; set; }
+        public int IsAccusedType { get; set; }
         public long AccusedGroupNo { get; set; }
         public string? AccuseName { get; set; }
         public string? FatherName { get; set; }
-        public int? Gender { get; set; }
         public string? Address { get; set; }
+        public int? Age { get; set; }
+        public int? Gender { get; set; }
+        public int? FIRStatusId { get; set; }
+        public string? Remark { get; set; }
+        public int? DepartmentId { get; set; }
+        public string? DepartmentName { get; set; }
+        public int? DesignationId { get; set; }
+        public string? DesignationName { get; set; }
+        public string? EmpID { get; set; }
+        public int? JanPratinidhiPostID { get; set; }
+        public string? JanPratinidhiPostName { get; set; }
+        public string? ConstitutionDT { get; set; }
+        public int? IsSanction { get; set; }
+        public string? SanctionDocs { get; set; }
         public string? MobileNo { get; set; }
         public string? UIDNo { get; set; }
         public long? DistrictId { get; set; }
-        public long? ThanaId { get; set; }
-        public int? FIRStatusId { get; set; }
+        public long? PsId { get; set; }
     }
 
     public class DierVictimWitnessModel

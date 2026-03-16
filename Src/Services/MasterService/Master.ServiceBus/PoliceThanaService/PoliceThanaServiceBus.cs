@@ -108,5 +108,17 @@ public class PoliceThanaServiceBus(IUnitOfWorkRepository IUnitOfWorkRepository) 
         }
     }
 
+    public async Task<ResponseWithoutPaginationModel> AllPoliceStationDropdownList()
+    {
+        try
+        {
+            var data = _IUnitOfWorkRepository.PoliceThana.AllPoliceStationDropdownList();
+            return await data;
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+    }
 
 }

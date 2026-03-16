@@ -326,16 +326,29 @@ namespace Case.Repository.DierRegistrations
                         parmeters.Add("@CreatedBy", UserId);
                     }
                     parmeters.Add("@AccusedId", objModel.AccusedId);
+                    parmeters.Add("@IsAccusedType", objModel.IsAccusedType);
                     parmeters.Add("@AccusedGroupNo", objModel.AccusedGroupNo);
                     parmeters.Add("@AccuseName", objModel.AccuseName);
                     parmeters.Add("@FatherName", objModel.FatherName);
-                    parmeters.Add("@Gender", objModel.Gender);
                     parmeters.Add("@Address", objModel.Address);
+                    parmeters.Add("@Age", objModel.Age);
+                    parmeters.Add("@Gender", objModel.Gender);
+                    parmeters.Add("@FIRStatusId", objModel.FIRStatusId);
+                    parmeters.Add("@Remark", objModel.Remark);
+                    parmeters.Add("@DepartmentId", objModel.DepartmentId);
+                    parmeters.Add("@DepartmentName", objModel.DepartmentName);
+                    parmeters.Add("@DesignationId", objModel.DesignationId);
+                    parmeters.Add("@DesignationName", objModel.DesignationName);
+                    parmeters.Add("@EmpID", objModel.EmpID);
+                    parmeters.Add("@JanPratinidhiPostID", objModel.JanPratinidhiPostID);
+                    parmeters.Add("@JanPratinidhiPostName", objModel.JanPratinidhiPostName);
+                    parmeters.Add("@ConstitutionDT", objModel.ConstitutionDT);
+                    parmeters.Add("@IsSanction", objModel.IsSanction);
+                    parmeters.Add("@SanctionDocs", objModel.SanctionDocs);
                     parmeters.Add("@MobileNo", objModel.MobileNo);
                     parmeters.Add("@UIDNo", objModel.UIDNo);
                     parmeters.Add("@DistrictId", objModel.DistrictId);
-                    parmeters.Add("@ThanaId", objModel.ThanaId);
-                    parmeters.Add("@FIRStatusId", objModel.FIRStatusId);
+                    parmeters.Add("@PsId", objModel.PsId);
 
                     var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_DierAccused", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
                     var objResult = objData.FirstOrDefault();
