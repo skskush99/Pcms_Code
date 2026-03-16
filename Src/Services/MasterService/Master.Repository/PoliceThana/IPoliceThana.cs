@@ -13,5 +13,6 @@ public interface IPoliceThana
     Task<ResponseWithoutPaginationModel> PoliceCircleDropdownList(int PdId);
     Task<ResponseModel> GetPoliceStation(PoliceStationFilterModel objModel);
     Task<ResponseWithoutPaginationModel> PoliceStationDropdownList(int PcId);
+    Task<ResponseWithoutPaginationModel> AllPoliceStationDropdownList();
 
 }

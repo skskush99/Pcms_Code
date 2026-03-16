@@ -468,11 +468,63 @@ namespace CaseService.Controllers
                 };
             }
         }
+        
         [HttpPost]
-        public async Task<ResponseWithoutPaginationModel> AddEditDierAccused(DierAccusedModel objModel)
+        [RequestSizeLimit(52428800)]
+        public async Task<ResponseWithoutPaginationModel> AddEditDierAccused(IFormFile? SelectFile, [FromForm] DierAccusedModel objModel)
         {
             try
             {
+                //  Charge Sheet Docs Upload
+                if (SelectFile != null && SelectFile.Length != 0)
+                {
+                    if (Path.GetFileNameWithoutExtension(SelectFile.FileName).Contains("."))
+                    {
+                        return new ResponseWithoutPaginationModel()
+                        {
+                            Status = false,
+                            Message = "Please enter a filename without any dots (e.g., 'Uploadfile' instead of 'Uploadfile.xyz' )."
+                        };
+                    }
+                    var extension = Path.GetExtension(SelectFile.FileName).ToLowerInvariant();
+
+                    var permittedExtensions = new[] { ".pdf" };
+                    if (string.IsNullOrEmpty(extension) || !permittedExtensions.Contains(extension))
+                    {
+                        return new ResponseWithoutPaginationModel()
+                        {
+                            Status = false,
+                            Message = "Kindly upload documents in PDF format only."
+                        };
+                    }
+
+                    //Validate that the file size does not exceed 10 MB.
+                    if (SelectFile.Length > 10485760)       // Limit upto 10 MB  (1,048,576 bytes in 1 MB)  
+                    {
+                        return new ResponseWithoutPaginationModel()
+                        {
+                            Status = false,
+                            Message = "File size is too large. Maximum allowed size is 10 MB."
+                        };
+                    }
+
+                    string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(SelectFile.FileName);
+                    string fileName = Convert.ToString(fileNameWithoutExtension).Replace(" ", "-") + DateTime.Now.ToString("ddMMyyyyhhmmss") + extension;
+                    string folderName = "Uploads/DierAccused/";
+
+                    string filePath = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+                    if (!Directory.Exists(filePath))
+                        Directory.CreateDirectory(filePath);
+
+                    var filePathWithName = Path.Combine(Directory.GetCurrentDirectory(), filePath, fileName);
+                    using (var stream = new FileStream(filePathWithName, FileMode.Create, FileAccess.Write))
+                    {
+                        await SelectFile.CopyToAsync(stream);
+                    }
+
+                    objModel.SanctionDocs = folderName + fileName;
+                }
+
                 return await unitOfWork.DierRegistrationsService.AddEditDierAccused(objModel, UserSession.Current.UserId);
             }
             catch (Exception ex)

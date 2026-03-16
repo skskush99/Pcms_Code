@@ -170,5 +170,23 @@ namespace Master.Service.Controllers
                 };
             }
         }
+
+        [HttpGet]
+        public async Task<ResponseWithoutPaginationModel> AllPoliceStationDropdownList()
+        {
+            try
+            {
+                return await _IUnitOfWorkService.PoliceThanaServiceBus.AllPoliceStationDropdownList();
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "AllPoliceStationDropdownList", ex.Message, ex.StackTrace, ex.Source, "MasterService/PoliceThanaController/AllPoliceStationDropdownList");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
     }
 }
