@@ -56,6 +56,7 @@
         public bool IsDeclaration { get; set; }
         public int? CaseStatus { get; set; }
         public string? PersonAgainstId { get; set; }
+        public long? OffenceClassifId { get; set; }
         public string? ClassificationID { get; set; }
         public bool IsCognizance { get; set; }
     }

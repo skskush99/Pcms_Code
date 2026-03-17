@@ -5,6 +5,7 @@
         public bool Status { get; set; }
         public string? Message { get; set; }
         public long ReturnID { get; set; }
+        public string? DierNoGenrated { get; set; }
         public int RegisterType { get; set; }
         public object? Data { get; set; }
     }
@@ -179,7 +180,7 @@
         public int? JanPratinidhiPostID { get; set; }
         public string? JanPratinidhiPostName { get; set; }
         public string? ConstitutionDT { get; set; }
-        public int? IsSanction { get; set; }
+        public bool? IsSanction { get; set; }
         public string? SanctionDocs { get; set; }
         public string? MobileNo { get; set; }
         public string? UIDNo { get; set; }

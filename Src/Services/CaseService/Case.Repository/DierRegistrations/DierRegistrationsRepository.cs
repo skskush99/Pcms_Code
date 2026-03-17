@@ -350,7 +350,7 @@ namespace Case.Repository.DierRegistrations
                     parmeters.Add("@JanPratinidhiPostID", objModel.JanPratinidhiPostID);
                     parmeters.Add("@JanPratinidhiPostName", objModel.JanPratinidhiPostName);
                     parmeters.Add("@ConstitutionDT", objModel.ConstitutionDT);
-                    parmeters.Add("@IsSanction", objModel.IsSanction);
+                    parmeters.Add("@IsSanction", objModel.IsSanction == true ? 1 : 0); 
                     parmeters.Add("@SanctionDocs", objModel.SanctionDocs);
                     parmeters.Add("@MobileNo", objModel.MobileNo);
                     parmeters.Add("@UIDNo", objModel.UIDNo);
