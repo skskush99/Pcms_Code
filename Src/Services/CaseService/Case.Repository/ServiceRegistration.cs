@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Case.Repository.DierRegistrations;
 using Case.Repository.ComplaintRegister;
+using Case.Repository.DierRegistrations_New;
 
 
 namespace Case.Repository
@@ -17,6 +18,7 @@ namespace Case.Repository
             services.AddTransient<IUnitOfWorkRepository, UnitOfWorkRepository>();
             services.AddTransient<IDierRegistrationsRepository, DierRegistrationsRepository>();
             services.AddTransient<IComplaintRegisterRepository, ComplaintRegisterRepository>();
+            services.AddTransient<IDierRegistrations_NewRepository, DierRegistrations_NewRepository>();
             #endregion Repository
         }
     }

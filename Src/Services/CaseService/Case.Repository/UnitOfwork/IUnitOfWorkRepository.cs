@@ -1,6 +1,7 @@
 ﻿
 using Case.Repository.DierRegistrations;
 using Case.Repository.ComplaintRegister;
+using Case.Repository.DierRegistrations_New;
 
 namespace Case.Repository.UnitOfwork
 {
@@ -8,5 +9,6 @@ namespace Case.Repository.UnitOfwork
     {
         IDierRegistrationsRepository DierRegistrations { get; }
         IComplaintRegisterRepository ComplaintRegister { get; }
+        IDierRegistrations_NewRepository DierRegistrations_New { get; }
     }
 }
