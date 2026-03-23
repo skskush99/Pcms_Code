@@ -54,6 +54,24 @@ namespace CaseService.Controllers
                 };
             }
         }
+        [HttpPost]
+        public async Task<ResponseModel> GetDisposalList(DierListFilterModel objModel)
+        {
+            try
+            {
+                var loginUserData = UserSession.Current;
+                return await unitOfWork.DierRegistrationsService.GetDisposalList(objModel);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetDisposalList", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/GetDisposalList");
+                return new ResponseModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
 
         [HttpPost]
         public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps1(DierRegistrationsSteps1Model objModel)

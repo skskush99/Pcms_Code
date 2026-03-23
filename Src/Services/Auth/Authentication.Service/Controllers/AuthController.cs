@@ -32,6 +32,7 @@ namespace Authentication.Service.Controllers
         }
 
         [HttpPost]
+        [Route("Authenticate")]
         public ActionResult<AuthenticationResponse?> Authenticate([FromBody] AuthenticationRequest authenticationRequest)
         {
 

@@ -59,6 +59,49 @@ namespace Case.Repository.DierRegistrations
                 };
             }
         }
+
+        public async Task<ResponseModel> GetDisposalList(DierListFilterModel objModel)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+                    parmeters.Add("@Action", "GetDisposalList");
+                    parmeters.Add("@CNRNo", objModel.CNRNo);
+                    parmeters.Add("@FIRNo", objModel.FIRNo);
+                    parmeters.Add("@DistrictId", objModel.DistrictId);
+                    parmeters.Add("@OfficeId", objModel.OfficeId);
+                    parmeters.Add("@JCourtId", objModel.JCourtId);
+                    parmeters.Add("@RegisterType", objModel.RegisterType);
+                    parmeters.Add("@SortBy", objModel.SortBy ?? "");
+                    parmeters.Add("@IsSortByDesc", objModel.IsSortByDesc == true ? 1 : 0);
+                    parmeters.Add("@PageNo", objModel.PageNo);
+                    parmeters.Add("@Pagesize", objModel.PageSize);
+                    var objResult = await Con.QueryMultipleAsync("spTrn_DierRegistrations", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+
+                    ResponseModel objResut = new()
+                    {
+                        Status = true,
+                        Message = "",
+                        Data = objResult.Read<object>(),
+                        Pagination = objResult.Read<PaginationModel>()
+                    };
+                    DisposeCurrentSqlConnection();
+
+                    return objResut;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetDisposalList", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/GetDisposalList");
+                return new ResponseModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
         public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps1(DierRegistrationsSteps1Model objModel, int UserId)
         {
             try

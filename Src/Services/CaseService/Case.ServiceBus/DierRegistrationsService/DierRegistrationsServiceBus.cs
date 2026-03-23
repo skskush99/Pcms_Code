@@ -25,6 +25,18 @@ namespace Case.ServiceBus.DierRegistrationsService
                 throw;
             }
         }
+        public async Task<ResponseModel> GetDisposalList(DierListFilterModel objModel)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.GetDisposalList(objModel);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps1(DierRegistrationsSteps1Model objModel, int UserId)
         {
             try
