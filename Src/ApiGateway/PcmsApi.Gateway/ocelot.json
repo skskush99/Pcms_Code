@@ -3061,6 +3061,23 @@
       }
     },
     {
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/DisposalList",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/DierRegistrations/GetDisposalList",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
       "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/AddEditDierSteps1",
       "UpstreamHttpMethod": [
         "POST"
@@ -3144,6 +3161,20 @@
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
       }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsCase/Uploads/DierAccused/{everything}",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/Uploads/DierAccused/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ]
     },
     {
       "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/GetAccused",
