@@ -7,6 +7,7 @@ namespace Case.Repository.DierRegistrations
     public interface IDierRegistrationsRepository
     {
         Task<ResponseModel> GetDierList(DierListFilterModel objModel);
+        Task<ResponseModel> GetDisposalList(DierListFilterModel objModel);
         Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps1(DierRegistrationsSteps1Model objModel, int UserId);
         Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps2(DierRegistrationsSteps2Model objModel, int UserId);
         Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps3(DierRegistrationsSteps3Model objModel, int UserId);
