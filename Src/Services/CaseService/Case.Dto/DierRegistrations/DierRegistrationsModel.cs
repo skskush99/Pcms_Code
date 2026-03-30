@@ -83,6 +83,13 @@
 
     }
 
+    //public class DierRegistrationsSteps6Model
+    //{
+    //    public long? DirRegId { get; set; }
+    //    public int Steps { get; set; }
+    //    public bool? IsDisposal { get; set; }
+    //}
+
     public class DierRegistrationsModel
     {
         public long? DirRegId { get; set; }
@@ -123,6 +130,7 @@
         public string? CourtSubmissionDate { get; set; }
         public long? FRStatusID { get; set; }
         public string? FRStatusName { get; set; }
+        public bool? IsDisposal { get; set; }
     }  
 
     public class DierRegistrations_OldModel
@@ -275,6 +283,102 @@
         public string SectionsName { get; set; }
     }
 
+    public class FinalDisposalRegister
+    {
+        public int DisposalRegId { get; set; }
+        public int Steps { get; set; }
+        public string? FRNo { get; set; }
+        public string? FIRNo { get; set; }
+        public long FIRYear { get; set; }
+        public int? PoliceStationId { get; set; }
+        public long ProsecutionYear { get; set; }
+        public string? TitleOfCase { get; set; }
+        public string? AccusedNames { get; set; }
+        public string? AccusedAddress { get; set; }
 
+        public string? CourtName { get; set; }
+        public string? CNRNo { get; set; }
+        public string? CISNo { get; set; }
+        public string? CourtCaseNo { get; set; }
+        public long CourtCaseYear { get; set; }
+
+        public int DecisionTypeId { get; set; }
+        public int? DecisionReasonId { get; set; }
+
+        public string? JudgmentDecisionDate { get; set; }
+
+        public bool IsProbationGranted { get; set; }
+        public string? ProbationGrantedPeriod { get; set; }
+
+        public bool IsFineCompensationOrdered { get; set; }
+        public decimal? FineCompensationOrderedAmount { get; set; }
+
+        public string? UnderSection { get; set; }
+        public string? JudgmentSummary { get; set; }
+        public string? SectionsConvicted { get; set; }
+        public bool IsContestedCase { get; set; }
+        public string? PresentedRulingNo { get; set; }
+        public bool IsActionsProposedUnderNirbhaya { get; set; }
+
+        public string? DispatchRegNo { get; set; }
+        public string? DispatchDate { get; set; }
+
+        public bool IsAppealProposed { get; set; }
+        public string? RecommendationDate { get; set; }
+
+        public string? AppealDispatchRegNo { get; set; }
+        public int? GroundsFilingAppealID { get; set; }
+        public string? GroundsFilingAppeal { get; set; }
+        public string? Specifications { get; set; }
+
+        public string? LinkedCNR { get; set; }
+        public string? TransferredClubbed { get; set; }
+        public string? Remarks { get; set; }
+
+        public string? RequestingApplicationDate { get; set; }
+        public string? ReceivingApplicationDate { get; set; }
+
+        public string? JudgementCopyDocs { get; set; }
+
+        public string? CINNo { get; set; }
+        public string? ReAgainRegisterBy { get; set; }
+
+        public string? ChargeSheetNo { get; set; }
+        public string? ChargeSheetDate { get; set; }
+        public string? DateBeforeFillingCourt { get; set; }
+
+        public int? FirStatusId { get; set; }
+
+        public int? DistrictId { get; set; }
+        public int? OfficeId { get; set; }
+        public int? JCourtId { get; set; }
+        public int? DirRegId { get; set; }
+
+        public string? DierNo { get; set; }
+        public string? RepCinNo { get; set; }
+        public string? CaseStatus { get; set; }
+        public bool? IsDisposal { get; set; }
+
+        // Navigation Property
+        //public List<Trn_SentenceDt>? SentenceDetails { get; set; }
+    }
+    public class DisposalSentenceModel
+    {
+        public int SentenceId { get; set; }
+        public long? DisposalGroupNo { get; set; }
+        public string? Section { get; set; }
+        public string? SentenceType { get; set; }
+        public string? Period { get; set; }
+        public decimal? Fine { get; set; }
+        public string? Remarks { get; set; }
+    }
+
+    public class DisposalRegistrationsResponseModel
+    {
+        public bool Status { get; set; }
+        public string? Message { get; set; }
+        public long ReturnID { get; set; }
+        public object? Data { get; set; }
+    }
 
 }

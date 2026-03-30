@@ -12,6 +12,7 @@ namespace Case.Repository.DierRegistrations
         Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps2(DierRegistrationsSteps2Model objModel, int UserId);
         Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps3(DierRegistrationsSteps3Model objModel, int UserId);
         Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps4(DierRegistrationsSteps4Model objModel, int UserId);
+        Task<DisposalRegistrationsResponseModel> AddEditDierDisposalRegistrationsSteps5(FinalDisposalRegister objModel, int UserId);
 
         Task<ResponseWithoutPaginationModel> AddEditDierRegistrations(DierRegistrations_OldModel objModel, int UserId);
 
@@ -37,6 +38,10 @@ namespace Case.Repository.DierRegistrations
         Task<ResponseWithoutPaginationModel> GetOffenceClassification(long OffenceClassifGroupNo);
         Task<DierRegistrationsResponseModel> AddEditOffenceClassification(OffenceClassificationModel objModel, int UserId);
         Task<DierRegistrationsResponseModel> DeleteOffenceClassification(long OffenceClassifId, int UserId);
+
+        Task<ResponseWithoutPaginationModel> GetDisposalSentence(long DisposalGroupNo);
+        Task<ResponseWithoutPaginationModel> AddEditDisposalSentence(DisposalSentenceModel objModel, int UserId);
+        Task<ResponseWithoutPaginationModel> DeleteDisposalSentence(long SentenceId, int UserId);
 
 
 

@@ -85,6 +85,18 @@ namespace Case.ServiceBus.DierRegistrationsService
                 throw;
             }
         }
+        public async Task<DisposalRegistrationsResponseModel> AddEditDierDisposalRegistrationsSteps5(FinalDisposalRegister objModel, int UserId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.AddEditDierDisposalRegistrationsSteps5(objModel, UserId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public async Task<ResponseWithoutPaginationModel> AddEditDierRegistrations(DierRegistrations_OldModel objModel, int UserId)
         {
             try
@@ -285,6 +297,43 @@ namespace Case.ServiceBus.DierRegistrationsService
             }
         }
 
+
+        public async Task<ResponseWithoutPaginationModel> GetDisposalSentence(long DisposalGroupNo)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.GetDisposalSentence(DisposalGroupNo);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<ResponseWithoutPaginationModel> AddEditDisposalSentence(DisposalSentenceModel objModel, int UserId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.AddEditDisposalSentence(objModel, UserId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<ResponseWithoutPaginationModel> DeleteDisposalSentence(long SentenceId, int UserId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.DeleteDisposalSentence(SentenceId, UserId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
         //public async Task<ResponseWithoutPaginationModel> GetDierVictim(long VictimGroupNo)
         //{

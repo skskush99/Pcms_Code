@@ -3146,6 +3146,23 @@
       }
     },
     {
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/AddEditDierDisposalSteps5",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/DierRegistrations/AddEditDierDisposalRegistrationsSteps5",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
       "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/AddEdit",
       "UpstreamHttpMethod": [
         "POST"
@@ -3522,6 +3539,57 @@
         "POST"
       ],
       "DownstreamPathTemplate": "/PcmsCaseService/api/DierRegistrations/DeleteOffenceClassification",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/GetSentence",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/DierRegistrations/GetDisposalSentence",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/AddEditSentence",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/DierRegistrations/AddEditDisposalSentence",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/DeleteSentence",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/DierRegistrations/DeleteDisposalSentence",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {

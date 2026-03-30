@@ -258,6 +258,126 @@ namespace Case.Repository.DierRegistrations
                 };
             }
         }
+        public async Task<DisposalRegistrationsResponseModel> AddEditDierDisposalRegistrationsSteps5(FinalDisposalRegister objModel, int UserId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+
+                    if (objModel.DisposalRegId > 0)
+                    {
+                        parmeters.Add("@Action", "DisposalEdit");
+                        parmeters.Add("@UpdatedBy", UserId);
+                        parmeters.Add("@DisposalRegId", objModel.DisposalRegId);
+                    }
+                    else
+                    {
+                        parmeters.Add("@Action", "DisposalAdd");
+                        parmeters.Add("@CreatedBy", UserId);
+                    }
+                    parmeters.Add("@DirRegId", objModel.DirRegId);
+                    parmeters.Add("@Steps", objModel.Steps);
+                    parmeters.Add("@FRNo", objModel.FRNo == null ? "" : objModel.FRNo);
+                    parmeters.Add("@FIRNo", objModel.FIRNo == null ? "" : objModel.FIRNo);
+                    parmeters.Add("@FIRYear", objModel.FIRYear);
+                    parmeters.Add("@PoliceStationId", objModel.PoliceStationId);
+                    parmeters.Add("@ProsecutionYear", objModel.ProsecutionYear);
+                    parmeters.Add("@TitleOfCase", objModel.TitleOfCase);
+                    parmeters.Add("@AccusedNames", objModel.AccusedNames);
+                    parmeters.Add("@AccusedAddress", objModel.AccusedAddress);
+                    parmeters.Add("@CourtName", objModel.CourtName);
+                    parmeters.Add("@CNRNo", objModel.CNRNo == null ? "" : objModel.CNRNo);
+                    parmeters.Add("@CISNo", objModel.CISNo == null ? "" : objModel.CISNo);
+                    parmeters.Add("@CourtCaseNo", objModel.CourtCaseNo == null ? "" : objModel.CourtCaseNo);
+                    parmeters.Add("@CourtCaseYear", objModel.CourtCaseYear);
+                    parmeters.Add("@DecisionTypeId", objModel.DecisionTypeId);
+                    parmeters.Add("@DecisionReasonId", objModel.DecisionReasonId);
+                    parmeters.Add("@JudgmentDecisionDate", objModel.JudgmentDecisionDate);
+                    parmeters.Add("@IsProbationGranted", objModel.IsProbationGranted);
+                    parmeters.Add("@ProbationGrantedPeriod", objModel.ProbationGrantedPeriod);
+                    parmeters.Add("@IsFineCompensationOrdered", objModel.IsFineCompensationOrdered);
+                    parmeters.Add("@FineCompensationOrderedAmount", objModel.FineCompensationOrderedAmount);
+                    parmeters.Add("@UnderSection", objModel.UnderSection);
+                    parmeters.Add("@JudgmentSummary", objModel.JudgmentSummary);
+                    parmeters.Add("@SectionsConvicted", objModel.SectionsConvicted);
+                    parmeters.Add("@IsContestedCase", objModel.IsContestedCase);
+                    parmeters.Add("@PresentedRulingNo", objModel.PresentedRulingNo);
+                    parmeters.Add("@IsActionsProposedUnderNirbhaya", objModel.IsActionsProposedUnderNirbhaya);
+                    parmeters.Add("@DispatchRegNo", objModel.DispatchRegNo == null ? "" : objModel.DispatchRegNo);
+                    parmeters.Add("@DispatchDate", objModel.DispatchDate);
+                    parmeters.Add("@IsAppealProposed", objModel.IsAppealProposed);
+                    parmeters.Add("@RecommendationDate", objModel.RecommendationDate);
+                    parmeters.Add("@AppealDispatchRegNo", objModel.AppealDispatchRegNo == null ? "" : objModel.AppealDispatchRegNo);
+                    parmeters.Add("@GroundsFilingAppealID", objModel.GroundsFilingAppealID);
+                    parmeters.Add("@GroundsFilingAppeal", objModel.GroundsFilingAppeal);
+                    parmeters.Add("@Specifications", objModel.Specifications);
+                    parmeters.Add("@LinkedCNR", objModel.LinkedCNR);
+                    parmeters.Add("@TransferredClubbed", objModel.TransferredClubbed);
+                    parmeters.Add("@Remarks", objModel.Remarks);
+                    parmeters.Add("@RequestingApplicationDate", objModel.RequestingApplicationDate);
+                    parmeters.Add("@ReceivingApplicationDate", objModel.ReceivingApplicationDate);
+                    parmeters.Add("@JudgementCopyDocs", objModel.JudgementCopyDocs);
+                    parmeters.Add("@CINNo", objModel.CINNo);
+                    parmeters.Add("@ReAgainRegisterBy", objModel.ReAgainRegisterBy);
+                    parmeters.Add("@ChargeSheetNo", objModel.ChargeSheetNo == null ? "" : objModel.ChargeSheetNo);
+                    parmeters.Add("@ChargeSheetDate", objModel.ChargeSheetDate);
+                    parmeters.Add("@DateBeforeFillingCourt", objModel.DateBeforeFillingCourt);
+                    parmeters.Add("@FirStatusId", objModel.FirStatusId);
+                    parmeters.Add("@DistrictId", objModel.DistrictId);
+                    parmeters.Add("@OfficeId", objModel.OfficeId);
+                    parmeters.Add("@JCourtId", objModel.JCourtId);
+                    parmeters.Add("@DierNo", objModel.DierNo == null ? "" : objModel.DierNo);
+                    parmeters.Add("@RepCinNo", objModel.RepCinNo);
+                    parmeters.Add("@CaseStatus", objModel.CaseStatus);
+                    parmeters.Add("@IsDisposal", objModel.IsDisposal);
+
+                    var objData = await Con.QueryAsync<DisposalRegistrationsResponseModel>("spTrn_FinalDisposalRegister", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objResut = objData.FirstOrDefault();
+                    DisposeCurrentSqlConnection();
+                    return objResut != null ? objResut : new DisposalRegistrationsResponseModel();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "AddEditDierDisposalRegistrationsSteps5", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/AddEditDierDisposalRegistrationsSteps5");
+                return new DisposalRegistrationsResponseModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+        //public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps6(DierRegistrationsSteps6Model objModel, int UserId)
+        //{
+        //    try
+        //    {
+        //        using (var Con = GetOpenConnection())
+        //        {
+        //            var parmeters = new DynamicParameters();
+
+        //            parmeters.Add("@Action", "DierEdit5");
+        //            parmeters.Add("@UpdatedBy", UserId);
+        //            parmeters.Add("@DirRegId", objModel.DirRegId);
+        //            parmeters.Add("@Steps", objModel.Steps);                    
+        //            parmeters.Add("@IsDisposal", objModel.IsDisposal);
+        //            var objData = await Con.QueryAsync<DierRegistrationsResponseModel>("spTrn_DierRegistrations", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+        //            var objResut = objData.FirstOrDefault();
+        //            DisposeCurrentSqlConnection();
+        //            return objResut != null ? objResut : new DierRegistrationsResponseModel();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logsService.Logs("Error", "AddEditDierRegistrationsSteps5", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/AddEditDierRegistrationsSteps5");
+        //        return new DierRegistrationsResponseModel()
+        //        {
+        //            Status = false,
+        //            Message = ex.Message,
+        //        };
+        //    }
+        //}
         public async Task<ResponseWithoutPaginationModel> AddEditDierRegistrations(DierRegistrations_OldModel objModel, int UserId)
         {
             try
@@ -861,6 +981,109 @@ namespace Case.Repository.DierRegistrations
             {
                 _logsService.Logs("Error", "DeleteOffenceClassification", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/DeleteOffenceClassification");
                 return new DierRegistrationsResponseModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+
+        public async Task<ResponseWithoutPaginationModel> GetDisposalSentence(long DisposalGroupNo)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+                    parmeters.Add("@Action", "GetDisposalSentenceList");
+                    parmeters.Add("@DisposalGroupNo", DisposalGroupNo);
+                    var objResult = await Con.QueryAsync("spTrn_SentenceDt", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+
+                    ResponseWithoutPaginationModel objResut = new()
+                    {
+                        Status = true,
+                        Message = "",
+                        Data = objResult,
+                    };
+                    DisposeCurrentSqlConnection();
+
+                    return objResut;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetDisposalSentence", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/GetDisposalSentence");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+        public async Task<ResponseWithoutPaginationModel> AddEditDisposalSentence(DisposalSentenceModel objModel, int UserId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+
+                    if (objModel.SentenceId > 0)
+                    {
+                        parmeters.Add("@Action", "DisposalSentenceEdit");
+                        parmeters.Add("@UpdatedBy", UserId);
+                    }
+                    else
+                    {
+                        parmeters.Add("@Action", "DisposalSentenceAdd");
+                        parmeters.Add("@CreatedBy", UserId);
+                    }
+                    parmeters.Add("@SentenceId", objModel.SentenceId);
+                    parmeters.Add("@DisposalGroupNo", objModel.DisposalGroupNo);
+                    parmeters.Add("@Section", objModel.Section);
+                    parmeters.Add("@SentenceType", objModel.SentenceType);
+                    parmeters.Add("@Period", objModel.Period);
+                    parmeters.Add("@Fine", objModel.Fine);
+                    parmeters.Add("@Remarks", objModel.Remarks);
+
+                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_SentenceDt", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objResult = objData.FirstOrDefault();
+                    DisposeCurrentSqlConnection();
+                    return objResult != null ? objResult : new ResponseWithoutPaginationModel();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "AddEditDisposalSentence", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/AddEditDisposalSentence");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+        public async Task<ResponseWithoutPaginationModel> DeleteDisposalSentence(long SentenceId, int UserId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+                    parmeters.Add("@Action", "DeleteDisposalSentence");
+                    parmeters.Add("@DeletedBy", UserId);
+                    parmeters.Add("@SentenceId", SentenceId);
+
+                    var objData = await Con.QueryAsync<ResponseWithoutPaginationModel>("spTrn_SentenceDt", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objResut = objData.FirstOrDefault();
+                    DisposeCurrentSqlConnection();
+                    return objResut != null ? objResut : new ResponseWithoutPaginationModel();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "DeleteDisposalSentence", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/DeleteDisposalSentence");
+                return new ResponseWithoutPaginationModel()
                 {
                     Status = false,
                     Message = ex.Message,
