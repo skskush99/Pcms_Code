@@ -1,6 +1,9 @@
-﻿namespace Case.Dto.DierRegistrations
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Http;
+
+namespace Case.Dto.DierRegistrations_New
 {
-    public class DierRegistrationsResponseModel
+    public class DierRegistrations_NewResponseModel
     {
         public bool Status { get; set; }
         public string? Message { get; set; }
@@ -9,7 +12,7 @@
         public int RegisterType { get; set; }
         public object? Data { get; set; }
     }
-    public class DierListFilterModel
+    public class Dier_NewListFilterModel
     {
         public string? CNRNo { get; set; }
         public string? FIRNo { get; set; }
@@ -22,7 +25,7 @@
         public int PageNo { get; set; }
         public int PageSize { get; set; }
     }
-    public class DierRegistrationsSteps1Model
+    public class DierRegistrations_NewSteps1Model
     {
         public long? DirRegId { get; set; }
         public int Steps { get; set; }
@@ -35,10 +38,10 @@
         public long? PoliceStationId { get; set; }
         public string? CNRNo { get; set; }
         public string? FIRNo { get; set; }
-        public long? FIRYear { get; set; }        
+        public long? FIRYear { get; set; }
     }
 
-    public class DierRegistrationsSteps2Model
+    public class DierRegistrations_NewSteps2Model
     {
         public long? DirRegId { get; set; }
         public int Steps { get; set; }
@@ -60,18 +63,22 @@
         public string? CourtSubmissionDate { get; set; }
         public long? FRStatusID { get; set; }
         public string? FRStatusName { get; set; }
+        public List<Dier_NewInvestigationModel>? DierInvestigationDetails { get; set; }
+        public List<OffenceClassification_NewModel>? OffenceClassificationDetails { get; set; }
     }
 
-    public class DierRegistrationsSteps3Model
+    public class DierRegistrations_NewSteps3Model
     {
         public long? DirRegId { get; set; }
         public int Steps { get; set; }
         public int? IsAccusedType { get; set; }
         public long? AccusedGroupNo { get; set; }
         public long? VictimWitnessGroupNo { get; set; }
+        public List<Dier_NewAccusedModel>? DierAccusedModel { get; set; }
+        public List<Dier_NewVictimWitnessModel>? DierVictimWitnessDetails { get; set; }
     }
 
-    public class DierRegistrationsSteps4Model
+    public class DierRegistrations_NewSteps4Model
     {
         public long? DirRegId { get; set; }
         public int Steps { get; set; }
@@ -83,14 +90,7 @@
 
     }
 
-    //public class DierRegistrationsSteps6Model
-    //{
-    //    public long? DirRegId { get; set; }
-    //    public int Steps { get; set; }
-    //    public bool? IsDisposal { get; set; }
-    //}
-
-    public class DierRegistrationsModel
+    public class DierRegistrations_NewModel
     {
         public long? DirRegId { get; set; }
         public int Steps { get; set; }
@@ -100,6 +100,7 @@
         public int? RegisterType { get; set; }
         public int? SearchCaseVia { get; set; }
         public string? DierNo { get; set; }
+        public long? PoliceStationId { get; set; }
         public string? CNRNo { get; set; }
         public string? FIRNo { get; set; }
         public long? FIRYear { get; set; }
@@ -130,10 +131,14 @@
         public string? CourtSubmissionDate { get; set; }
         public long? FRStatusID { get; set; }
         public string? FRStatusName { get; set; }
-        public bool? IsDisposal { get; set; }
-    }  
 
-    public class DierRegistrations_OldModel
+        public List<Dier_NewInvestigationModel>? DierInvestigationDetails { get; set; }
+        public List<OffenceClassification_NewModel>? OffenceClassificationDetails { get; set; }
+        public List<Dier_NewAccusedModel>? DierAccusedModel { get; set; }
+        public List<Dier_NewVictimWitnessModel>? DierVictimWitnessDetails { get; set; }
+    }
+
+    public class DierRegistrations_New_OldModel
     {
         public long? DirRegId { get; set; }
         public string? TitleOfCase { get; set; }
@@ -168,7 +173,7 @@
         public int Steps { get; set; }
     }
 
-    public class DierAccusedModel
+    public class Dier_NewAccusedModel
     {
         public long? AccusedId { get; set; }
         public int IsAccusedType { get; set; }
@@ -194,14 +199,17 @@
         public string? UIDNo { get; set; }
         public long? DistrictId { get; set; }
         public long? PsId { get; set; }
+        // ✅ File comes here
+        [NotMapped]
+        public IFormFile? SanctionFile { get; set; }
     }
 
-    public class DierVictimWitnessModel
+    public class Dier_NewVictimWitnessModel
     {
         public long Id { get; set; }
         public int IsVictimWitness { get; set; }
         public long GroupNo { get; set; }
-        public string?  Name { get; set; }
+        public string? Name { get; set; }
         public string? FatherName { get; set; }
         public int? Gender { get; set; }
         public string? Address { get; set; }
@@ -211,38 +219,7 @@
         public long? ThanaId { get; set; }
         public int? Status { get; set; }
     }
-
-    //public class DierVictimModel
-    //{
-    //    public long VictimId { get; set; }
-    //    public long VictimGroupNo { get; set; }
-    //    public string? VictimName { get; set; }
-    //    public string? FatherName { get; set; }
-    //    public int? Gender { get; set; }
-    //    public string? Address { get; set; }
-    //    public string? MobileNo { get; set; }
-    //    public string? UIDNo { get; set; }
-    //    public long? DistrictId { get; set; }
-    //    public long? ThanaId { get; set; }
-    //    public int? VictimStatus { get; set; }
-    //}
-
-    //public class DierWitnessModel
-    //{
-    //    public long WitnessId { get; set; }
-    //    public long WitnessGroupNo { get; set; }
-    //    public string? WitnessName { get; set; }
-    //    public string? FatherName { get; set; }
-    //    public int? Gender { get; set; }
-    //    public string? Address { get; set; }
-    //    public string? MobileNo { get; set; }
-    //    public string? UIDNo { get; set; }
-    //    public long? DistrictId { get; set; }
-    //    public long? ThanaId { get; set; }
-    //    public int? WitnessStatus { get; set; }
-    //}
-
-    public class DierInvestigationModel
+    public class Dier_NewInvestigationModel
     {
         public long InvestId { get; set; }
         public long InvestGroupNo { get; set; }
@@ -257,7 +234,7 @@
         public int? InvestStatus { get; set; }
     }
 
-    public class DierComplaintAgainstPersonModel
+    public class Dier_NewComplaintAgainstPersonModel
     {
         public long ComplaintPerId { get; set; }
         public long ComplaintPerGroupNo { get; set; }
@@ -270,7 +247,7 @@
         public string? Institution { get; set; }
     }
 
-    public class OffenceClassificationModel
+    public class OffenceClassification_NewModel
     {
         public long? OffenceClassifId { get; set; }
         public long? OffenceClassifGroupNo { get; set; }
@@ -282,103 +259,4 @@
         public long SectionsID { get; set; }
         public string SectionsName { get; set; }
     }
-
-    public class FinalDisposalRegister
-    {
-        public int DisposalRegId { get; set; }
-        public int Steps { get; set; }
-        public string? FRNo { get; set; }
-        public string? FIRNo { get; set; }
-        public long FIRYear { get; set; }
-        public int? PoliceStationId { get; set; }
-        public long ProsecutionYear { get; set; }
-        public string? TitleOfCase { get; set; }
-        public string? AccusedNames { get; set; }
-        public string? AccusedAddress { get; set; }
-
-        public string? CourtName { get; set; }
-        public string? CNRNo { get; set; }
-        public string? CISNo { get; set; }
-        public string? CourtCaseNo { get; set; }
-        public long CourtCaseYear { get; set; }
-
-        public int DecisionTypeId { get; set; }
-        public int? DecisionReasonId { get; set; }
-
-        public string? JudgmentDecisionDate { get; set; }
-
-        public bool IsProbationGranted { get; set; }
-        public string? ProbationGrantedPeriod { get; set; }
-
-        public bool IsFineCompensationOrdered { get; set; }
-        public decimal? FineCompensationOrderedAmount { get; set; }
-
-        public string? UnderSection { get; set; }
-        public string? JudgmentSummary { get; set; }
-        public string? SectionsConvicted { get; set; }
-        public bool IsContestedCase { get; set; }
-        public string? PresentedRulingNo { get; set; }
-        public bool IsActionsProposedUnderNirbhaya { get; set; }
-
-        public string? DispatchRegNo { get; set; }
-        public string? DispatchDate { get; set; }
-
-        public bool IsAppealProposed { get; set; }
-        public string? RecommendationDate { get; set; }
-
-        public string? AppealDispatchRegNo { get; set; }
-        public int? GroundsFilingAppealID { get; set; }
-        public string? GroundsFilingAppeal { get; set; }
-        public string? Specifications { get; set; }
-
-        public string? LinkedCNR { get; set; }
-        public string? TransferredClubbed { get; set; }
-        public string? Remarks { get; set; }
-
-        public string? RequestingApplicationDate { get; set; }
-        public string? ReceivingApplicationDate { get; set; }
-
-        public string? JudgementCopyDocs { get; set; }
-
-        public string? CINNo { get; set; }
-        public string? ReAgainRegisterBy { get; set; }
-
-        public string? ChargeSheetNo { get; set; }
-        public string? ChargeSheetDate { get; set; }
-        public string? DateBeforeFillingCourt { get; set; }
-
-        public int? FirStatusId { get; set; }
-
-        public int? DistrictId { get; set; }
-        public int? OfficeId { get; set; }
-        public int? JCourtId { get; set; }
-        public int? DirRegId { get; set; }
-
-        public string? DierNo { get; set; }
-        public string? RepCinNo { get; set; }
-        public string? CaseStatus { get; set; }
-        public bool? IsDisposal { get; set; }
-
-        // Navigation Property
-        //public List<Trn_SentenceDt>? SentenceDetails { get; set; }
-    }
-    public class DisposalSentenceModel
-    {
-        public int SentenceId { get; set; }
-        public long? DisposalGroupNo { get; set; }
-        public string? Section { get; set; }
-        public string? SentenceType { get; set; }
-        public string? Period { get; set; }
-        public decimal? Fine { get; set; }
-        public string? Remarks { get; set; }
-    }
-
-    public class DisposalRegistrationsResponseModel
-    {
-        public bool Status { get; set; }
-        public string? Message { get; set; }
-        public long ReturnID { get; set; }
-        public object? Data { get; set; }
-    }
-
 }
