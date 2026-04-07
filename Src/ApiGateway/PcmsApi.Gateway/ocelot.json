@@ -3602,6 +3602,57 @@
       }
     },
     {
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/GetWitnessesAttendance",
+      "UpstreamHttpMethod": [
+        "GET"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/DierRegistrations/GetWitnessesAttendanceList",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/AddEditWitnessAttendances",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/DierRegistrations/AddEditWitnessesAttendance",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/PcmsCase/DierRegistrations/DeleteWitnessAttendances",
+      "UpstreamHttpMethod": [
+        "POST"
+      ],
+      "DownstreamPathTemplate": "/PcmsCaseService/api/DierRegistrations/DeleteWitnessesAttendance",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.70.234.9",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
       "UpstreamPathTemplate": "/PcmsReport/AddMonthlyReport/GetAddMonthlyReports",
       "UpstreamHttpMethod": [
         "POST"

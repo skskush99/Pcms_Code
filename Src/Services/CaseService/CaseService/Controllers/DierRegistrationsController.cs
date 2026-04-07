@@ -879,7 +879,7 @@ namespace CaseService.Controllers
 
         [HttpPost]
         [RequestSizeLimit(52428800)]
-        public async Task<ResponseWithoutPaginationModel> AddEditDisposalSentence(DisposalSentenceModel objModel)
+        public async Task<DisposalRegistrationsResponseModel> AddEditDisposalSentence(DisposalSentenceModel objModel)
         {
             try
             {
@@ -888,7 +888,7 @@ namespace CaseService.Controllers
             catch (Exception ex)
             {
                 _logsService.Logs("Error", "AddEditDisposalSentence", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/AddEditDisposalSentence");
-                return new ResponseWithoutPaginationModel()
+                return new DisposalRegistrationsResponseModel()
                 {
                     Status = false,
                     Message = ex.Message,
@@ -896,7 +896,7 @@ namespace CaseService.Controllers
             }
         }
         [HttpPost]
-        public async Task<ResponseWithoutPaginationModel> DeleteDisposalSentence(long SentenceId)
+        public async Task<DisposalRegistrationsResponseModel> DeleteDisposalSentence(long SentenceId)
         {
             try
             {
@@ -905,7 +905,60 @@ namespace CaseService.Controllers
             catch (Exception ex)
             {
                 _logsService.Logs("Error", "DeleteDisposalSentence", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/DeleteDisposalSentence");
+                return new DisposalRegistrationsResponseModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        [HttpGet]
+        public async Task<ResponseWithoutPaginationModel> GetWitnessesAttendanceList(long DirRegId)
+        {
+            try
+            {
+                return await unitOfWork.DierRegistrationsService.GetWitnessesAttendanceList(DirRegId);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetWitnessesAttendanceList", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/GetWitnessesAttendanceList");
                 return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        [HttpPost]
+        public async Task<DisposalRegistrationsResponseModel> AddEditWitnessesAttendance(WitnessesAttendanceModel objModel)
+        {
+            try
+            {
+                return await unitOfWork.DierRegistrationsService.AddEditWitnessesAttendance(objModel, UserSession.Current.UserId);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "AddEditWitnessesAttendance", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/AddEditWitnessesAttendance");
+                return new DisposalRegistrationsResponseModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+        [HttpPost]
+        public async Task<DisposalRegistrationsResponseModel> DeleteWitnessesAttendance(long Id)
+        {
+            try
+            {
+                return await unitOfWork.DierRegistrationsService.DeleteWitnessesAttendance(Id, UserSession.Current.UserId);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "DeleteWitnessesAttendance", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/DeleteWitnessesAttendance");
+                return new DisposalRegistrationsResponseModel()
                 {
                     Status = false,
                     Message = ex.Message,
