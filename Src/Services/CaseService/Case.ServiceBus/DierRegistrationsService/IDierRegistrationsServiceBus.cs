@@ -37,8 +37,12 @@ namespace Case.ServiceBus.DierRegistrationsService
         Task<DierRegistrationsResponseModel> DeleteOffenceClassification(long OffenceClassifId, int UserId);
 
         Task<ResponseWithoutPaginationModel> GetDisposalSentence(long DisposalGroupNo);
-        Task<ResponseWithoutPaginationModel> AddEditDisposalSentence(DisposalSentenceModel objModel, int UserId);
-        Task<ResponseWithoutPaginationModel> DeleteDisposalSentence(long SentenceId, int UserId);
+        Task<DisposalRegistrationsResponseModel> AddEditDisposalSentence(DisposalSentenceModel objModel, int UserId);
+        Task<DisposalRegistrationsResponseModel> DeleteDisposalSentence(long SentenceId, int UserId);
+
+        Task<ResponseWithoutPaginationModel> GetWitnessesAttendanceList(long DirRegId);
+        Task<DisposalRegistrationsResponseModel> AddEditWitnessesAttendance(WitnessesAttendanceModel objModel, int UserId);
+        Task<DisposalRegistrationsResponseModel> DeleteWitnessesAttendance(long Id, int UserId);
 
 
         //Task<ResponseWithoutPaginationModel> GetDierVictim(long VictimGroupNo);

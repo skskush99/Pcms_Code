@@ -310,7 +310,7 @@ namespace Case.ServiceBus.DierRegistrationsService
                 throw;
             }
         }
-        public async Task<ResponseWithoutPaginationModel> AddEditDisposalSentence(DisposalSentenceModel objModel, int UserId)
+        public async Task<DisposalRegistrationsResponseModel> AddEditDisposalSentence(DisposalSentenceModel objModel, int UserId)
         {
             try
             {
@@ -322,11 +322,48 @@ namespace Case.ServiceBus.DierRegistrationsService
                 throw;
             }
         }
-        public async Task<ResponseWithoutPaginationModel> DeleteDisposalSentence(long SentenceId, int UserId)
+        public async Task<DisposalRegistrationsResponseModel> DeleteDisposalSentence(long SentenceId, int UserId)
         {
             try
             {
                 var data = _IUnitOfWorkRepository.DierRegistrations.DeleteDisposalSentence(SentenceId, UserId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<ResponseWithoutPaginationModel> GetWitnessesAttendanceList(long DirRegId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.GetWitnessesAttendanceList(DirRegId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<DisposalRegistrationsResponseModel> AddEditWitnessesAttendance(WitnessesAttendanceModel objModel, int UserId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.AddEditWitnessesAttendance(objModel, UserId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<DisposalRegistrationsResponseModel> DeleteWitnessesAttendance(long Id, int UserId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.DeleteWitnessesAttendance(Id, UserId);
                 return await data;
             }
             catch (Exception)

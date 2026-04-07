@@ -1,4 +1,6 @@
-﻿namespace Case.Dto.DierRegistrations
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Case.Dto.DierRegistrations
 {
     public class DierRegistrationsResponseModel
     {
@@ -358,6 +360,7 @@
         public string? RepCinNo { get; set; }
         public string? CaseStatus { get; set; }
         public bool? IsDisposal { get; set; }
+        public string? SentenceId { get; set; }
 
         // Navigation Property
         //public List<Trn_SentenceDt>? SentenceDetails { get; set; }
@@ -379,6 +382,25 @@
         public string? Message { get; set; }
         public long ReturnID { get; set; }
         public object? Data { get; set; }
+    }
+
+    public class WitnessesAttendanceModel
+    {
+        public long Id { get; set; }
+        public long DirRegId { get; set; }
+        public string? DierNo { get; set; }
+        public string? FIRNo { get; set; }
+        public int? FIRYear { get; set; }
+        public string? FIRDt { get; set; }
+        public string? WitnessAttendanceDate { get; set; }
+        public long? WitnessesAppearedInCourt { get; set; }
+        public long? WitnessesExamined { get; set; }
+        public long? ExaminedInPerson { get; set; }
+        public long? ExaminedViaVC { get; set; }
+        public long? WitnessesNotExaminedHearingDate { get; set; }
+        public long? WitnessesRestrained { get; set; }
+        public long? WitnessesNotExaminedHearingDateRestrained { get; set; }
+        public string? ReasonsNonRecordingStatements { get; set; }
     }
 
 }
