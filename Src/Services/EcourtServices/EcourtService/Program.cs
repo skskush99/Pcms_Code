@@ -59,7 +59,7 @@ public class Program
         }
 
         //middleware for encryption
-        //app.UseMiddleware<EncryptionDecryptionMiddleware>();  //open in future if needed Decryption
+        //app.UseMiddleware<EcourtService.Middleware.EncryptionDecryptionMiddleware>();  //open in future if needed Decryption
 
         app.UseCors();
 

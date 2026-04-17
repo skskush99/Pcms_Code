@@ -102,6 +102,48 @@ namespace Case.Repository.DierRegistrations
                 };
             }
         }
+        public async Task<ResponseModel> GetFinalDisposalDierList(DierListFilterModel objModel)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+                    parmeters.Add("@Action", "GetFinalDisposalDierList");
+                    parmeters.Add("@CNRNo", objModel.CNRNo);
+                    parmeters.Add("@FIRNo", objModel.FIRNo);
+                    parmeters.Add("@DistrictId", objModel.DistrictId);
+                    parmeters.Add("@OfficeId", objModel.OfficeId);
+                    parmeters.Add("@JCourtId", objModel.JCourtId);
+                    parmeters.Add("@RegisterType", objModel.RegisterType);
+                    parmeters.Add("@SortBy", objModel.SortBy ?? "");
+                    parmeters.Add("@IsSortByDesc", objModel.IsSortByDesc == true ? 1 : 0);
+                    parmeters.Add("@PageNo", objModel.PageNo);
+                    parmeters.Add("@Pagesize", objModel.PageSize);
+                    var objResult = await Con.QueryMultipleAsync("spTrn_DierRegistrations", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+
+                    ResponseModel objResut = new()
+                    {
+                        Status = true,
+                        Message = "",
+                        Data = objResult.Read<object>(),
+                        Pagination = objResult.Read<PaginationModel>()
+                    };
+                    DisposeCurrentSqlConnection();
+
+                    return objResut;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetFinalDisposalDierList", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/GetFinalDisposalDierList");
+                return new ResponseModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
         public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps1(DierRegistrationsSteps1Model objModel, int UserId)
         {
             try
@@ -314,6 +356,7 @@ namespace Case.Repository.DierRegistrations
                     parmeters.Add("@GroundsFilingAppeal", objModel.GroundsFilingAppeal);
                     parmeters.Add("@Specifications", objModel.Specifications);
                     parmeters.Add("@LinkedCNR", objModel.LinkedCNR);
+                    parmeters.Add("@LinkedCaseRemarks", objModel.LinkedCaseRemarks);
                     parmeters.Add("@TransferredClubbed", objModel.TransferredClubbed);
                     parmeters.Add("@Remarks", objModel.Remarks);
                     parmeters.Add("@RequestingApplicationDate", objModel.RequestingApplicationDate);
@@ -1092,7 +1135,7 @@ namespace Case.Repository.DierRegistrations
             }
         }
 
-        public async Task<ResponseWithoutPaginationModel> GetWitnessesAttendanceList(long DirRegId)
+        public async Task<ResponseWithoutPaginationModel> GetWitnessesAttendanceList(long DierRegId)
         {
             try
             {
@@ -1100,7 +1143,7 @@ namespace Case.Repository.DierRegistrations
                 {
                     var parmeters = new DynamicParameters();
                     parmeters.Add("@Action", "GetWitnessesAttendanceList");
-                    parmeters.Add("@DirRegId", DirRegId);
+                    parmeters.Add("@DierRegId", DierRegId);
                     var objResult = await Con.QueryAsync("spTrn_WitnessesAttendanceDt", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
 
                     ResponseWithoutPaginationModel objResut = new()
@@ -1143,7 +1186,7 @@ namespace Case.Repository.DierRegistrations
                         parmeters.Add("@CreatedBy", UserId);
                     }
                     parmeters.Add("@Id", objModel.Id);
-                    parmeters.Add("@DirRegId", objModel.DirRegId);
+                    parmeters.Add("@DierRegId", objModel.DierRegId);
                     parmeters.Add("@DierNo", objModel.DierNo);
                     parmeters.Add("@FIRNo", objModel.FIRNo);
                     parmeters.Add("@FIRYear", objModel.FIRYear);
@@ -1194,6 +1237,294 @@ namespace Case.Repository.DierRegistrations
             catch (Exception ex)
             {
                 _logsService.Logs("Error", "DeleteWitnessesAttendance", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/DeleteWitnessesAttendance");
+                return new DisposalRegistrationsResponseModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        public async Task<ResponseWithoutPaginationModel> GetAppealNigraniRegisterList(long DierRegId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+                    parmeters.Add("@Action", "GetAppealNigraniRegisterList");
+                    parmeters.Add("@DierRegId", DierRegId);
+                    var objResult = await Con.QueryAsync("spTrn_AppealNigraniRegister", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+
+                    ResponseWithoutPaginationModel objResut = new()
+                    {
+                        Status = true,
+                        Message = "",
+                        Data = objResult,
+                    };
+                    DisposeCurrentSqlConnection();
+
+                    return objResut;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetAppealNigraniRegisterList", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/GetAppealNigraniRegisterList");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+        public async Task<DisposalRegistrationsResponseModel> AddEditAppealNigraniRegister(AppealNigraniRegisterModel objModel, int UserId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+
+                    if (objModel.Id > 0)
+                    {
+                        parmeters.Add("@Action", "AppealNigraniRegisterEdit");
+                        parmeters.Add("@UpdatedBy", UserId);
+                    }
+                    else
+                    {
+                        parmeters.Add("@Action", "AppealNigraniRegisterAdd");
+                        parmeters.Add("@CreatedBy", UserId);
+                    }
+                    parmeters.Add("@Id", objModel.Id);
+                    parmeters.Add("@DierRegId", objModel.DierRegId);
+                    parmeters.Add("@DierNo", objModel.DierNo);
+                    parmeters.Add("@FIRNo", objModel.FIRNo);
+                    parmeters.Add("@FIRYear", objModel.FIRYear);
+                    parmeters.Add("@FIRDt", objModel.FIRDt);
+                    parmeters.Add("@RecommendationDate", objModel.RecommendationDate);
+                    parmeters.Add("@DispatchRegNo", objModel.DispatchRegNo);
+                    parmeters.Add("@AppealFilingGrounds", objModel.AppealFilingGrounds);
+                    parmeters.Add("@SpecificationNotes", objModel.SpecificationNotes);
+                    parmeters.Add("@DecisionDate", objModel.DecisionDate);
+                    parmeters.Add("@CopyApplicationDate", objModel.CopyApplicationDate);
+                    parmeters.Add("@CopyReceiptDate", objModel.CopyReceiptDate);
+                    parmeters.Add("@AppealExpiryDate", objModel.AppealExpiryDate);
+                    parmeters.Add("@APPRecordsReceiptDate", objModel.APPRecordsReceiptDate);
+                    parmeters.Add("@LawDeptTransmittalRefNo", objModel.LawDeptTransmittalRefNo);
+                    parmeters.Add("@LawDeptTransmittalDate", objModel.LawDeptTransmittalDate);
+                    parmeters.Add("@Remarks", objModel.Remarks);
+
+                    var objData = await Con.QueryAsync<DisposalRegistrationsResponseModel>("spTrn_AppealNigraniRegister", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objResult = objData.FirstOrDefault();
+                    DisposeCurrentSqlConnection();
+                    return objResult != null ? objResult : new DisposalRegistrationsResponseModel();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "AddEditAppealNigraniRegister", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/AddEditAppealNigraniRegister");
+                return new DisposalRegistrationsResponseModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+        public async Task<DisposalRegistrationsResponseModel> DeleteAppealNigraniRegister(long Id, int UserId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+                    parmeters.Add("@Action", "DeleteAppealNigraniRegister");
+                    parmeters.Add("@DeletedBy", UserId);
+                    parmeters.Add("@Id", Id);
+
+                    var objData = await Con.QueryAsync<DisposalRegistrationsResponseModel>("spTrn_AppealNigraniRegister", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objResut = objData.FirstOrDefault();
+                    DisposeCurrentSqlConnection();
+                    return objResut != null ? objResut : new DisposalRegistrationsResponseModel();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "DeleteAppealNigraniRegister", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/DeleteAppealNigraniRegister");
+                return new DisposalRegistrationsResponseModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        public async Task<ResponseWithoutPaginationModel> GetFinalDisposalByDierIdList(long DierRegId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+                    parmeters.Add("@Action", "GetFinalDisposalByDierIdList");
+                    parmeters.Add("@DirRegId", DierRegId);
+                    var objResult = await Con.QueryAsync("spTrn_FinalDisposalRegister", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+
+                    ResponseWithoutPaginationModel objResut = new()
+                    {
+                        Status = true,
+                        Message = "",
+                        Data = objResult,
+                    };
+                    DisposeCurrentSqlConnection();
+
+                    return objResut;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetFinalDisposalByDierIdList", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/GetFinalDisposalByDierIdList");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        public async Task<ResponseWithoutPaginationModel> GetPerformanceEvaluationRegisterList(long PerfEvalRegId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+                    parmeters.Add("@Action", "GetPerformanceEvaluationRegisterList");
+                    parmeters.Add("@PerfEvalRegId", PerfEvalRegId);
+                    var objResult = await Con.QueryAsync("spTrn_UC_PerformanceEvaluationRegister", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+
+                    ResponseWithoutPaginationModel objResut = new()
+                    {
+                        Status = true,
+                        Message = "",
+                        Data = objResult,
+                    };
+                    DisposeCurrentSqlConnection();
+
+                    return objResut;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetPerformanceEvaluationRegisterList", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/GetPerformanceEvaluationRegisterList");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        public async Task<ResponseWithoutPaginationModel> GetPerformanceEvaluationRegisterByDierIdList(long DierRegId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+                    parmeters.Add("@Action", "GetPerformanceEvaluationRegisterByDierIdList");
+                    parmeters.Add("@DierRegId", DierRegId);
+                    var objResult = await Con.QueryAsync("spTrn_UC_PerformanceEvaluationRegister", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+
+                    ResponseWithoutPaginationModel objResut = new()
+                    {
+                        Status = true,
+                        Message = "",
+                        Data = objResult,
+                    };
+                    DisposeCurrentSqlConnection();
+
+                    return objResut;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetPerformanceEvaluationRegisterByDierIdList", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/GetPerformanceEvaluationRegisterByDierIdList");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+        public async Task<DisposalRegistrationsResponseModel> AddEditPerformanceEvaluationRegister(PerformanceEvaluationRegisterModel objModel, int UserId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+
+                    if (objModel.PerfEvalRegId > 0)
+                    {
+                        parmeters.Add("@Action", "PerformanceEvaluationRegisterEdit");
+                        parmeters.Add("@UpdatedBy", UserId);
+                    }
+                    else
+                    {
+                        parmeters.Add("@Action", "PerformanceEvaluationRegisterAdd");
+                        parmeters.Add("@CreatedBy", UserId);
+                    }
+                    parmeters.Add("@PerfEvalRegId", objModel.PerfEvalRegId);
+                    parmeters.Add("@DierRegId", objModel.DierRegId);
+                    parmeters.Add("@DierNo", objModel.DierNo);
+                    parmeters.Add("@FIRNo", objModel.FIRNo);
+                    parmeters.Add("@FIRYear", objModel.FIRYear);
+                    parmeters.Add("@FIRDt", objModel.FIRDt);
+                    parmeters.Add("@ExaminedRecordDetails", objModel.ExaminedRecordDetails);
+                    parmeters.Add("@IsRecordPreparedProperly", objModel.IsRecordPreparedProperly);
+                    parmeters.Add("@IsFactsAndLawDetailed", objModel.IsFactsAndLawDetailed);
+                    parmeters.Add("@IsAssistantProsecutionViewLogical", objModel.IsAssistantProsecutionViewLogical);
+                    parmeters.Add("@IsDeputyDirectorViewLogical", objModel.IsDeputyDirectorViewLogical);
+                    parmeters.Add("@AssistantProsecutionPreparationLevel", objModel.AssistantProsecutionPreparationLevel);
+                    parmeters.Add("@DeputyDirectorPreparationLevel", objModel.DeputyDirectorPreparationLevel);
+                    parmeters.Add("@Remarks", objModel.Remarks);
+
+                    var objData = await Con.QueryAsync<DisposalRegistrationsResponseModel>("spTrn_UC_PerformanceEvaluationRegister", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objResult = objData.FirstOrDefault();
+                    DisposeCurrentSqlConnection();
+                    return objResult != null ? objResult : new DisposalRegistrationsResponseModel();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "AddEditPerformanceEvaluationRegister", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/AddEditPerformanceEvaluationRegister");
+                return new DisposalRegistrationsResponseModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+        public async Task<DisposalRegistrationsResponseModel> DeletePerformanceEvaluationRegister(long PerfEvalRegId, int UserId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+                    parmeters.Add("@Action", "DeletePerformanceEvaluationRegister");
+                    parmeters.Add("@DeletedBy", UserId);
+                    parmeters.Add("@PerfEvalRegId", PerfEvalRegId);
+
+                    var objData = await Con.QueryAsync<DisposalRegistrationsResponseModel>("spTrn_UC_PerformanceEvaluationRegister", parmeters, commandTimeout: 300, commandType: CommandType.StoredProcedure);
+                    var objResut = objData.FirstOrDefault();
+                    DisposeCurrentSqlConnection();
+                    return objResut != null ? objResut : new DisposalRegistrationsResponseModel();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "DeletePerformanceEvaluationRegister", ex.Message, ex.StackTrace, ex.Source, "CaseService/Case.Repository/DierRegistrationsRepository/DeletePerformanceEvaluationRegister");
                 return new DisposalRegistrationsResponseModel()
                 {
                     Status = false,
