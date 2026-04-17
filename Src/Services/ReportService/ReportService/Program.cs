@@ -65,7 +65,7 @@ if (app.Environment.IsDevelopment()|| app.Environment.IsProduction())
 
 app.UseAuthorization();
 //middleware for encryption
-app.UseMiddleware<EncryptionDecryptionMiddleware>();
+//app.UseMiddleware<EncryptionDecryptionMiddleware>();
 app.UseUserContext();
 
 app.MapControllers();

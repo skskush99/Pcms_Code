@@ -122,6 +122,24 @@ namespace Authentication.Service.Controllers
                 };
             }
         }
+        [HttpGet]
+        [Route("GetOfficesByDistrictIdDropdownList")]
+        public async Task<ResponseWithoutPaginationModel> GetOfficesByDistrictIdDropdownList(int DistrictId)
+        {
+            try
+            {
+                return await _IUnitOfWorkService.DropDownsServiceBus.GetOfficesByDistrictIdDropdownList(DistrictId);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetOfficesByDistrictIdDropdownList", ex.Message, ex.StackTrace, ex.Source, "Authentication.Service/DoopDownsController/GetOfficesByDistrictIdDropdownList");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
 
         [HttpGet]
         [Route("GetDesignationDropdownList")]
@@ -141,6 +159,24 @@ namespace Authentication.Service.Controllers
                 };
             }
         }
+        [HttpGet]
+        [Route("GetDesignationByRoleIdDropdownList")]
+        public async Task<ResponseWithoutPaginationModel> GetDesignationByRoleIdDropdownList(int RoleId)
+        {
+            try
+            {
+                return await _IUnitOfWorkService.DropDownsServiceBus.GetDesignationByRoleIdDropdownList(RoleId);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetDesignationByRoleIdDropdownList", ex.Message, ex.StackTrace, ex.Source, "Authentication.Service/DoopDownsController/GetDesignationByRoleIdDropdownList");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
 
         [HttpGet]
         [Route("GetCourtNamesDropdownList")]
@@ -153,6 +189,25 @@ namespace Authentication.Service.Controllers
             catch (Exception ex)
             {
                 _logsService.Logs("Error", "GetCourtNamesDropdownList", ex.Message, ex.StackTrace, ex.Source, "Authentication.Service/DoopDownsController/GetCourtNamesDropdownList");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        [HttpGet]
+        [Route("GetCourtNamesByOfficeIdDropdownList")]
+        public async Task<ResponseWithoutPaginationModel> GetCourtNamesByOfficeIdDropdownList(int OfficeId)
+        {
+            try
+            {
+                return await _IUnitOfWorkService.DropDownsServiceBus.GetCourtNamesByOfficeIdDropdownList(OfficeId);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetCourtNamesByOfficeIdDropdownList", ex.Message, ex.StackTrace, ex.Source, "Authentication.Service/DoopDownsController/GetCourtNamesByOfficeIdDropdownList");
                 return new ResponseWithoutPaginationModel()
                 {
                     Status = false,

@@ -75,11 +75,35 @@ public class DropDownsServiceBus(IUnitOfWorkRepository IUnitOfWorkRepository) : 
             throw;
         }
     }
+    public async Task<ResponseWithoutPaginationModel> GetOfficesByDistrictIdDropdownList(int DistrictId)
+    {
+        try
+        {
+            var data = _IUnitOfWorkRepository.DropDowns.GetOfficesByDistrictIdDropdownList(DistrictId);
+            return await data;
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+    }
     public async Task<ResponseWithoutPaginationModel> GetDesignationDropdownList()
     {
         try
         {
             var data = _IUnitOfWorkRepository.DropDowns.GetDesignationDropdownList();
+            return await data;
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+    }
+    public async Task<ResponseWithoutPaginationModel> GetDesignationByRoleIdDropdownList(int RoleId)
+    {
+        try
+        {
+            var data = _IUnitOfWorkRepository.DropDowns.GetDesignationByRoleIdDropdownList(RoleId);
             return await data;
         }
         catch (Exception)
@@ -93,6 +117,18 @@ public class DropDownsServiceBus(IUnitOfWorkRepository IUnitOfWorkRepository) : 
         try
         {
             var data = _IUnitOfWorkRepository.DropDowns.GetCourtNamesDropdownList(JCourtId);
+            return await data;
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+    }
+    public async Task<ResponseWithoutPaginationModel> GetCourtNamesByOfficeIdDropdownList(int OfficeId)
+    {
+        try
+        {
+            var data = _IUnitOfWorkRepository.DropDowns.GetCourtNamesByOfficeIdDropdownList(OfficeId);
             return await data;
         }
         catch (Exception)

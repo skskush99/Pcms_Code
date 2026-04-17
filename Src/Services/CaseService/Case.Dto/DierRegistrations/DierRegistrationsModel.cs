@@ -334,6 +334,7 @@ namespace Case.Dto.DierRegistrations
         public string? Specifications { get; set; }
 
         public string? LinkedCNR { get; set; }
+        public string? LinkedCaseRemarks { get; set; }
         public string? TransferredClubbed { get; set; }
         public string? Remarks { get; set; }
 
@@ -387,7 +388,7 @@ namespace Case.Dto.DierRegistrations
     public class WitnessesAttendanceModel
     {
         public long Id { get; set; }
-        public long DirRegId { get; set; }
+        public long DierRegId { get; set; }
         public string? DierNo { get; set; }
         public string? FIRNo { get; set; }
         public int? FIRYear { get; set; }
@@ -401,6 +402,44 @@ namespace Case.Dto.DierRegistrations
         public long? WitnessesRestrained { get; set; }
         public long? WitnessesNotExaminedHearingDateRestrained { get; set; }
         public string? ReasonsNonRecordingStatements { get; set; }
+    }
+    public class AppealNigraniRegisterModel
+    {
+        public long Id { get; set; }
+        public long DierRegId { get; set; }
+        public string? DierNo { get; set; }
+        public string? FIRNo { get; set; }
+        public int? FIRYear { get; set; }
+        public string? FIRDt { get; set; }
+        public string? RecommendationDate { get; set; }
+        public string? DispatchRegNo { get; set; }
+        public string? AppealFilingGrounds { get; set; }
+        public string? SpecificationNotes { get; set; }
+        public string? DecisionDate { get; set; }
+        public string? CopyApplicationDate { get; set; }
+        public string? CopyReceiptDate { get; set; }
+        public string? AppealExpiryDate { get; set; }
+        public string? APPRecordsReceiptDate { get; set; }
+        public string? LawDeptTransmittalRefNo { get; set; }
+        public string? LawDeptTransmittalDate { get; set; }
+        public string? Remarks { get; set; }
+    }
+    public class PerformanceEvaluationRegisterModel
+    {
+        public long PerfEvalRegId { get; set; }
+        public long DierRegId { get; set; }
+        public string? DierNo { get; set; }
+        public string? FIRNo { get; set; }
+        public int? FIRYear { get; set; }
+        public string? FIRDt { get; set; }
+        public string? ExaminedRecordDetails { get; set; }
+        public bool IsRecordPreparedProperly { get; set; }
+        public bool IsFactsAndLawDetailed { get; set; }
+        public bool IsAssistantProsecutionViewLogical { get; set; }
+        public bool IsDeputyDirectorViewLogical { get; set; }
+        public int? AssistantProsecutionPreparationLevel { get; set; }
+        public int? DeputyDirectorPreparationLevel { get; set; }
+        public string? Remarks { get; set; }
     }
 
 }

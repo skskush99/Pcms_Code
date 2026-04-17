@@ -72,6 +72,24 @@ namespace CaseService.Controllers
                 };
             }
         }
+        [HttpPost]
+        public async Task<ResponseModel> GetFinalDisposalDierList(DierListFilterModel objModel)
+        {
+            try
+            {
+                var loginUserData = UserSession.Current;
+                return await unitOfWork.DierRegistrationsService.GetFinalDisposalDierList(objModel);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetFinalDisposalDierList", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/GetFinalDisposalDierList");
+                return new ResponseModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
 
         [HttpPost]
         public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps1(DierRegistrationsSteps1Model objModel)
@@ -914,11 +932,11 @@ namespace CaseService.Controllers
         }
 
         [HttpGet]
-        public async Task<ResponseWithoutPaginationModel> GetWitnessesAttendanceList(long DirRegId)
+        public async Task<ResponseWithoutPaginationModel> GetWitnessesAttendanceList(long DierRegId)
         {
             try
             {
-                return await unitOfWork.DierRegistrationsService.GetWitnessesAttendanceList(DirRegId);
+                return await unitOfWork.DierRegistrationsService.GetWitnessesAttendanceList(DierRegId);
             }
             catch (Exception ex)
             {
@@ -958,6 +976,146 @@ namespace CaseService.Controllers
             catch (Exception ex)
             {
                 _logsService.Logs("Error", "DeleteWitnessesAttendance", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/DeleteWitnessesAttendance");
+                return new DisposalRegistrationsResponseModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        [HttpGet]
+        public async Task<ResponseWithoutPaginationModel> GetAppealNigraniRegisterList(long DierRegId)
+        {
+            try
+            {
+                return await unitOfWork.DierRegistrationsService.GetAppealNigraniRegisterList(DierRegId);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetAppealNigraniRegisterList", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/GetAppealNigraniRegisterList");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        [HttpPost]
+        public async Task<DisposalRegistrationsResponseModel> AddEditAppealNigraniRegister(AppealNigraniRegisterModel objModel)
+        {
+            try
+            {
+                return await unitOfWork.DierRegistrationsService.AddEditAppealNigraniRegister(objModel, UserSession.Current.UserId);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "AddEditAppealNigraniRegister", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/AddEditAppealNigraniRegister");
+                return new DisposalRegistrationsResponseModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+        [HttpPost]
+        public async Task<DisposalRegistrationsResponseModel> DeleteAppealNigraniRegister(long Id)
+        {
+            try
+            {
+                return await unitOfWork.DierRegistrationsService.DeleteAppealNigraniRegister(Id, UserSession.Current.UserId);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "DeleteAppealNigraniRegister", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/DeleteAppealNigraniRegister");
+                return new DisposalRegistrationsResponseModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+        [HttpGet]
+        public async Task<ResponseWithoutPaginationModel> GetFinalDisposalByDierIdList(long DierRegId)
+        {
+            try
+            {
+                return await unitOfWork.DierRegistrationsService.GetFinalDisposalByDierIdList(DierRegId);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetFinalDisposalByDierIdList", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/GetFinalDisposalByDierIdList");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        [HttpGet]
+        public async Task<ResponseWithoutPaginationModel> GetPerformanceEvaluationRegisterList(long PerfEvalRegId)
+        {
+            try
+            {
+                return await unitOfWork.DierRegistrationsService.GetPerformanceEvaluationRegisterList(PerfEvalRegId);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetPerformanceEvaluationRegisterList", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/GetPerformanceEvaluationRegisterList");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+        [HttpGet]
+        public async Task<ResponseWithoutPaginationModel> GetPerformanceEvaluationRegisterByDierIdList(long DierRegId)
+        {
+            try
+            {
+                return await unitOfWork.DierRegistrationsService.GetPerformanceEvaluationRegisterByDierIdList(DierRegId);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetPerformanceEvaluationRegisterByDierIdList", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/GetPerformanceEvaluationRegisterByDierIdList");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        [HttpPost]
+        public async Task<DisposalRegistrationsResponseModel> AddEditPerformanceEvaluationRegister(PerformanceEvaluationRegisterModel objModel)
+        {
+            try
+            {
+                return await unitOfWork.DierRegistrationsService.AddEditPerformanceEvaluationRegister(objModel, UserSession.Current.UserId);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "AddEditPerformanceEvaluationRegister", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/AddEditPerformanceEvaluationRegister");
+                return new DisposalRegistrationsResponseModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+        [HttpPost]
+        public async Task<DisposalRegistrationsResponseModel> DeletePerformanceEvaluationRegister(long PerfEvalRegId)
+        {
+            try
+            {
+                return await unitOfWork.DierRegistrationsService.DeletePerformanceEvaluationRegister(PerfEvalRegId, UserSession.Current.UserId);
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "DeletePerformanceEvaluationRegister", ex.Message, ex.StackTrace, ex.Source, "CaseService/DierRegistrationsController/DeletePerformanceEvaluationRegister");
                 return new DisposalRegistrationsResponseModel()
                 {
                     Status = false,

@@ -8,6 +8,7 @@ namespace Case.Repository.DierRegistrations
     {
         Task<ResponseModel> GetDierList(DierListFilterModel objModel);
         Task<ResponseModel> GetDisposalList(DierListFilterModel objModel);
+        Task<ResponseModel> GetFinalDisposalDierList(DierListFilterModel objModel);
         Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps1(DierRegistrationsSteps1Model objModel, int UserId);
         Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps2(DierRegistrationsSteps2Model objModel, int UserId);
         Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps3(DierRegistrationsSteps3Model objModel, int UserId);
@@ -43,9 +44,20 @@ namespace Case.Repository.DierRegistrations
         Task<DisposalRegistrationsResponseModel> AddEditDisposalSentence(DisposalSentenceModel objModel, int UserId);
         Task<DisposalRegistrationsResponseModel> DeleteDisposalSentence(long SentenceId, int UserId);
 
-        Task<ResponseWithoutPaginationModel> GetWitnessesAttendanceList(long DirRegId);
+        Task<ResponseWithoutPaginationModel> GetWitnessesAttendanceList(long DierRegId);
         Task<DisposalRegistrationsResponseModel> AddEditWitnessesAttendance(WitnessesAttendanceModel objModel, int UserId);
         Task<DisposalRegistrationsResponseModel> DeleteWitnessesAttendance(long Id, int UserId);
+
+        Task<ResponseWithoutPaginationModel> GetAppealNigraniRegisterList(long DierRegId);
+        Task<DisposalRegistrationsResponseModel> AddEditAppealNigraniRegister(AppealNigraniRegisterModel objModel, int UserId);
+        Task<DisposalRegistrationsResponseModel> DeleteAppealNigraniRegister(long Id, int UserId);
+
+        Task<ResponseWithoutPaginationModel> GetFinalDisposalByDierIdList(long DierRegId);
+
+        Task<ResponseWithoutPaginationModel> GetPerformanceEvaluationRegisterList(long PerfEvalRegId);
+        Task<ResponseWithoutPaginationModel> GetPerformanceEvaluationRegisterByDierIdList(long DierRegId);
+        Task<DisposalRegistrationsResponseModel> AddEditPerformanceEvaluationRegister(PerformanceEvaluationRegisterModel objModel, int UserId);
+        Task<DisposalRegistrationsResponseModel> DeletePerformanceEvaluationRegister(long PerfEvalRegId, int UserId);
 
 
 

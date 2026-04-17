@@ -37,6 +37,18 @@ namespace Case.ServiceBus.DierRegistrationsService
                 throw;
             }
         }
+        public async Task<ResponseModel> GetFinalDisposalDierList(DierListFilterModel objModel)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.GetFinalDisposalDierList(objModel);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public async Task<DierRegistrationsResponseModel> AddEditDierRegistrationsSteps1(DierRegistrationsSteps1Model objModel, int UserId)
         {
             try
@@ -335,11 +347,11 @@ namespace Case.ServiceBus.DierRegistrationsService
             }
         }
 
-        public async Task<ResponseWithoutPaginationModel> GetWitnessesAttendanceList(long DirRegId)
+        public async Task<ResponseWithoutPaginationModel> GetWitnessesAttendanceList(long DierRegId)
         {
             try
             {
-                var data = _IUnitOfWorkRepository.DierRegistrations.GetWitnessesAttendanceList(DirRegId);
+                var data = _IUnitOfWorkRepository.DierRegistrations.GetWitnessesAttendanceList(DierRegId);
                 return await data;
             }
             catch (Exception)
@@ -364,6 +376,104 @@ namespace Case.ServiceBus.DierRegistrationsService
             try
             {
                 var data = _IUnitOfWorkRepository.DierRegistrations.DeleteWitnessesAttendance(Id, UserId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<ResponseWithoutPaginationModel> GetAppealNigraniRegisterList(long DierRegId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.GetAppealNigraniRegisterList(DierRegId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<DisposalRegistrationsResponseModel> AddEditAppealNigraniRegister(AppealNigraniRegisterModel objModel, int UserId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.AddEditAppealNigraniRegister(objModel, UserId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<DisposalRegistrationsResponseModel> DeleteAppealNigraniRegister(long Id, int UserId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.DeleteAppealNigraniRegister(Id, UserId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<ResponseWithoutPaginationModel> GetFinalDisposalByDierIdList(long DierRegId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.GetFinalDisposalByDierIdList(DierRegId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<ResponseWithoutPaginationModel> GetPerformanceEvaluationRegisterList(long PerfEvalRegId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.GetPerformanceEvaluationRegisterList(PerfEvalRegId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<ResponseWithoutPaginationModel> GetPerformanceEvaluationRegisterByDierIdList(long DierRegId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.GetPerformanceEvaluationRegisterByDierIdList(DierRegId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<DisposalRegistrationsResponseModel> AddEditPerformanceEvaluationRegister(PerformanceEvaluationRegisterModel objModel, int UserId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.AddEditPerformanceEvaluationRegister(objModel, UserId);
+                return await data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<DisposalRegistrationsResponseModel> DeletePerformanceEvaluationRegister(long PerfEvalRegId, int UserId)
+        {
+            try
+            {
+                var data = _IUnitOfWorkRepository.DierRegistrations.DeletePerformanceEvaluationRegister(PerfEvalRegId, UserId);
                 return await data;
             }
             catch (Exception)

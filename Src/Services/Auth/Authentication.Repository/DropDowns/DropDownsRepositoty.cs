@@ -176,6 +176,38 @@ namespace Authentication.Repository.DropDowns
                 };
             }
         }
+        public async Task<ResponseWithoutPaginationModel> GetOfficesByDistrictIdDropdownList(int DistrictId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+                    parmeters.Add("@Action", "GetOfficesByDistrictIdDropdownList");
+                    parmeters.Add("@DistrictId", DistrictId);
+                    var objData = await Con.QueryAsync<DropdownlistModel>("spMstOffices", parmeters, commandType: CommandType.StoredProcedure);
+
+                    ResponseWithoutPaginationModel objResut = new ResponseWithoutPaginationModel();
+                    {
+                        objResut.Status = true;
+                        objResut.Message = "";
+                        objResut.Data = objData;
+                    }
+                    ;
+                    DisposeCurrentSqlConnection();
+                    return objResut;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetOfficesByDistrictIdDropdownList", ex.Message, ex.StackTrace, ex.Source, "Auth/Authentication.Repository/DropDowns/DropDownsRepositoty/GetOfficesByDistrictIdDropdownList");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
         public async Task<ResponseWithoutPaginationModel> GetDesignationDropdownList()
         {
             try
@@ -207,6 +239,39 @@ namespace Authentication.Repository.DropDowns
                 };
             }
         }
+
+        public async Task<ResponseWithoutPaginationModel> GetDesignationByRoleIdDropdownList(int RoleId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+                    parmeters.Add("@Action", "GetDesignationByRoleIdDropdownList");
+                    parmeters.Add("@LevelId", RoleId);
+                    var objData = await Con.QueryAsync<DropdownlistModel>("spMstDesignation", parmeters, commandType: CommandType.StoredProcedure);
+
+                    ResponseWithoutPaginationModel objResut = new ResponseWithoutPaginationModel();
+                    {
+                        objResut.Status = true;
+                        objResut.Message = "";
+                        objResut.Data = objData;
+                    }
+                    ;
+                    DisposeCurrentSqlConnection();
+                    return objResut;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetDesignationByRoleIdDropdownList", ex.Message, ex.StackTrace, ex.Source, "Auth/Authentication.Repository/DropDowns/DropDownsRepositoty/GetDesignationByRoleIdDropdownList");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
         public async Task<ResponseWithoutPaginationModel> GetCourtNamesDropdownList(int JCourtId)
         {
             try
@@ -231,6 +296,37 @@ namespace Authentication.Repository.DropDowns
             catch (Exception ex)
             {
                 _logsService.Logs("Error", "GetCourtNamesDropdownList", ex.Message, ex.StackTrace, ex.Source, "Auth/Authentication.Repository/DropDowns/DropDownsRepositoty/GetCourtNamesDropdownList");
+                return new ResponseWithoutPaginationModel()
+                {
+                    Status = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+        public async Task<ResponseWithoutPaginationModel> GetCourtNamesByOfficeIdDropdownList(int OfficeId)
+        {
+            try
+            {
+                using (var Con = GetOpenConnection())
+                {
+                    var parmeters = new DynamicParameters();
+                    parmeters.Add("@Action", "GetCourtNamesByOfficeIdDropdownList");
+                    parmeters.Add("@OfficeId", OfficeId);
+                    var objData = await Con.QueryAsync<DropdownlistModel>("spMstCourtNames", parmeters, commandType: CommandType.StoredProcedure);
+
+                    ResponseWithoutPaginationModel objResut = new ResponseWithoutPaginationModel();
+                    {
+                        objResut.Status = true;
+                        objResut.Message = "";
+                        objResut.Data = objData;
+                    }
+                    DisposeCurrentSqlConnection();
+                    return objResut;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logsService.Logs("Error", "GetCourtNamesByOfficeIdDropdownList", ex.Message, ex.StackTrace, ex.Source, "Auth/Authentication.Repository/DropDowns/DropDownsRepositoty/GetCourtNamesByOfficeIdDropdownList");
                 return new ResponseWithoutPaginationModel()
                 {
                     Status = false,

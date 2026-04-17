@@ -12,7 +12,8 @@ namespace CCTNSServiceBus.CCTNS
     public class CCTNSService : ICCTNSService
     {
         private readonly CCTNSCredentials _cctnsCredentials;
-        private readonly string encryptionKey = "897J4n32yd323K09vf9E654328756431";
+        private readonly string encryptionKey = "756k8M65yd323K09vf9E654328752897";
+        //private readonly string encryptionKey = "897J4n32yd323K09vf9E654328756431";
         private const string EncryptionAlgoType = "AES";
         private const string ALGO = "AES/GCM/NoPadding";
         private const string UtfFormat = "UTF-8";
@@ -132,7 +133,8 @@ namespace CCTNSServiceBus.CCTNS
             {
                 CCTNSService crypto = new CCTNSService(_configuration);
 
-                string encryptionKey = "897J4n32yd323K09vf9E654328756431";
+                //string encryptionKey = "897J4n32yd323K09vf9E654328756431";
+                string encryptionKey = "756k8M65yd323K09vf9E654328752897";
 
                 // Payload (same as console)
                 var payload = new
@@ -330,13 +332,14 @@ namespace CCTNSServiceBus.CCTNS
 
                 var plainText = new
                 {
+                    //firNum = "27542003260025",
                     //firNum = "27564051250030",
                     firNum = firNum
                 };
                 string plainTextJsons = JsonConvert.SerializeObject(plainText);
 
                 // Generate IV
-                string iv = cryptoAESGCM.GenerateBase64IV();
+                string iv = cryptoAESGCM.GenerateBase64IV();                                                                                                                                                             
 
                 // Encrypt payload
                 string encryptedPayload = cryptoAESGCM.FIREncrypt(plainTextJsons, data.AuthsecretKey, iv);
